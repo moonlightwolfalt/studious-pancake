@@ -1,0 +1,20 @@
+# Render blueprint: New + > Blueprint, point it at this repo.
+services:
+  - type: web
+    name: mopeio-local
+    runtime: docker
+    plan: starter          # a persistent disk needs a paid plan; free works but accounts reset on every deploy/spin-down
+    healthCheckPath: /master/servers
+    disk:
+      name: accounts
+      mountPath: /var/data
+      sizeGB: 1
+    envVars:
+      - key: DB_DIR
+        value: /var/data
+      - key: GOOGLE_CLIENT_ID
+        sync: false        # paste your OAuth Web client id in the Render dashboard
+      - key: MOPE_INFINITE_EMAILS
+        sync: false        # optional: comma-separated emails with unlimited coins/gems
+      - key: MOPE_FREE_SHOP
+        value: "1"

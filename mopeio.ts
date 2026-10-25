@@ -29,6 +29,15 @@ switch (cmd) {
   case "patch":
     await buildDist();
     break;
+  case "build": // what the Docker image runs: everything except probe/serve (generated data is committed)
+    await fetchSite();
+    {
+      const { pretty } = await runDeobfuscation();
+      await writeNamed();
+      await fetchSite({ extraTexts: [{ text: pretty, base: "/client.js" }] });
+    }
+    await buildDist();
+    break;
   case "world":
     await genWorld(process.argv[3]);
     break;
@@ -58,5 +67,6 @@ switch (cmd) {
   world   generate data/world.json  [seed]
   probe   read animal/skin tables from the client -> data/animals.json, data/shop-catalog.json
   serve   run master + accounts + game servers + static site on :8080
+  build   fetch + deobf + patch (no probe/serve) – used by the Docker build
   all     run every step above, then serve`);
 }

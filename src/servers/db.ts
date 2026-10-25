@@ -1,10 +1,10 @@
 import { Database } from "bun:sqlite";
 import { mkdirSync } from "node:fs";
 import { join } from "node:path";
-import { DATA } from "../config";
+import { DB_DIR } from "../config";
 
-mkdirSync(DATA, { recursive: true });
-export const db = new Database(join(DATA, "accounts.sqlite"), { create: true });
+mkdirSync(DB_DIR, { recursive: true });
+export const db = new Database(join(DB_DIR, "accounts.sqlite"), { create: true });
 db.run("PRAGMA journal_mode = WAL");
 db.run(`CREATE TABLE IF NOT EXISTS users (
   id          INTEGER PRIMARY KEY AUTOINCREMENT,

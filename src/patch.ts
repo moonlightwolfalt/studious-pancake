@@ -70,12 +70,11 @@ export const clientPatches: Patch[] = [
     },
   },
   {
-    // Google sign-in: swap mope.io's OAuth client id for yours (GOOGLE_CLIENT_ID)
+    // Google sign-in: the client id comes from the server at runtime (GOOGLE_CLIENT_ID),
+    // so one build works on any deployment.
     name: "google-client-id",
     apply(code) {
-      const id = process.env.GOOGLE_CLIENT_ID;
-      if (!id) return code;
-      return code.replace(/(google: ")[0-9]+-[a-z0-9]+\.apps\.googleusercontent\.com(")/, `$1${id}$2`);
+      return code.replace(/(google: )"[0-9]+-[a-z0-9]+\.apps\.googleusercontent\.com"/, '$1window.__mopeGoogleId()');
     },
   },
   {

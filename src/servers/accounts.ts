@@ -206,6 +206,9 @@ export async function handleAccounts(
 
   if (m === "OPTIONS") return new Response(null, { status: 204 });
 
+  // public, non-secret settings the browser needs (Google OAuth client ids are public by design)
+  if (path === "/config") return json({ googleClientId: process.env.GOOGLE_CLIENT_ID ?? null });
+
   if (path === "/auth/register" && m === "POST") return register(req);
   if (path === "/auth/login/local" && m === "POST") return login(req);
   if (path === "/auth/login/google" && m === "POST") return googleLogin(req);

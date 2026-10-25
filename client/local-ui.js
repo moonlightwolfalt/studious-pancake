@@ -122,6 +122,28 @@
     });
     var box = el("div", { id: "mopeAuth" }, [title, name, email, pass, err, el("div", { className: "row" }, [go, alt])]);
     host.appendChild(box);
+    addGoogleButton(box);
+  }
+
+  /**
+   * Google: the original client already runs the OAuth popup (initTokenClient) on #googleLoginBtn and
+   * posts the access token to /auth/login/google. We only need to show that button inside our
+   * form when the server has a GOOGLE_CLIENT_ID (the client id is injected by prelude.js).
+   */
+  function addGoogleButton(host) {
+    fetch(API + "/config")
+      .then(function (r) {
+        return r.json();
+      })
+      .then(function (cfg) {
+        var btn = $("#googleLoginBtn");
+        if (!cfg.googleClientId || !btn) return;
+        btn.style.cssText = "display:block;width:100%;margin:12px 0 0;padding:9px;border:0;border-radius:4px;" +
+          "background:#4285f4;color:#fff;font-weight:bold;font-size:15px;cursor:pointer";
+        btn.textContent = "Sign in with Google";
+        host.appendChild(btn);
+      })
+      .catch(function () {});
   }
 
   function patchLoginOverlay() {

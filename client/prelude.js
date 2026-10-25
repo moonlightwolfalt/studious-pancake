@@ -48,6 +48,17 @@
   window.gtag = window.gtag || function () {};
   window.adsbygoogle = window.adsbygoogle || [];
 
+  /** Google OAuth client id configured on the server (GOOGLE_CLIENT_ID); falls back to "" */
+  window.__mopeGoogleId = function () {
+    try {
+      var x = new XMLHttpRequest();
+      x.open("GET", "/accounts/config", false);
+      x.send();
+      if (x.status === 200) return JSON.parse(x.responseText).googleClientId || "";
+    } catch (e) {}
+    return "";
+  };
+
   /** Master server: GET /master/servers (synchronous, runs once at load). */
   window.__mopeLoadServers = function () {
     try {

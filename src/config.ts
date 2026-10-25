@@ -6,7 +6,9 @@ export const WORK = join(ROOT, "work");
 export const SITE = join(WORK, "site"); // raw mirror of v1.mope.io
 export const DECODED = join(WORK, "decoded"); // deobfuscation output
 export const DIST = join(WORK, "dist"); // patched, ready to serve
-export const DATA = join(ROOT, "data"); // sqlite db etc (gitignored)
+export const DATA = join(ROOT, "data"); // generated game data (animals, shop, world)
+/** accounts database location; point DB_DIR at a persistent disk in production */
+export const DB_DIR = process.env.DB_DIR ?? DATA;
 
 export const PORT = Number(process.env.PORT ?? 8080);
 

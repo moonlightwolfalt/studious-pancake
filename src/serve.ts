@@ -19,6 +19,7 @@ export async function serve(opts: { port?: number; quiet?: boolean } = {}) {
   const serverStats = () => servers.map((s) => ({ id: s.id, totalPlayerCount: playerCount(s.id) }));
 
   const server = Bun.serve<WsData>({
+    hostname: "0.0.0.0",
     port: opts.port ?? PORT,
     async fetch(req, srv) {
       const url = new URL(req.url);
@@ -60,7 +61,8 @@ async function staticFile(path: string): Promise<Response> {
   for (const root of [DIST, CACHE]) {
     const f = join(root, rel);
     if (f.startsWith(root) && existsSync(f) && (await Bun.file(f).exists())) {
-      return new Response(Bun.file(f), { headers: { "cache-control": "no-cache" } });
+      // Google Sign-In's popup needs window.opener access back to the page
+      return new Response(Bun.file(f), { headers: { "cache-control": "no-cache", "cross-origin-opener-policy": "same-origin-allow-popups" } });
     }
   }
   // read-through: assets are assembled at runtime by the client, so pull
