@@ -3,7 +3,7 @@ import { join } from "node:path";
 import { DATA } from "../../config";
 import { Writer } from "../protocol";
 import { BIOME, loadAnimals, xpForTier, type Animal } from "./catalog";
-import { canEat, FOOD, foodXp } from "./diet";
+import { canEat, canHunt, FOOD, foodXp, MEAT } from "./diet";
 import { type Entity, OT } from "./entities";
 import { snapshot, type Snapshot, writeNewlyVisible, writeRemoved, writeUpdate } from "./wire";
 
@@ -42,15 +42,32 @@ export interface PlayerLike {
   known: Map<number, Snapshot>;
   menu: Animal[] | null;
   wantsMenu: boolean;
+  /** 0-100, drains on land and refills in lakes */
+  water: number;
+  /** float hit points (ent.hp is the rounded copy sent to the client) */
+  hpF: number;
+  /** performance.now() times when each ability is ready again */
+  cooldown: { W: number; S: number };
   send(w: Writer): void;
-  onEaten(by: Entity | null): void;
+  /** reason: 1 eaten, 4 thirst */
+  onDeath(reason: number, by: Entity | null): void;
   onLevel(): void;
 }
+
+const LAKES = new Set([5, 9, 13]);
+/** MOPE_DEBUG_THIRST_RATE=30 makes thirst 30x faster (to test death and respawn quickly) */
+const THIRST_RATE = Number(process.env.MOPE_DEBUG_THIRST_RATE ?? 1) || 1;
 
 export class World {
   ents = new Map<number, Entity>();
   grid = new Map<number, Set<Entity>>();
   players = new Set<PlayerLike>();
+  /** every connected client (spawned or not) – used for the "players online" counter */
+  connected = new Set<object>();
+  /** all animals (players + NPCs); the sim loops over this instead of every entity */
+  animals = new Set<Entity>();
+  /** short-lived objects (meat) */
+  temps: Entity[] = [];
   nextId = 1;
   respawns: { at: number; make: () => Entity }[] = [];
   /** biome ground rectangles; too big for the spatial grid, so they're tested against the view directly */
@@ -107,6 +124,7 @@ export class World {
   }
   add(e: Entity) {
     this.ents.set(e.id, e);
+    if (e.kind === "animal") this.animals.add(e);
     const k = this.key(e.x, e.y);
     (e as any)._cell = k;
     let c = this.grid.get(k);
@@ -115,6 +133,7 @@ export class World {
   }
   remove(e: Entity) {
     this.ents.delete(e.id);
+    this.animals.delete(e);
     this.grid.get(this.cellOf(e)!)?.delete(e);
   }
   private reindex(e: Entity) {
@@ -157,16 +176,22 @@ export class World {
 
   // ---- NPC animals ------------------------------------------------------
   private spawnNpcs(n: number) {
-    const pool = loadAnimals().filter((a) => a.tier <= 5);
-    for (let i = 0; i < n; i++) this.spawnNpc(pool);
+    for (let i = 0; i < n; i++) this.spawnNpc();
   }
-  spawnNpc(pool = loadAnimals().filter((a) => a.tier <= 5)) {
+  /** wandering NPC animals: mostly small herbivores plus some predators up to tier 7 */
+  makeNpc(): Entity {
+    const pool = loadAnimals().filter((a) => a.tier <= 7);
     const spot = this.randomSpot();
     const biome = this.biomeAt(spot.x, spot.y);
-    const fit = pool.filter((a) => a.biome === biome);
-    const a = (fit.length ? fit : pool)[Math.floor(Math.random() * (fit.length || pool.length))];
+    const fit = pool.filter((a) => a.biome === biome && (a.tier <= 4 || Math.random() < 0.35));
+    const list = fit.length ? fit : pool;
+    const a = list[Math.floor(Math.random() * list.length)];
     const e = this.makeAnimal(a, spot.x, spot.y, "");
     e.ai = { tx: spot.x, ty: spot.y, next: 0 };
+    return e;
+  }
+  spawnNpc() {
+    const e = this.makeNpc();
     this.add(e);
     return e;
   }
@@ -175,69 +200,130 @@ export class World {
   }
   makeAnimal(a: Animal, x: number, y: number, nick: string, species = 0, sub = 0): Entity {
     return {
-      id: this.nextId++, kind: "animal", type: OT.ANIMAL, animalType: a.id, x, y, rad: this.radFor(a.tier), biome: this.biomeAt(x, y),
+      id: this.nextId++, kind: "animal", type: OT.ANIMAL, animalType: a.id, ref: a, x, y, rad: this.radFor(a.tier), biome: this.biomeAt(x, y),
       angle: 0, spec: 0, spec2: 0, hp: 100, species, sub, premium: 0, theme: 0, season: 1, vip: 0, nick, flags: new Set(),
       vx: 0, vy: 0,
     };
   }
 
   // ---- simulation ---------------------------------------------------------
-  tick() {
+  /** where an NPC wants to go this tick: flee from hunters, chase prey, else wander */
+  private aiTarget(e: Entity, now: number): { tx: number; ty: number; mul: number } {
+    const A = e.ref!;
+    let threat: Entity | null = null, td = Infinity;
+    let prey: Entity | null = null, pd = Infinity;
+    for (const o of this.near(e.x, e.y, 460)) {
+      if (o === e || o.kind !== "animal" || o.dead || !o.ref) continue;
+      const d = Math.hypot(o.x - e.x, o.y - e.y);
+      if (canHunt(o.ref) && o.ref.tier > A.tier && o.rad >= e.rad * 1.1 && d < 400 && d < td) (threat = o), (td = d);
+      if (canHunt(A) && A.tier >= 2 && A.tier > o.ref.tier && e.rad >= o.rad * 1.1 && !o.flags?.has("underWater") && d < 450 && d < pd) (prey = o), (pd = d);
+    }
+    if (threat) {
+      const dx = e.x - threat.x, dy = e.y - threat.y, d = Math.hypot(dx, dy) || 1;
+      return { tx: e.x + (dx / d) * 500, ty: e.y + (dy / d) * 500, mul: 0.85 };
+    }
+    if (prey) return { tx: prey.x, ty: prey.y, mul: 1.2 };
+    const ai = e.ai!;
+    if (now > ai.next || Math.hypot(ai.tx - e.x, ai.ty - e.y) < 20) {
+      ai.tx = Math.min(this.file.width - 100, Math.max(100, e.x + rand(-500, 500)));
+      ai.ty = Math.min(this.file.height - 100, Math.max(100, e.y + rand(-500, 500)));
+      ai.next = now + rand(2000, 6000);
+    }
+    return { tx: ai.tx, ty: ai.ty, mul: 0.45 };
+  }
+
+  /** `fixedDt` (seconds) lets tests step the simulation faster than real time */
+  tick(fixedDt?: number) {
     const now = performance.now();
-    const dt = Math.min(0.25, (now - this.last) / 1000);
+    const dt = fixedDt ?? Math.min(0.25, (now - this.last) / 1000);
     this.last = now;
     const W = this.file.width, H = this.file.height;
 
-    for (const e of this.ents.values()) {
-      if (e.kind !== "animal") continue;
+    // meat and other temporary objects expire
+    if (this.temps.length) {
+      this.temps = this.temps.filter((t) => {
+        if (t.dead) return false;
+        if (now < (t.expires ?? Infinity)) return true;
+        t.dead = true;
+        this.remove(t);
+        this.pendingRemovals.push({ id: t.id, killer: 0 });
+        return false;
+      });
+    }
+
+    for (const e of [...this.animals]) {
+      if (e.dead) continue;
       const pl = e.owner as PlayerLike | undefined;
-      let tx: number, ty: number, speed: number;
-      const tier = loadAnimals().find((a) => a.id === e.animalType)?.tier ?? 1;
-      speed = Math.max(110, 250 - tier * 7);
+      const A = e.ref!;
+
+      // timed ability effects wear off
+      if (e.stunUntil && now > e.stunUntil) (e.stunUntil = 0), e.flags!.delete("eff_stunned");
+      if (e.diveUntil && now > e.diveUntil) (e.diveUntil = 0), e.flags!.delete("underWater"), e.flags!.delete("usingDiveAbility");
+      if (e.dashUntil && now > e.dashUntil) (e.dashUntil = 0), e.flags!.delete("usingAbility");
+
+      // ---- movement
+      let tx = e.x, ty = e.y, mul = 1;
+      // fairly flat across tiers: hunters (x1.2 while chasing) can catch fleeing prey (x0.85), players can outrun with boost
+      let speed = Math.max(120, 220 - A.tier * 3);
       if (pl) {
         tx = pl.mouse.x; ty = pl.mouse.y;
         if (pl.boost) speed *= 1.5;
       } else if (e.ai) {
-        if (now > e.ai.next || Math.hypot(e.ai.tx - e.x, e.ai.ty - e.y) < 20) {
-          e.ai.tx = Math.min(W - 100, Math.max(100, e.x + rand(-500, 500)));
-          e.ai.ty = Math.min(H - 100, Math.max(100, e.y + rand(-500, 500)));
-          e.ai.next = now + rand(2000, 6000);
-        }
-        tx = e.ai.tx; ty = e.ai.ty; speed *= 0.45;
-      } else continue;
+        const t = this.aiTarget(e, now);
+        tx = t.tx; ty = t.ty; mul = t.mul;
+      }
+      if (e.dashUntil) speed *= 2.2;
+      speed *= mul;
+      const stunned = !!e.stunUntil;
       const dx = tx - e.x, dy = ty - e.y, d = Math.hypot(dx, dy);
-      if (d > 4) {
-        const k = Math.min(1, d / (e.rad * 2)) * speed * dt;
+      if (!stunned && d > 4 && (pl || e.ai)) {
+        // players ease off near the cursor; NPCs (chasing/fleeing) keep full speed to their target
+        const k = (pl ? Math.min(1, d / (e.rad * 2)) : 1) * speed * dt;
         e.x += (dx / d) * k;
         e.y += (dy / d) * k;
-        // wire angle: client subtracts 90 for animals, art faces up
+        // wire angle: the client subtracts 90 for animals and the art faces up
         e.angle = (Math.atan2(dy, dx) * 180) / Math.PI + 180;
       }
       e.x = Math.min(W - e.rad, Math.max(e.rad, e.x));
       e.y = Math.min(H - e.rad, Math.max(e.rad, e.y));
       e.biome = this.biomeAt(e.x, e.y);
       this.reindex(e);
-    }
 
-    // eating
-    for (const p of this.players) {
-      const me = p.ent;
-      if (!me || !p.animal) continue;
-      for (const o of this.near(me.x, me.y, me.rad + 60)) {
-        if (o === me || o.dead) continue;
-        const d = Math.hypot(o.x - me.x, o.y - me.y);
-        if (o.kind === "obj" && FOOD.has(o.type) && d < me.rad + o.rad * 0.4) {
-          if (!canEat(p.animal, o.type)) continue; // not on this animal's diet: it passes over it
-          this.consume(o, me);
-          this.gain(p, foodXp(p.animal, o.type));
-        } else if (o.kind === "animal" && d < me.rad * 0.8 && me.rad > o.rad * 1.1 && o !== me) {
-          const victim = o.owner as PlayerLike | undefined;
-          const vt = loadAnimals().find((a) => a.id === o.animalType)?.tier ?? 1;
-          if (vt < p.animal.tier || (victim && me.rad > o.rad * 1.25)) {
-            p.kills++;
-            this.gain(p, 30 * vt + (victim ? victim.xp * 0.2 : 0));
-            this.kill(o, me);
+      // ---- thirst (players only): land animals drain water, lakes refill it
+      if (pl) {
+        if (A.biome === BIOME.WATER) {
+          pl.water = 100;
+        } else {
+          let inLake = false;
+          for (const o of this.near(e.x, e.y, e.rad + 350)) {
+            if (o.kind === "obj" && LAKES.has(o.type) && Math.hypot(o.x - e.x, o.y - e.y) < o.rad * 0.95) { inLake = true; break; }
           }
+          if (inLake) e.flags!.add("inWater"); else e.flags!.delete("inWater");
+          pl.water = Math.min(100, Math.max(0, pl.water + (inLake ? 14 : -0.9 * THIRST_RATE) * dt));
+        }
+        if (pl.water <= 0) pl.hpF -= 6 * THIRST_RATE * dt;
+        else if (pl.water > 20 && pl.hpF < 100) pl.hpF = Math.min(100, pl.hpF + 3 * dt);
+        e.hp = Math.max(0, Math.round(pl.hpF));
+        if (pl.hpF <= 0) { this.kill(e, null, 4); continue; }
+      }
+
+      // ---- eating
+      for (const o of this.near(e.x, e.y, e.rad + 60)) {
+        if (o === e || o.dead || e.dead) continue;
+        const od = Math.hypot(o.x - e.x, o.y - e.y);
+        if (o.kind === "obj") {
+          if (!pl || !FOOD.has(o.type) || od >= e.rad + o.rad * 0.4) continue;
+          if (!canEat(A, o.type)) continue; // not on this animal's diet: it passes over it
+          this.consume(o, e);
+          this.gain(pl, foodXp(A, o.type));
+        } else if (o.ref && canHunt(A) && A.tier > o.ref.tier && e.rad >= o.rad * 1.1 && od < e.rad * 0.8) {
+          if (o.flags?.has("underWater") && !e.flags?.has("underWater")) continue; // divers can't be caught from above
+          const victim = o.owner as PlayerLike | undefined;
+          if (pl) {
+            pl.kills++;
+            this.gain(pl, 30 * o.ref.tier + (victim ? victim.xp * 0.2 : 0));
+          }
+          this.kill(o, e, 1);
         }
       }
     }
@@ -269,20 +355,61 @@ export class World {
   }
   pendingRemovals: { id: number; killer: number }[] = [];
 
-  kill(victim: Entity, by: Entity | null) {
+  /** an animal dies: remove it, leave meat, tell the player (reason 1 = eaten, 4 = thirst) */
+  kill(victim: Entity, by: Entity | null, reason = 1) {
     const pl = victim.owner as PlayerLike | undefined;
     victim.dead = true;
     this.remove(victim);
     this.pendingRemovals.push({ id: victim.id, killer: by?.id ?? 0 });
-    if (pl) pl.onEaten(by);
-    else {
-      this.respawns.push({ at: performance.now() + 8000, make: () => this.spawnNpcEntity() });
+    this.dropMeat(victim);
+    if (pl) pl.onDeath(reason, by);
+    else this.respawns.push({ at: performance.now() + 8000, make: () => this.makeNpc() });
+  }
+
+  /** bigger animals leave more (and bigger) pieces; carnivores and omnivores can eat them */
+  private dropMeat(victim: Entity) {
+    const tier = victim.ref?.tier ?? 1;
+    const type = victim.rad < 28 ? 52 : victim.rad < 60 ? 53 : 54;
+    const pieces = Math.min(4, 1 + Math.floor(tier / 4));
+    for (let i = 0; i < pieces; i++) {
+      const m: Entity = {
+        id: this.nextId++, kind: "obj", type, x: victim.x + rand(-25, 25), y: victim.y + rand(-25, 25), rad: 9 + (type - 52) * 3,
+        biome: victim.biome, angle: rand(0, 360), spec: 0, spec2: 0, hp: 100, vx: 0, vy: 0, expires: performance.now() + 25_000,
+      };
+      this.add(m);
+      this.temps.push(m);
     }
   }
-  private spawnNpcEntity(): Entity {
-    const e = this.spawnNpc();
-    this.remove(e); // spawnNpc added it; respawn callback re-adds
-    return e;
+
+  /** ability keys: W = dash for everyone; S = dive (sea animals) or a stunning roar (everyone else) */
+  useAbility(p: PlayerLike, key: "W" | "S") {
+    const e = p.ent, A = p.animal;
+    const now = performance.now();
+    if (!e || !A || now < p.cooldown[key]) return;
+    if (key === "W") {
+      e.dashUntil = now + 1200;
+      e.flags!.add("usingAbility");
+      p.cooldown.W = now + 6000;
+    } else if (A.biome === BIOME.WATER) {
+      e.diveUntil = now + 3000;
+      e.flags!.add("underWater");
+      e.flags!.add("usingDiveAbility");
+      p.cooldown.S = now + 8000;
+    } else {
+      for (const o of this.near(e.x, e.y, 300)) {
+        if (o === e || o.kind !== "animal" || !o.ref || o.ref.tier >= A.tier) continue;
+        if (Math.hypot(o.x - e.x, o.y - e.y) > 280) continue;
+        o.stunUntil = now + 1500;
+        o.flags!.add("eff_stunned");
+      }
+      p.cooldown.S = now + 9000;
+    }
+  }
+
+  rankOf(p: PlayerLike): number {
+    let r = 1;
+    for (const o of this.players) if (o !== p && o.xp > p.xp) r++;
+    return r;
   }
 
   gain(p: PlayerLike, xp: number) {
@@ -341,7 +468,7 @@ export class World {
         () => w.u8(3).u16(me.x * 4).u16(me.y * 4),
         () => w.u8(7).u32(me.id),
         () => w.u8(11).u32(p.xp),
-        () => w.u8(16).u8(100), // water bar (kept full: no thirst model)
+        () => w.u8(16).u8(Math.round(p.water)), // water bar
       ];
       w.u8(props.length);
       for (const f of props) f();

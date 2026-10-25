@@ -93,7 +93,7 @@ export function writeUpdate(w: Writer, e: Entity, prev: Snapshot): boolean {
   if (Math.abs(prev.x - e.x) >= 0.25 || Math.abs(prev.y - e.y) >= 0.25) props.push(() => w.u16(PROP.POS).u16(e.x * 4).u16(e.y * 4));
   if (Math.abs(prev.rad - e.rad) >= 0.1) props.push(() => w.u16(PROP.RAD).u16(e.rad * 10));
   if (Math.abs(prev.angle - e.angle) >= 1) props.push(() => w.u16(PROP.ANGLE).u16(angleWire(e.angle)));
-  if (prev.hp !== e.hp) props.push(() => w.u16(PROP.HP).u8(e.hp));
+  if (prev.hp !== e.hp) props.push(() => w.u16(PROP.HP).u8(Math.round(e.hp)));
   const flagsNow = e.flags ? [...e.flags].join(",") : "";
   if (!props.length && flagsNow === prev.flags) return false;
   w.u32(e.id);

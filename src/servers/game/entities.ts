@@ -54,6 +54,8 @@ export const PROP = {
   TEAM: 108, // u8
 } as const;
 
+import type { Animal } from "./catalog";
+
 export interface Entity {
   id: number;
   kind: "animal" | "obj";
@@ -86,6 +88,13 @@ export interface Entity {
   nick?: string;
   flags?: Set<AnimalFlag>;
   // simulation
+  /** catalog entry for animals (not sent over the wire) */
+  ref?: Animal;
+  /** meat drops etc. disappear at this performance.now() time */
+  expires?: number;
+  stunUntil?: number;
+  diveUntil?: number;
+  dashUntil?: number;
   vx: number;
   vy: number;
   dead?: boolean;

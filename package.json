@@ -14,7 +14,8 @@
   "scripts": {
     "start": "bun mopeio.ts serve",
     "build": "bun mopeio.ts build",
-    "dev": "bun mopeio.ts all"
+    "dev": "bun mopeio.ts all",
+    "test": "bun tests/sim.test.ts"
   },
   "engines": {
     "bun": ">=1.0.0"
