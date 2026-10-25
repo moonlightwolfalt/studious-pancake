@@ -68,6 +68,15 @@ export const clientPatches: Patch[] = [
     },
   },
   {
+    // Google sign-in: swap mope.io's OAuth client id for yours (GOOGLE_CLIENT_ID)
+    name: "google-client-id",
+    apply(code) {
+      const id = process.env.GOOGLE_CLIENT_ID;
+      if (!id) return code;
+      return code.replace(/(google: ")[0-9]+-[a-z0-9]+\.apps\.googleusercontent\.com(")/, `$1${id}$2`);
+    },
+  },
+  {
     // Account server -> same origin, /accounts prefix.
     name: "account-server-url",
     required: true,
@@ -75,6 +84,32 @@ export const clientPatches: Patch[] = [
       const re = /(let \w+ = )"https:\/\/prod-accounts\.[a-z0-9.-]+";/;
       if (!re.test(code)) throw new Error("account server url not found");
       return sub(code, re, `$1location.origin + "/accounts";`);
+    },
+  },
+  {
+    // Upgrade menu: the canvas grid is hard-wired to 7 buttons per row. With every
+    // animal on offer (100+), grow the row length and shrink the buttons to fit.
+    name: "upgrade-menu-all-animals",
+    required: true,
+    apply(code) {
+      // rows are now wider than the 8-key hotkey table: tolerate missing keys
+      code = code.replace(
+        /setHotKey\((\w+)\[(\w+) - 1\]\[(\w+)\]\.toUpperCase\(\)\)/g,
+        'setHotKey((($1[$2 - 1] || [])[$3] || " ").toUpperCase())',
+      );
+      const re =
+        /(var (\w+) = 150;[\s\S]{0,600}?var (\w+) = (\w+) \* (\w+);\s*var \w+ = 10;\s*var \w+ = \3 \+ 20;\s*)var (\w+) = 7;/;
+      const m = code.match(re);
+      if (!m) throw new Error("upgrade menu layout not found");
+      const [, head, , size, , , perRow] = m;
+      // the choices array is the identifier compared against `.length > perRow + 1` just below
+      const arr = code.match(new RegExp(`var \\w+ = Math\\.max\\(0, (\\w+)\\.length\\);\\s*if \\(\\1\\.length > ${perRow} \\+ 1\\)`))?.[1];
+      if (!arr) throw new Error("choices array not found");
+      return code.replace(
+        re,
+        `${head}var ${perRow} = Math.min(18, Math.max(7, Math.ceil(Math.sqrt(${arr}.length * 1.7))));\n` +
+          `          if (${arr}.length > 8) { ${size} = Math.min(${size}, _mopeFit(${arr}.length, ${perRow})); }`,
+      );
     },
   },
   {
@@ -93,6 +128,16 @@ export const clientPatches: Patch[] = [
     },
   },
 ];
+
+/** helper injected next to the patched menu: button size so the whole grid fits the canvas */
+export const MENU_FIT_HELPER = `
+function _mopeFit(n, perRow) {
+  var rows = Math.ceil(n / perRow);
+  var byW = (window.innerWidth * 0.94) / (perRow * 1.15 * 1.0);
+  var byH = (window.innerHeight * 0.62) / (rows * 1.15 * 1.15);
+  return Math.max(36, Math.min(byW, byH));
+}
+`;
 
 export function applyClientPatches(
   code: string,
@@ -156,7 +201,7 @@ export async function buildDist(log: (s: string) => void = console.log) {
   const decoded = await Bun.file(join(DECODED, "client.deobf.js")).text();
   log("patching client.js");
   const { code } = applyClientPatches(decoded, log);
-  await writeFile(join(DIST, "client.js"), code);
+  await writeFile(join(DIST, "client.js"), MENU_FIT_HELPER + code);
   await writeFile(join(DIST, "index.html"), patchIndex(await Bun.file(join(SITE, "index.html")).text()));
   log(`dist ready: ${DIST}`);
 }

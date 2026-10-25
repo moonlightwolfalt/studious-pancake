@@ -50,7 +50,8 @@ const food = {
   4: [3, 30, 98],
   5: [3, 29, 31, 32, 68, 69],
 };
-const decor = { 0: [101, 8, 47, 7, 42], 1: [5, 9, 13], 2: [8, 17, 47], 3: [44, 42, 58], 4: [8, 47, 87, 88], 5: [101, 101, 7, 66] };
+// only types the server can fully encode (no undecoded custom per-class data)
+const decor = { 0: [101, 8, 47, 7], 1: [5, 9, 13], 2: [8, 17, 47], 3: [44, 58, 8], 4: [8, 47], 5: [101, 101, 7] };
 const known = new Set(gameobjTypes);
 for (const v of Object.values(food)) for (const t of v) known.add(t);
 for (const v of Object.values(decor)) for (const t of v) known.add(t);
@@ -72,7 +73,8 @@ for (const r of regions) {
 }
 // at least one of every object type the client knows how to draw, so none is untested
 const placed = new Set(objects.map((o) => o.type));
-for (const t of [...known].filter((t) => t > 2 && t < 200 && !placed.has(t))) {
+const encodable = new Set([...Object.values(food).flat(), ...Object.values(decor).flat()]);
+for (const t of [...known].filter((t) => encodable.has(t) && !placed.has(t))) {
   const r = pick(regions);
   add(t, r.biome, between(r.x + 200, r.x + r.w - 200), between(r.y + 200, r.y + r.h - 200), 40);
 }

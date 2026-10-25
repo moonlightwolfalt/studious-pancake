@@ -28,7 +28,9 @@
   function LocalWebSocket(url, protocols) {
     var target = remap(String(url));
     if (target !== url) console.log("[mopeio-re] ws", url, "->", target);
-    return protocols === undefined ? new NativeWS(target) : new NativeWS(target, protocols);
+    var ws = protocols === undefined ? new NativeWS(target) : new NativeWS(target, protocols);
+    if (!/\/ping$/.test(target)) window.__mopeGameWS = ws;
+    return ws;
   }
   LocalWebSocket.prototype = NativeWS.prototype;
   ["CONNECTING", "OPEN", "CLOSING", "CLOSED"].forEach(function (k) {

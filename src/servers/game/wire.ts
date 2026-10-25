@@ -33,6 +33,8 @@ export function writeNewlyVisible(w: Writer, e: Entity) {
     if (e.flags?.has("isDevMode")) w.u8(0);
     w.u16(0); // wins1v1
     w.u8(0); // teamID
+  } else if (e.type === 101) {
+    w.u16(0).u8(1).u8(0); // tree: foodType, canopy, eventType
   } else if (e.type === 5 || e.type === 9 || e.type === 13) {
     w.u16((e.innerRad ?? e.rad * 0.8) * 4);
   }

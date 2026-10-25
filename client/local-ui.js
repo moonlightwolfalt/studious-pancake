@@ -157,6 +157,15 @@
     shop.appendChild(btn);
   }
 
+  /* [U]: ask the local game server for the all-animals upgrade menu (custom message 122) */
+  document.addEventListener("keydown", function (e) {
+    if (e.key !== "u" && e.key !== "U") return;
+    var t = e.target && e.target.tagName;
+    if (t === "INPUT" || t === "TEXTAREA") return;
+    var ws = window.__mopeGameWS;
+    if (ws && ws.readyState === 1) ws.send(new Uint8Array([122]).buffer);
+  });
+
   function tick() {
     patchLoginOverlay();
     patchShop();

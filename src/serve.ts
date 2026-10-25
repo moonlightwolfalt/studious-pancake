@@ -3,7 +3,7 @@ import { mkdir, writeFile } from "node:fs/promises";
 import { dirname, extname, join, normalize } from "node:path";
 import { DECODED, DIST, ORIGIN, PORT, WORK } from "./config";
 import { handleAccounts } from "./servers/accounts";
-import { gameWs, type WsData } from "./servers/game";
+import { gameWs, playerCount, type WsData } from "./servers/game";
 import { buildServerList, publicList, type ServerEntry } from "./servers/master";
 
 const CACHE = join(WORK, "cache");
@@ -16,7 +16,7 @@ async function baseServers() {
 export async function serve(opts: { port?: number; quiet?: boolean } = {}) {
   const servers: ServerEntry[] = buildServerList(await baseServers());
   const byId = new Map(servers.map((s) => [s.id, s]));
-  const serverStats = () => servers.map((s) => ({ id: s.id, totalPlayerCount: 0 }));
+  const serverStats = () => servers.map((s) => ({ id: s.id, totalPlayerCount: playerCount(s.id) }));
 
   const server = Bun.serve<WsData>({
     port: opts.port ?? PORT,
