@@ -17,6 +17,11 @@ export async function runProbe(log: (s: string) => void = console.log) {
   server.stop(true);
   if (code !== 0) throw new Error(`probe exited with ${code}`);
   const animals = JSON.parse(await Bun.file(join(DATA, "animals.json")).text()) as AnimalDef[];
+  // the client's own ANIMAL_TIER table (tiers 1-17; 0 = event animals), grouped by tier
+  const tiers: Record<number, { id: number; name: string; biome: string }[]> = {};
+  for (const a of animals) (tiers[a.tier] ??= []).push({ id: a.id, name: a.name.replace(/[!\n]/g, " ").trim(), biome: (a.skin ?? "").replace(/^\//, "").split("/")[0] });
+  await Bun.write(join(DATA, "tiers.json"), JSON.stringify(tiers, null, 1));
+  log(`tier table: ${Object.keys(tiers).filter((t) => +t > 0).length} tiers -> data/tiers.json`);
   const items = await writeCatalog(animals);
   log(`shop catalog: ${items.length} items -> data/shop-catalog.json`);
 }

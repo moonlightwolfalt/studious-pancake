@@ -10,6 +10,7 @@ export interface WorldFile {
   seed: number;
   width: number;
   height: number;
+  grid?: { cell: number; cols: number; rows: number; layout: string[]; biomes: Record<string, number> };
   minimap: { biome: number; x: number; y: number; w: number; h: number }[];
   objects: { id: number; type: number; biome: number; x: number; y: number; rad: number; innerRad?: number; respawn?: number }[];
 }
@@ -119,6 +120,12 @@ export class World {
   }
 
   biomeAt(x: number, y: number): number {
+    const g = this.file.grid;
+    if (g) {
+      const cx = Math.min(g.cols - 1, Math.max(0, Math.floor(x / g.cell)));
+      const cy = Math.min(g.rows - 1, Math.max(0, Math.floor(y / g.cell)));
+      return g.biomes[g.layout[cy][cx]] ?? BIOME.LAND;
+    }
     for (const r of this.file.minimap) if (x >= r.x && x < r.x + r.w && y >= r.y && y < r.y + r.h) return r.biome;
     return BIOME.LAND;
   }
