@@ -1,3 +1,5 @@
 node_modules/
 work/
 data/accounts.sqlite*
+.env
+deploy.env
