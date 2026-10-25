@@ -5,7 +5,7 @@
 #   fly deploy
 # Run exactly ONE machine: every game world lives in that process's memory.
 
-app = "mopeio-local"          # must be globally unique: change it
+app = "studious-pancake"   # your existing Fly app (must be globally unique)
 primary_region = "iad"        # closest to your players: fly platform regions
 
 [build]
