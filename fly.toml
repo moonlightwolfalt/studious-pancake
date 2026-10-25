@@ -1,0 +1,45 @@
+# Fly.io config. Deploy with:
+#   fly launch --no-deploy --copy-config     (pick an app name; keep this file)
+#   fly volumes create accounts --size 1 --region iad
+#   fly secrets set GOOGLE_CLIENT_ID=xxxx.apps.googleusercontent.com
+#   fly deploy
+# Run exactly ONE machine: every game world lives in that process's memory.
+
+app = "mopeio-local"          # must be globally unique: change it
+primary_region = "iad"        # closest to your players: fly platform regions
+
+[build]
+  dockerfile = "Dockerfile"
+
+[env]
+  PORT = "8080"
+  DB_DIR = "/data"            # the volume below, so accounts survive deploys and restarts
+  MOPE_FREE_SHOP = "1"
+  # MOPE_INFINITE_EMAILS = "a@example.com,b@example.com"
+
+[mounts]
+  source = "accounts"
+  destination = "/data"
+
+[http_service]
+  internal_port = 8080
+  force_https = true          # the client picks wss:// automatically on https pages
+  auto_stop_machines = "stop" # sleep when idle to save money; set "off" to keep games running
+  auto_start_machines = true
+  min_machines_running = 0
+
+  [http_service.concurrency]
+    type = "connections"
+    soft_limit = 200
+    hard_limit = 250
+
+  [[http_service.checks]]
+    grace_period = "20s"
+    interval = "30s"
+    method = "GET"
+    path = "/master/servers"
+    timeout = "5s"
+
+[[vm]]
+  size = "shared-cpu-1x"
+  memory = "512mb"
