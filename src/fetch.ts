@@ -149,6 +149,17 @@ export async function fetchSite(
     pump();
   });
 
+  // the whole pipeline needs these; fail loudly instead of crashing later on a missing file
+  for (const need of ["/client.js", "/"]) {
+    const e = seen.get(need);
+    if (!e || e.status !== 200) {
+      throw new Error(
+        `could not download ${ORIGIN}${need} (HTTP ${e?.status ?? "none"}${e?.type ? `, ${e.type}` : ""}). ` +
+          `The site may be blocking this host (e.g. a cloud provider IP) or be down.`,
+      );
+    }
+  }
+
   const entries = [...seen.values()].sort((a, b) => a.path.localeCompare(b.path));
   await writeFile(join(SITE, "_manifest.json"), JSON.stringify(entries, null, 1));
   const ok = entries.filter((e) => e.status === 200).length;
