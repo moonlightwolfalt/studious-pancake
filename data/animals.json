@@ -1,0 +1,4462 @@
+[
+ {
+  "id": 1,
+  "tier": 1,
+  "name": "Mouse",
+  "skin": "land/mouse/0/mouse",
+  "folder": "land",
+  "color": "gray",
+  "text": "You're a tiny Mouse- Eat food to grow!",
+  "variants": [
+   {
+    "species": 1,
+    "sub": 0,
+    "name": "Golden Mouse",
+    "skin": "land/mouse/1/mouse"
+   },
+   {
+    "species": 2,
+    "sub": 0,
+    "name": "Purple Mouse",
+    "skin": "land/mouse/2/mouse"
+   },
+   {
+    "species": 100,
+    "sub": 0,
+    "name": "Robo Mouse",
+    "skin": "land/mouse/100/mouse"
+   },
+   {
+    "species": 111,
+    "sub": 0,
+    "name": "Classic Mouse",
+    "skin": "land/mouse/111/mouse"
+   },
+   {
+    "species": 112,
+    "sub": 0,
+    "name": "Gold-trim Mouse",
+    "skin": "land/mouse/112/mouse"
+   },
+   {
+    "species": 201,
+    "sub": 0,
+    "name": "Bubbly Mouse",
+    "skin": "land/mouse/201/mouse"
+   },
+   {
+    "species": 202,
+    "sub": 0,
+    "name": "Super Mouse",
+    "skin": "land/mouse/202/mouse"
+   },
+   {
+    "species": 204,
+    "sub": 0,
+    "name": "Dark Plague Rat",
+    "skin": "land/mouse/204/0/mouse"
+   },
+   {
+    "species": 204,
+    "sub": 1,
+    "name": "Light Plague Rat",
+    "skin": "land/mouse/204/1/mouse"
+   },
+   {
+    "species": 205,
+    "sub": 0,
+    "name": "Mouse Ornamental",
+    "skin": "land/mouse/205/mouse"
+   },
+   {
+    "species": 250,
+    "sub": 0,
+    "name": "Sample Mouse",
+    "skin": "land/mouse/250/mouse"
+   }
+  ]
+ },
+ {
+  "id": 2,
+  "tier": 2,
+  "name": "Rabbit!",
+  "skin": "land/rabbit/0/rabbit",
+  "folder": "land",
+  "color": "#502E1A",
+  "text": "UPGRADED to Rabbit!",
+  "variants": [
+   {
+    "species": 111,
+    "sub": 0,
+    "name": "Classic Rabbit",
+    "skin": "land/rabbit/111/rabbit"
+   },
+   {
+    "species": 112,
+    "sub": 0,
+    "name": "Gold-trim Rabbit",
+    "skin": "land/rabbit/112/rabbit"
+   },
+   {
+    "species": 200,
+    "sub": 0,
+    "name": "Monochrome Rabbit!",
+    "skin": "land/rabbit/200/rabbit"
+   },
+   {
+    "species": 202,
+    "sub": 0,
+    "name": "Jackapole",
+    "skin": "land/rabbit/202/0/rabbit"
+   },
+   {
+    "species": 202,
+    "sub": 1,
+    "name": "Hollow Rabbit",
+    "skin": "land/rabbit/202/1/rabbit"
+   },
+   {
+    "species": 204,
+    "sub": 0,
+    "name": "Carrot Rabbit",
+    "skin": "land/rabbit/204/rabbit"
+   },
+   {
+    "species": 220,
+    "sub": 0,
+    "name": "Fairy Rabbit",
+    "skin": "land/rabbit/220/rabbit"
+   },
+   {
+    "species": 222,
+    "sub": 0,
+    "name": "Jolly Rabbit",
+    "skin": "land/rabbit/222/rabbit"
+   }
+  ]
+ },
+ {
+  "id": 3,
+  "tier": 4,
+  "name": "Pig",
+  "skin": "land/pig/0/pig",
+  "folder": "land",
+  "color": "#DD6BD4",
+  "text": "UPGRADED to Pig!\n  Pigs move FAST through MUD! (Can use 'stink' on mud/ hiding holes!)",
+  "variants": [
+   {
+    "species": 1,
+    "sub": 0,
+    "name": "Pinky Pig",
+    "skin": "land/pig/1/pig"
+   },
+   {
+    "species": 2,
+    "sub": 0,
+    "name": "Stinky Pig",
+    "skin": "land/pig/2/pig"
+   },
+   {
+    "species": 111,
+    "sub": 0,
+    "name": "Classic Pig",
+    "skin": "land/pig/111/pig"
+   },
+   {
+    "species": 112,
+    "sub": 0,
+    "name": "Gold-trim Pig",
+    "skin": "land/pig/112/pig"
+   },
+   {
+    "species": 201,
+    "sub": 0,
+    "name": "Floaty Pig",
+    "skin": "land/pig/201/pig"
+   },
+   {
+    "species": 202,
+    "sub": 0,
+    "name": "Piggy Bank",
+    "skin": "land/pig/202/pig"
+   },
+   {
+    "species": 204,
+    "sub": 0,
+    "name": "Butcher Pig",
+    "skin": "land/pig/204/0/pig"
+   },
+   {
+    "species": 204,
+    "sub": 1,
+    "name": "Hot Dog Pig",
+    "skin": "land/pig/204/1/pig"
+   },
+   {
+    "species": 205,
+    "sub": 0,
+    "name": "Bacon Pig",
+    "skin": "land/pig/205/pig"
+   },
+   {
+    "species": 206,
+    "sub": 0,
+    "name": "Hampire",
+    "skin": "land/pig/206/pig"
+   },
+   {
+    "species": 220,
+    "sub": 0,
+    "name": "Fumigator Pig",
+    "skin": "land/pig/220/pig"
+   }
+  ]
+ },
+ {
+  "id": 4,
+  "tier": 6,
+  "name": "Fox!",
+  "skin": "land/fox/0/fox",
+  "folder": "land",
+  "color": "#FF9D43",
+  "text": "UPGRADED to Fox!!\n You can kick players out of hiding holes! (Press W when in one!)\n+ Hide in red berry bushes!",
+  "variants": [
+   {
+    "species": 111,
+    "sub": 0,
+    "name": "Classic Fox",
+    "skin": "land/fox/111/fox"
+   },
+   {
+    "species": 112,
+    "sub": 0,
+    "name": "Gold-trim Fox",
+    "skin": "land/fox/112/fox"
+   },
+   {
+    "species": 200,
+    "sub": 0,
+    "name": "Night Thief!",
+    "skin": "land/fox/200/fox"
+   },
+   {
+    "species": 204,
+    "sub": 0,
+    "name": "Black Asura Fox",
+    "skin": "land/fox/204/fox"
+   }
+  ]
+ },
+ {
+  "id": 5,
+  "tier": 5,
+  "name": "Deer",
+  "skin": "land/deer/0/deer",
+  "folder": "land",
+  "color": "#C4773E",
+  "text": "UPGRADED to Deer! \nPress W to dig up food! \nDig in mud for better food!",
+  "variants": [
+   {
+    "species": 1,
+    "sub": 0,
+    "name": "Doe",
+    "skin": "land/deer/1/deer"
+   },
+   {
+    "species": 2,
+    "sub": 0,
+    "name": "Marsh Deer",
+    "skin": "land/deer/2/deer"
+   },
+   {
+    "species": 100,
+    "sub": 0,
+    "name": "The Wendigo",
+    "skin": "land/deer/100/deer"
+   },
+   {
+    "species": 111,
+    "sub": 0,
+    "name": "Classic Deer",
+    "skin": "land/deer/111/deer"
+   },
+   {
+    "species": 112,
+    "sub": 0,
+    "name": "Gold-trim Deer",
+    "skin": "land/deer/112/deer"
+   },
+   {
+    "species": 202,
+    "sub": 0,
+    "name": "Mezavor",
+    "skin": "land/deer/202/0/deer"
+   },
+   {
+    "species": 202,
+    "sub": 1,
+    "name": "Divine Deer",
+    "skin": "land/deer/202/1/deer"
+   }
+  ]
+ },
+ {
+  "id": 6,
+  "tier": 3,
+  "name": "Mole",
+  "skin": "land/mole/0/mole",
+  "folder": "land",
+  "color": "#4C4A45",
+  "text": "UPGRADED to Mole!\n Hold W to dig underground!\nGo under anything, do surprise attacks!",
+  "variants": [
+   {
+    "species": 100,
+    "sub": 0,
+    "name": "Zombie Mole",
+    "skin": "land/mole/100/mole"
+   },
+   {
+    "species": 111,
+    "sub": 0,
+    "name": "Classic Mole",
+    "skin": "land/mole/111/mole"
+   },
+   {
+    "species": 112,
+    "sub": 0,
+    "name": "Gold-trim Mole",
+    "skin": "land/mole/112/mole"
+   },
+   {
+    "species": 202,
+    "sub": 0,
+    "name": "Toxic Mole",
+    "skin": "land/mole/202/0/mole"
+   },
+   {
+    "species": 202,
+    "sub": 1,
+    "name": "Cytokinetic Mole",
+    "skin": "land/mole/202/1/mole"
+   }
+  ]
+ },
+ {
+  "id": 7,
+  "tier": 7,
+  "name": "Zebra",
+  "skin": "land/zebra/0/zebra",
+  "folder": "land",
+  "color": "#000",
+  "text": "UPGRADED to Zebra!\n Press 'W' to give RARE kick and stun your opponents",
+  "variants": [
+   {
+    "species": 1,
+    "sub": 0,
+    "name": "Okapi",
+    "skin": "land/zebra/1/zebra"
+   },
+   {
+    "species": 100,
+    "sub": 0,
+    "name": "Unicornze",
+    "skin": "land/zebra/100/zebra"
+   },
+   {
+    "species": 111,
+    "sub": 0,
+    "name": "Classic Zebra",
+    "skin": "land/zebra/111/zebra"
+   },
+   {
+    "species": 112,
+    "sub": 0,
+    "name": "Gold-trim Zebra",
+    "skin": "land/zebra/112/zebra"
+   },
+   {
+    "species": 201,
+    "sub": 0,
+    "name": "Playground Zebra",
+    "skin": "land/zebra/201/zebra"
+   },
+   {
+    "species": 202,
+    "sub": 0,
+    "name": "Synth Zebra",
+    "skin": "land/zebra/202/zebra"
+   }
+  ]
+ },
+ {
+  "id": 8,
+  "tier": 11,
+  "name": "Lion",
+  "skin": "land/lion/0/lion",
+  "folder": "land",
+  "color": "#FF9000",
+  "text": "UPGRADED to Lion!\n Press W to release a mighty ROAR (Rawr!)",
+  "variants": [
+   {
+    "species": 1,
+    "sub": 0,
+    "name": "Lioness",
+    "skin": "land/lion/1/0/lion"
+   },
+   {
+    "species": 1,
+    "sub": 1,
+    "name": "White Lioness",
+    "skin": "land/lion/1/1/lion"
+   },
+   {
+    "species": 1,
+    "sub": 2,
+    "name": "Black Lioness",
+    "skin": "land/lion/1/2/lion"
+   },
+   {
+    "species": 2,
+    "sub": 0,
+    "name": "Lion Cub",
+    "skin": "land/lion/2/0/lion"
+   },
+   {
+    "species": 2,
+    "sub": 1,
+    "name": "White Lion Cub",
+    "skin": "land/lion/2/1/lion"
+   },
+   {
+    "species": 2,
+    "sub": 2,
+    "name": "Black Lion Cub",
+    "skin": "land/lion/2/2/lion"
+   },
+   {
+    "species": 3,
+    "sub": 0,
+    "name": "Black-Maned\nLion",
+    "skin": "land/lion/3/lion"
+   },
+   {
+    "species": 4,
+    "sub": 0,
+    "name": "White Lion",
+    "skin": "land/lion/4/lion"
+   },
+   {
+    "species": 5,
+    "sub": 0,
+    "name": "Black Lion",
+    "skin": "land/lion/5/lion"
+   },
+   {
+    "species": 100,
+    "sub": 0,
+    "name": "The Mantalian",
+    "skin": "land/lion/100/lion"
+   },
+   {
+    "species": 111,
+    "sub": 0,
+    "name": "Classic Lion",
+    "skin": "land/lion/111/lion"
+   },
+   {
+    "species": 112,
+    "sub": 0,
+    "name": "Gold-trim Lion",
+    "skin": "land/lion/112/lion"
+   },
+   {
+    "species": 113,
+    "sub": 0,
+    "name": "Guardion",
+    "skin": "land/lion/113/lion"
+   },
+   {
+    "species": 200,
+    "sub": 0,
+    "name": "Clowoud Lion",
+    "skin": "land/lion/200/0/lion"
+   },
+   {
+    "species": 200,
+    "sub": 1,
+    "name": "Sunset Clowoud Lion",
+    "skin": "land/lion/200/1/lion"
+   },
+   {
+    "species": 200,
+    "sub": 2,
+    "name": "Storm Clowoud Lion",
+    "skin": "land/lion/200/2/lion"
+   },
+   {
+    "species": 202,
+    "sub": 0,
+    "name": "Chimera Lion",
+    "skin": "land/lion/202/lion"
+   },
+   {
+    "species": 220,
+    "sub": 0,
+    "name": "Ghastly Jade Lion",
+    "skin": "land/lion/220/lion"
+   }
+  ]
+ },
+ {
+  "id": 9,
+  "tier": 9,
+  "name": "Cheetah",
+  "skin": "land/bigcat/0/cheetah",
+  "folder": "land",
+  "color": "#CAC05B",
+  "text": "UPGRADED to Cheetah!\n Press W to get a speed boost!",
+  "variants": [
+   {
+    "species": 1,
+    "sub": 0,
+    "name": "Jaguar",
+    "skin": "land/bigcat/1/jaguar"
+   },
+   {
+    "species": 2,
+    "sub": 0,
+    "name": "Leopard",
+    "skin": "land/bigcat/2/leopard"
+   },
+   {
+    "species": 3,
+    "sub": 0,
+    "name": "Black Panther",
+    "skin": "land/bigcat/3/blackpanther"
+   },
+   {
+    "species": 100,
+    "sub": 0,
+    "name": "Big Cookie",
+    "skin": "land/bigcat/100/100/bigcat"
+   },
+   {
+    "species": 111,
+    "sub": 0,
+    "name": "Classic Cheetah",
+    "skin": "land/bigcat/111/cheetah"
+   },
+   {
+    "species": 112,
+    "sub": 0,
+    "name": "Gold-trim Cheetah",
+    "skin": "land/bigcat/112/cheetah"
+   },
+   {
+    "species": 202,
+    "sub": 0,
+    "name": "C.M.Y.K NeoN Cheetak",
+    "skin": "land/bigcat/202/cheetah"
+   },
+   {
+    "species": 204,
+    "sub": 0,
+    "name": "Genie Cheetah",
+    "skin": "land/bigcat/204/genie_cheetah"
+   },
+   {
+    "species": 205,
+    "sub": 0,
+    "name": "Witch Cat",
+    "skin": "land/bigcat/205/witch_cat"
+   }
+  ]
+ },
+ {
+  "id": 10,
+  "tier": 10,
+  "name": "Bear",
+  "skin": "land/bear/0/0/bear",
+  "folder": "land",
+  "color": "#CAC05B",
+  "text": "UPGRADED to BEAR!\n Bears climb through green hills! (Press W to use your claw!)",
+  "variants": [
+   {
+    "species": 1,
+    "sub": 1,
+    "name": "Panda",
+    "skin": "land/bear/1/1/bear"
+   },
+   {
+    "species": 111,
+    "sub": 0,
+    "name": "Classic Bear",
+    "skin": "land/bear/111/0/bear"
+   },
+   {
+    "species": 112,
+    "sub": 0,
+    "name": "Gold-trim Bear",
+    "skin": "land/bear/112/0/bear"
+   }
+  ]
+ },
+ {
+  "id": 11,
+  "tier": 11,
+  "name": "Crocodile",
+  "skin": "land/croc/0/0/croc",
+  "folder": "land",
+  "color": "#30F51C",
+  "text": "UPGRADED to Crocodile!\n Press W to bite and drag around animals! \n+ (Now hide in water spots)+ Swim well in Mud, Lakes & Oceans!",
+  "variants": [
+   {
+    "species": 1,
+    "sub": 1,
+    "name": "Giant Crocodile",
+    "skin": "land/croc/1/1/croc"
+   },
+   {
+    "species": 111,
+    "sub": 0,
+    "name": "Classic Crocodile",
+    "skin": "land/croc/111/0/croc"
+   },
+   {
+    "species": 112,
+    "sub": 0,
+    "name": "Gold-trim Crocodile",
+    "skin": "land/croc/112/0/croc"
+   }
+  ]
+ },
+ {
+  "id": 12,
+  "tier": 12,
+  "name": "Rhino",
+  "skin": "land/rhino/0/rhino",
+  "folder": "land",
+  "color": "#94a3a9",
+  "text": "UPGRADED to Rhino!\n Press W to CHARGE with your mighty horn!",
+  "variants": [
+   {
+    "species": 1,
+    "sub": 0,
+    "name": "White Rhino",
+    "skin": "land/rhino/1/rhino"
+   },
+   {
+    "species": 2,
+    "sub": 0,
+    "name": "Black Rhino",
+    "skin": "land/rhino/2/rhino"
+   },
+   {
+    "species": 3,
+    "sub": 0,
+    "name": "Woolly Rhino",
+    "skin": "land/rhino/3/rhino"
+   },
+   {
+    "species": 111,
+    "sub": 0,
+    "name": "Classic Rhino",
+    "skin": "land/rhino/111/rhino"
+   },
+   {
+    "species": 112,
+    "sub": 0,
+    "name": "Gold-trim Rhino",
+    "skin": "land/rhino/112/rhino"
+   },
+   {
+    "species": 201,
+    "sub": 0,
+    "name": "Shrub Rhino",
+    "skin": "land/rhino/201/rhino"
+   },
+   {
+    "species": 202,
+    "sub": 0,
+    "name": "Cotton Candy Rhino",
+    "skin": "land/rhino/202/rhino"
+   },
+   {
+    "species": 204,
+    "sub": 0,
+    "name": "Acuti Rhino",
+    "skin": "land/rhino/204/rhino"
+   },
+   {
+    "species": 220,
+    "sub": 0,
+    "name": "Ink Rhino",
+    "skin": "land/rhino/220/rhino"
+   }
+  ]
+ },
+ {
+  "id": 13,
+  "tier": 13,
+  "name": "Hippo!",
+  "skin": "land/hippo/0/hippo",
+  "folder": "land",
+  "color": "#945A99",
+  "text": "UPGRADED to Hippo!!\nHippos are great swimmers, dominate the Lakes/Oceans/Mud!",
+  "variants": [
+   {
+    "species": 1,
+    "sub": 0,
+    "name": "Golden Hippo!",
+    "skin": "land/hippo/1/hippo"
+   },
+   {
+    "species": 2,
+    "sub": 0,
+    "name": "Pygmy Hippo!",
+    "skin": "land/hippo/2/hippo"
+   },
+   {
+    "species": 100,
+    "sub": 0,
+    "name": "Swampster!",
+    "skin": "land/hippo/100/hippo"
+   },
+   {
+    "species": 111,
+    "sub": 0,
+    "name": "Classic Hippo",
+    "skin": "land/hippo/111/hippo"
+   },
+   {
+    "species": 202,
+    "sub": 0,
+    "name": "Planet Hippo",
+    "skin": "land/hippo/202/hippo"
+   },
+   {
+    "species": 204,
+    "sub": 0,
+    "name": "Sun Hippo!",
+    "skin": "land/hippo/204/hippo"
+   }
+  ]
+ },
+ {
+  "id": 14,
+  "tier": 15,
+  "name": "Dragon!",
+  "skin": "land/dragon/0/0/dragon",
+  "folder": "land",
+  "color": "#22FF8A",
+  "text": "UPGRADED to Dragon!\n (You're amazing!) \nFly over everything, Hold W to shoot fire!",
+  "variants": [
+   {
+    "species": 1,
+    "sub": 0,
+    "name": "Golden Dragon!",
+    "skin": "land/dragon/1/0/dragon"
+   },
+   {
+    "species": 2,
+    "sub": 0,
+    "name": "Knight Dragon!",
+    "skin": "land/dragon/2/0/dragon"
+   },
+   {
+    "species": 3,
+    "sub": 0,
+    "name": "Boss Dragon!",
+    "skin": "land/dragon/3/0/dragon"
+   },
+   {
+    "species": 100,
+    "sub": 0,
+    "name": "The Gargon!",
+    "skin": "land/dragon/100/0/dragon"
+   },
+   {
+    "species": 111,
+    "sub": 0,
+    "name": "Classic Dragon",
+    "skin": "land/dragon/111/0/dragon"
+   },
+   {
+    "species": 200,
+    "sub": 0,
+    "name": "Goofy Dragon!",
+    "skin": "land/dragon/200/0/dragon"
+   },
+   {
+    "species": 200,
+    "sub": 1,
+    "name": "Desert Dragon!",
+    "skin": "land/dragon/200/1/dragon"
+   },
+   {
+    "species": 200,
+    "sub": 2,
+    "name": "Forge Dragon!",
+    "skin": "land/dragon/200/2/dragon"
+   },
+   {
+    "species": 200,
+    "sub": 3,
+    "name": "Mythical Serpent!",
+    "skin": "land/dragon/200/3/dragon"
+   },
+   {
+    "species": 201,
+    "sub": 0,
+    "name": "Squishy Dragon!",
+    "skin": "land/dragon/201/0/dragon"
+   },
+   {
+    "species": 202,
+    "sub": 0,
+    "name": "Aberrant Dragon",
+    "skin": "land/dragon/202/0/dragon"
+   },
+   {
+    "species": 203,
+    "sub": 0,
+    "name": "Ghoul Dragon",
+    "skin": "land/dragon/203/0/dragon"
+   },
+   {
+    "species": 204,
+    "sub": 0,
+    "name": "Magma Dragon!",
+    "skin": "land/dragon/204/0/dragon"
+   },
+   {
+    "species": 206,
+    "sub": 0,
+    "name": "Star Dragon",
+    "skin": "land/dragon/206/0/dragon"
+   },
+   {
+    "species": 220,
+    "sub": 0,
+    "name": "Behemoth Hive Dragon",
+    "skin": "land/dragon/220/0/dragon"
+   },
+   {
+    "species": 224,
+    "sub": 0,
+    "name": "Astral Dragon",
+    "skin": "land/dragon/224/0/dragon"
+   },
+   {
+    "species": 225,
+    "sub": 0,
+    "name": "Rose Dragon",
+    "skin": "land/dragon/225/0/dragon"
+   },
+   {
+    "species": 226,
+    "sub": 0,
+    "name": "Purple Haze",
+    "skin": "land/dragon/226/0/dragon"
+   },
+   {
+    "species": 254,
+    "sub": 0,
+    "name": "Santa Dragon!",
+    "skin": "land/dragon/254/0/dragon"
+   }
+  ]
+ },
+ {
+  "id": 15,
+  "tier": 1,
+  "name": "Shrimp!",
+  "skin": "ocean/shrimp/0/shrimp",
+  "folder": "ocean",
+  "color": "#502E1A",
+  "text": "UPGRADED to Shrimp!",
+  "variants": [
+   {
+    "species": 111,
+    "sub": 0,
+    "name": "Classic Shrimp!",
+    "skin": "ocean/shrimp/111/shrimp"
+   },
+   {
+    "species": 112,
+    "sub": 0,
+    "name": "Gold-trim Shrimp!",
+    "skin": "ocean/shrimp/112/shrimp"
+   },
+   {
+    "species": 200,
+    "sub": 0,
+    "name": "Deluxe Shrimp!",
+    "skin": "ocean/shrimp/200/shrimp"
+   },
+   {
+    "species": 201,
+    "sub": 0,
+    "name": "Chef Shrimp!",
+    "skin": "ocean/shrimp/201/shrimp"
+   },
+   {
+    "species": 202,
+    "sub": 0,
+    "name": "Sushi Shrimp!",
+    "skin": "ocean/shrimp/202/shrimp"
+   }
+  ]
+ },
+ {
+  "id": 16,
+  "tier": 2,
+  "name": "Trout",
+  "skin": "ocean/trout/0/0/trout",
+  "folder": "ocean",
+  "color": "#502E1A",
+  "text": "UPGRADED to Trout!",
+  "variants": [
+   {
+    "species": 111,
+    "sub": 0,
+    "name": "Classic Trout",
+    "skin": "ocean/trout/111/0/trout"
+   },
+   {
+    "species": 112,
+    "sub": 0,
+    "name": "Gold-trim Trout",
+    "skin": "ocean/trout/112/0/trout"
+   }
+  ]
+ },
+ {
+  "id": 17,
+  "tier": 3,
+  "name": "Crab!",
+  "skin": "ocean/crab/0/crab",
+  "folder": "ocean",
+  "color": "#bf2408",
+  "text": "UPGRADED to Crab!\n Crabs can survive on dry land!\n (On land, Press W to go into your shell!)",
+  "variants": [
+   {
+    "species": 111,
+    "sub": 0,
+    "name": "Classic Crab",
+    "skin": "ocean/crab/111/crab"
+   },
+   {
+    "species": 112,
+    "sub": 0,
+    "name": "Gold-trim Crab",
+    "skin": "ocean/crab/112/crab"
+   },
+   {
+    "species": 200,
+    "sub": 0,
+    "name": "Metallic Crab!",
+    "skin": "ocean/crab/200/crab"
+   },
+   {
+    "species": 201,
+    "sub": 0,
+    "name": "Coconut Crab!",
+    "skin": "ocean/crab/201/crab"
+   },
+   {
+    "species": 204,
+    "sub": 0,
+    "name": "Dark Matter Crab!",
+    "skin": "ocean/crab/204/crab"
+   }
+  ]
+ },
+ {
+  "id": 18,
+  "tier": 5,
+  "name": "Squid",
+  "skin": "ocean/squid/0/squid",
+  "folder": "ocean",
+  "color": "#40dda4",
+  "text": "UPGRADED to Squid!\n Squid can use INK when injured (press W!) \n+ you can hide in plankton bushes!",
+  "variants": [
+   {
+    "species": 111,
+    "sub": 0,
+    "name": "Classic Squid",
+    "skin": "ocean/squid/111/squid"
+   },
+   {
+    "species": 112,
+    "sub": 0,
+    "name": "Gold-trim Squid",
+    "skin": "ocean/squid/112/squid"
+   },
+   {
+    "species": 200,
+    "sub": 0,
+    "name": "Cuttle Fish",
+    "skin": "ocean/squid/200/squid"
+   },
+   {
+    "species": 201,
+    "sub": 0,
+    "name": "Seacoast Squid",
+    "skin": "ocean/squid/201/squid"
+   },
+   {
+    "species": 202,
+    "sub": 0,
+    "name": "Psychedelic Squid",
+    "skin": "ocean/squid/202/squid"
+   },
+   {
+    "species": 204,
+    "sub": 0,
+    "name": "Void Scuttling Squid",
+    "skin": "ocean/squid/204/squid"
+   }
+  ]
+ },
+ {
+  "id": 19,
+  "tier": 12,
+  "name": "Shark!",
+  "skin": "ocean/shark/0/shark",
+  "folder": "ocean",
+  "color": "#999fc6",
+  "text": "UPGRADED to Shark!\n A vicious predator of the oceans!",
+  "variants": [
+   {
+    "species": 1,
+    "sub": 0,
+    "name": "Tiger Shark!",
+    "skin": "ocean/shark/1/shark"
+   },
+   {
+    "species": 2,
+    "sub": 0,
+    "name": "Hammerhead Shark!",
+    "skin": "ocean/shark/2/shark"
+   },
+   {
+    "species": 111,
+    "sub": 0,
+    "name": "Classic Shark",
+    "skin": "ocean/shark/111/shark"
+   },
+   {
+    "species": 112,
+    "sub": 0,
+    "name": "Gold-trim Shark",
+    "skin": "ocean/shark/112/shark"
+   },
+   {
+    "species": 201,
+    "sub": 0,
+    "name": "Surfboard Chomper!",
+    "skin": "ocean/shark/201/shark"
+   },
+   {
+    "species": 202,
+    "sub": 0,
+    "name": "Jawsome!",
+    "skin": "ocean/shark/202/shark"
+   }
+  ]
+ },
+ {
+  "id": 20,
+  "tier": 8,
+  "name": "Stingray!",
+  "skin": "ocean/stingray/0/stingray",
+  "folder": "ocean",
+  "color": "#164336",
+  "text": "UPGRADED to Stingray!\n Use electic shock (Release W key!) to shock animals! \n(Takes time to recharge)",
+  "variants": [
+   {
+    "species": 100,
+    "sub": 0,
+    "name": "Phantom Ray!",
+    "skin": "ocean/stingray/100/stingray"
+   },
+   {
+    "species": 111,
+    "sub": 0,
+    "name": "Classic Stingray",
+    "skin": "ocean/stingray/111/stingray"
+   },
+   {
+    "species": 112,
+    "sub": 0,
+    "name": "Gold-trim Stingray",
+    "skin": "ocean/stingray/112/stingray"
+   },
+   {
+    "species": 201,
+    "sub": 0,
+    "name": "Chocolate Ray!",
+    "skin": "ocean/stingray/201/stingray"
+   },
+   {
+    "species": 202,
+    "sub": 0,
+    "name": "Ether Stingray",
+    "skin": "ocean/stingray/202/0/stingray"
+   },
+   {
+    "species": 202,
+    "sub": 1,
+    "name": "Pancake Stingray",
+    "skin": "ocean/stingray/202/1/stingray"
+   }
+  ]
+ },
+ {
+  "id": 21,
+  "tier": 7,
+  "name": "Turtle!",
+  "skin": "ocean/turtle/0/turtle",
+  "folder": "ocean",
+  "color": "#502E1A",
+  "text": "UPGRADED to Turtle!\n Lives well on land & water! (On land, Press W to go into your shell!)",
+  "variants": [
+   {
+    "species": 111,
+    "sub": 0,
+    "name": "Classic Turtle",
+    "skin": "ocean/turtle/111/turtle"
+   },
+   {
+    "species": 112,
+    "sub": 0,
+    "name": "Gold-trim Turtle",
+    "skin": "ocean/turtle/112/turtle"
+   },
+   {
+    "species": 200,
+    "sub": 0,
+    "name": "Leather Back Turtle!",
+    "skin": "ocean/turtle/200/turtle"
+   },
+   {
+    "species": 201,
+    "sub": 0,
+    "name": "Kiwi Turtle!",
+    "skin": "ocean/turtle/201/turtle"
+   },
+   {
+    "species": 202,
+    "sub": 0,
+    "name": "Molten Lava Turtle",
+    "skin": "ocean/turtle/202/turtle"
+   },
+   {
+    "species": 203,
+    "sub": 0,
+    "name": "Trash Turtle",
+    "skin": "ocean/turtle/203/turtle"
+   }
+  ]
+ },
+ {
+  "id": 22,
+  "tier": 4,
+  "name": "Seahorse!",
+  "skin": "ocean/seahorse/0/seahorse",
+  "folder": "ocean",
+  "color": "#502E1A",
+  "text": "UPGRADED to Seahorse!",
+  "variants": [
+   {
+    "species": 111,
+    "sub": 0,
+    "name": "Classic Seahorse",
+    "skin": "ocean/seahorse/111/seahorse"
+   },
+   {
+    "species": 112,
+    "sub": 0,
+    "name": "Gold-trim Seahorse",
+    "skin": "ocean/seahorse/112/seahorse"
+   },
+   {
+    "species": 200,
+    "sub": 0,
+    "name": "Tully Monster!",
+    "skin": "ocean/seahorse/200/seahorse"
+   },
+   {
+    "species": 201,
+    "sub": 0,
+    "name": "Water Gun Horse!",
+    "skin": "ocean/seahorse/201/seahorse"
+   },
+   {
+    "species": 202,
+    "sub": 0,
+    "name": "Leafy Seadragon",
+    "skin": "ocean/seahorse/202/seahorse"
+   }
+  ]
+ },
+ {
+  "id": 23,
+  "tier": 6,
+  "name": "Jellyfish",
+  "skin": "ocean/jellyfish/0/jellyfish",
+  "folder": "ocean",
+  "color": "#FDB9BA",
+  "text": "UPGRADED to Jellyfish!\n A slowly-turning animal that can grow quite large!",
+  "variants": [
+   {
+    "species": 111,
+    "sub": 0,
+    "name": "Classic Jellyfish",
+    "skin": "ocean/jellyfish/111/jellyfish"
+   },
+   {
+    "species": 112,
+    "sub": 0,
+    "name": "Gold-trim Jellyfish",
+    "skin": "ocean/jellyfish/112/jellyfish"
+   },
+   {
+    "species": 201,
+    "sub": 0,
+    "name": "Seafoam Jellyfish",
+    "skin": "ocean/jellyfish/201/jellyfish"
+   },
+   {
+    "species": 202,
+    "sub": 0,
+    "name": "Disco Jellyfish",
+    "skin": "ocean/jellyfish/202/0/jellyfish"
+   },
+   {
+    "species": 202,
+    "sub": 1,
+    "name": "Twisted Horror",
+    "skin": "ocean/jellyfish/202/1/jellyfish"
+   }
+  ]
+ },
+ {
+  "id": 24,
+  "tier": 15,
+  "name": "The Kraken!",
+  "skin": "ocean/kraken/0/0/kraken",
+  "folder": "ocean",
+  "color": "#64a034",
+  "text": "UPGRADED to THE The Kraken!!\n Terrorize the oceans, and be feared by all!\n (Release W to use whirlpool ability!)",
+  "variants": [
+   {
+    "species": 1,
+    "sub": 0,
+    "name": "Golden Kraken!",
+    "skin": "ocean/kraken/1/kraken"
+   },
+   {
+    "species": 2,
+    "sub": 0,
+    "name": "Chromatic Kraken!",
+    "skin": "ocean/kraken/2/kraken"
+   },
+   {
+    "species": 111,
+    "sub": 0,
+    "name": "Classic Kraken",
+    "skin": "ocean/kraken/111/0/kraken"
+   },
+   {
+    "species": 201,
+    "sub": 0,
+    "name": "Squishy Kraken!",
+    "skin": "ocean/kraken/201/kraken"
+   },
+   {
+    "species": 202,
+    "sub": 0,
+    "name": "Giant Squid",
+    "skin": "ocean/kraken/202/0/kraken"
+   },
+   {
+    "species": 202,
+    "sub": 1,
+    "name": "Hydrothoth Kraken",
+    "skin": "ocean/kraken/202/1/kraken"
+   },
+   {
+    "species": 204,
+    "sub": 0,
+    "name": "Cthulhu Kraken!",
+    "skin": "ocean/kraken/204/kraken"
+   },
+   {
+    "species": 220,
+    "sub": 0,
+    "name": "Dr. Brainiopod",
+    "skin": "ocean/kraken/220/kraken"
+   },
+   {
+    "species": 222,
+    "sub": 0,
+    "name": "Gingerbread Kraken",
+    "skin": "ocean/kraken/222/kraken"
+   }
+  ]
+ },
+ {
+  "id": 25,
+  "tier": 9,
+  "name": "Puffer Fish",
+  "skin": "ocean/pufferfish/0/pufferfish",
+  "folder": "ocean",
+  "color": "#94a3a9",
+  "text": "UPGRADED to Puffer Fish!\n(Hold W to inflate - become spiky, and dangerous to touch!)",
+  "variants": [
+   {
+    "species": 2,
+    "sub": 0,
+    "name": "Demon Fish",
+    "skin": "ocean/pufferfish/2/pufferfish"
+   },
+   {
+    "species": 100,
+    "sub": 0,
+    "name": "Puffermace",
+    "skin": "ocean/pufferfish/100/pufferfish"
+   },
+   {
+    "species": 111,
+    "sub": 0,
+    "name": "Classic Pufferfish",
+    "skin": "ocean/pufferfish/111/pufferfish"
+   },
+   {
+    "species": 112,
+    "sub": 0,
+    "name": "Gold-trim Pufferfish",
+    "skin": "ocean/pufferfish/112/pufferfish"
+   },
+   {
+    "species": 201,
+    "sub": 0,
+    "name": "Omniball Puffer",
+    "skin": "ocean/pufferfish/201/pufferfish"
+   },
+   {
+    "species": 202,
+    "sub": 0,
+    "name": "Balloon Pufferfish",
+    "skin": "ocean/pufferfish/202/pufferfish"
+   },
+   {
+    "species": 203,
+    "sub": 0,
+    "name": "Icicle Pufferfish",
+    "skin": "ocean/pufferfish/203/pufferfish"
+   }
+  ]
+ },
+ {
+  "id": 26,
+  "tier": 13,
+  "name": "Killerwhale!",
+  "skin": "ocean/killerwhale/0/killerwhale",
+  "folder": "ocean",
+  "color": "#141414",
+  "text": "UPGRADED to Killerwhale!\nWhales blow out water when diving! (And sometimes other loot!)",
+  "variants": [
+   {
+    "species": 1,
+    "sub": 0,
+    "name": "Golden Orca!",
+    "skin": "ocean/killerwhale/1/killerwhale"
+   },
+   {
+    "species": 2,
+    "sub": 0,
+    "name": "Albino Orca!",
+    "skin": "ocean/killerwhale/2/killerwhale"
+   },
+   {
+    "species": 111,
+    "sub": 0,
+    "name": "Classic Killerwhale!",
+    "skin": "ocean/killerwhale/111/killerwhale"
+   },
+   {
+    "species": 201,
+    "sub": 0,
+    "name": "Lifeguard Orca!",
+    "skin": "ocean/killerwhale/201/killerwhale"
+   },
+   {
+    "species": 202,
+    "sub": 0,
+    "name": "Sea Angel Orca",
+    "skin": "ocean/killerwhale/202/killerwhale"
+   }
+  ]
+ },
+ {
+  "id": 27,
+  "tier": 10,
+  "name": "Swordfish!",
+  "skin": "ocean/swordfish/0/0/swordfish",
+  "folder": "ocean",
+  "color": "#689CD7",
+  "text": "UPGRADED to Swordfish!\n (Press W to rush with your sharp nose!)",
+  "variants": [
+   {
+    "species": 111,
+    "sub": 0,
+    "name": "Classic Swordfish!",
+    "skin": "ocean/swordfish/111/0/swordfish"
+   },
+   {
+    "species": 112,
+    "sub": 0,
+    "name": "Gold-trim Swordfish!",
+    "skin": "ocean/swordfish/112/0/swordfish"
+   },
+   {
+    "species": 201,
+    "sub": 0,
+    "name": "Surfboardfish",
+    "skin": "ocean/swordfish/201/0/swordfish"
+   },
+   {
+    "species": 205,
+    "sub": 0,
+    "name": "Evergreen Swordfish",
+    "skin": "ocean/swordfish/205/0/swordfish"
+   }
+  ]
+ },
+ {
+  "id": 28,
+  "tier": 9,
+  "name": "Gorilla!",
+  "skin": "land/gorilla/0/0/gorilla",
+  "folder": "land",
+  "color": "#945A99",
+  "text": "UPGRADED to Gorilla!!\nGorilla!s are very fast on hills/trees!\n Press W to throw bananas! (from trees)",
+  "variants": [
+   {
+    "species": 111,
+    "sub": 0,
+    "name": "Classic Gorilla",
+    "skin": "land/gorilla/111/0/gorilla"
+   },
+   {
+    "species": 112,
+    "sub": 0,
+    "name": "Gold-trim Gorilla",
+    "skin": "land/gorilla/112/0/gorilla"
+   }
+  ]
+ },
+ {
+  "id": 29,
+  "tier": 11,
+  "name": "Octopus",
+  "skin": "ocean/octopus/0/octopus",
+  "folder": "ocean",
+  "color": "#ff8340",
+  "text": "UPGRADED to Octopus!\nPress W to use your 'Disguise' ability!\n(Hint: wait for prey to bite you- they get stunned!)",
+  "variants": [
+   {
+    "species": 111,
+    "sub": 0,
+    "name": "Classic Octopus",
+    "skin": "ocean/octopus/111/octopus"
+   },
+   {
+    "species": 112,
+    "sub": 0,
+    "name": "Gold-trim Octopus",
+    "skin": "ocean/octopus/112/octopus"
+   },
+   {
+    "species": 200,
+    "sub": 0,
+    "name": "Vampire Squid",
+    "skin": "ocean/octopus/200/octopus"
+   },
+   {
+    "species": 201,
+    "sub": 0,
+    "name": "Fuchsia Tiger",
+    "skin": "ocean/octopus/201/octopus"
+   },
+   {
+    "species": 202,
+    "sub": 0,
+    "name": "Na Kika",
+    "skin": "ocean/octopus/202/octopus"
+   }
+  ]
+ },
+ {
+  "id": 30,
+  "tier": 10,
+  "name": "Wolf!",
+  "skin": "arctic/wolf/0/wolf",
+  "folder": "arctic",
+  "color": "#6B6B6B",
+  "text": "UPGRADED to Wolf!\n Wolf paws turn very well on ice!\n Press W to howl!",
+  "variants": [
+   {
+    "species": 111,
+    "sub": 0,
+    "name": "Classic Wolf",
+    "skin": "arctic/wolf/111/wolf"
+   },
+   {
+    "species": 112,
+    "sub": 0,
+    "name": "Gold-trim Wolf",
+    "skin": "arctic/wolf/112/wolf"
+   },
+   {
+    "species": 201,
+    "sub": 0,
+    "name": "Pineapple Wolf!",
+    "skin": "arctic/wolf/201/wolf"
+   },
+   {
+    "species": 202,
+    "sub": 0,
+    "name": "The Cerebus",
+    "skin": "arctic/wolf/202/wolf"
+   },
+   {
+    "species": 220,
+    "sub": 0,
+    "name": "Okami Wolf",
+    "skin": "arctic/wolf/220/wolf"
+   }
+  ]
+ },
+ {
+  "id": 31,
+  "tier": 2,
+  "name": "Arctic Hare!",
+  "skin": "arctic/arctichare/0/arctichare",
+  "folder": "arctic",
+  "color": "#CFCFCF",
+  "text": "UPGRADED to Arctic Hare!",
+  "variants": [
+   {
+    "species": 111,
+    "sub": 0,
+    "name": "Classic Arctic Hare",
+    "skin": "arctic/arctichare/111/arctichare"
+   },
+   {
+    "species": 112,
+    "sub": 0,
+    "name": "Gold-trim Arctic Hare",
+    "skin": "arctic/arctichare/112/arctichare"
+   },
+   {
+    "species": 201,
+    "sub": 0,
+    "name": "Snow Cone Hare!",
+    "skin": "arctic/arctichare/201/arctichare"
+   }
+  ]
+ },
+ {
+  "id": 32,
+  "tier": 15,
+  "name": "The Yeti!",
+  "skin": "arctic/yeti/0/yeti",
+  "folder": "arctic",
+  "color": "#839eb5",
+  "text": "UPGRADED to The Yeti!!\n So it really exists... \n Hold W to turn into snow, press W to freeeeeze!",
+  "variants": [
+   {
+    "species": 1,
+    "sub": 0,
+    "name": "Golden Yeti!",
+    "skin": "arctic/yeti/1/yeti"
+   },
+   {
+    "species": 2,
+    "sub": 0,
+    "name": "Emerald Yeti!",
+    "skin": "arctic/yeti/2/yeti"
+   },
+   {
+    "species": 3,
+    "sub": 0,
+    "name": "Aqua Yeti",
+    "skin": "arctic/yeti/3/yeti"
+   },
+   {
+    "species": 111,
+    "sub": 0,
+    "name": "Classic Yeti",
+    "skin": "arctic/yeti/111/yeti"
+   },
+   {
+    "species": 201,
+    "sub": 0,
+    "name": "Squishy Yeti",
+    "skin": "arctic/yeti/201/yeti"
+   },
+   {
+    "species": 202,
+    "sub": 0,
+    "name": "Lovely Yeti",
+    "skin": "arctic/yeti/202/0/yeti"
+   },
+   {
+    "species": 202,
+    "sub": 1,
+    "name": "Frosty Eye Demon",
+    "skin": "arctic/yeti/202/1/yeti"
+   },
+   {
+    "species": 204,
+    "sub": 0,
+    "name": "Frost Wolf",
+    "skin": "arctic/yeti/204/yeti"
+   },
+   {
+    "species": 220,
+    "sub": 0,
+    "name": "Glacial Demon",
+    "skin": "arctic/yeti/220/yeti"
+   }
+  ]
+ },
+ {
+  "id": 33,
+  "tier": 1,
+  "name": "Chipmunk!",
+  "skin": "arctic/chipmunk/0/chipmunk",
+  "folder": "arctic",
+  "color": "#CFCFCF",
+  "text": "You're a tiny Chipmunk! - Eat food to grow!",
+  "variants": [
+   {
+    "species": 111,
+    "sub": 0,
+    "name": "Classic Chipmunk",
+    "skin": "arctic/chipmunk/111/chipmunk"
+   },
+   {
+    "species": 112,
+    "sub": 0,
+    "name": "Gold-trim Chipmunk",
+    "skin": "arctic/chipmunk/112/chipmunk"
+   },
+   {
+    "species": 201,
+    "sub": 0,
+    "name": "Playful Munk!",
+    "skin": "arctic/chipmunk/201/chipmunk"
+   },
+   {
+    "species": 202,
+    "sub": 0,
+    "name": "Chipmonk",
+    "skin": "arctic/chipmunk/202/chipmunk"
+   }
+  ]
+ },
+ {
+  "id": 34,
+  "tier": 7,
+  "name": "Muskox!",
+  "skin": "arctic/muskox/0/muskox",
+  "folder": "arctic",
+  "color": "#231f18",
+  "text": "UPGRADED to Muskox!\n Press W to charge with your horns! \nPlus move decently on ice!",
+  "variants": [
+   {
+    "species": 111,
+    "sub": 0,
+    "name": "Classic Muskox",
+    "skin": "arctic/muskox/111/muskox"
+   },
+   {
+    "species": 112,
+    "sub": 0,
+    "name": "Gold-trim Muskox",
+    "skin": "arctic/muskox/112/muskox"
+   },
+   {
+    "species": 200,
+    "sub": 0,
+    "name": "Brazen Bull!",
+    "skin": "arctic/muskox/200/muskox"
+   },
+   {
+    "species": 201,
+    "sub": 0,
+    "name": "Fireworks Ox!",
+    "skin": "arctic/muskox/201/muskox"
+   },
+   {
+    "species": 202,
+    "sub": 0,
+    "name": "Monitor Muskox",
+    "skin": "arctic/muskox/202/muskox"
+   }
+  ]
+ },
+ {
+  "id": 35,
+  "tier": 3,
+  "name": "Penguin",
+  "skin": "arctic/penguin/0/penguin",
+  "folder": "arctic",
+  "color": "#FFFFFF",
+  "text": "UPGRADED to Penguin!\n Left-click to run!\n (HOLD W to slide FAST on ice)!",
+  "variants": [
+   {
+    "species": 111,
+    "sub": 0,
+    "name": "Classic Penguin",
+    "skin": "arctic/penguin/111/penguin"
+   },
+   {
+    "species": 112,
+    "sub": 0,
+    "name": "Gold-trim Penguin",
+    "skin": "arctic/penguin/112/penguin"
+   },
+   {
+    "species": 201,
+    "sub": 0,
+    "name": "Surfer Penguin",
+    "skin": "arctic/penguin/201/penguin"
+   },
+   {
+    "species": 202,
+    "sub": 0,
+    "name": "UFO Pigeon",
+    "skin": "arctic/penguin/202/penguin"
+   },
+   {
+    "species": 203,
+    "sub": 0,
+    "name": "Gift Deliverer Penguin",
+    "skin": "arctic/penguin/203/penguin"
+   }
+  ]
+ },
+ {
+  "id": 36,
+  "tier": 11,
+  "name": "Polar Bear",
+  "skin": "arctic/bear/0/bear",
+  "folder": "arctic",
+  "color": "#e4e4e4",
+  "text": "UPGRADED to Polar Bear!\n Polar bears can climb hills! \n+ They're amazing swimmers!",
+  "variants": [
+   {
+    "species": 111,
+    "sub": 0,
+    "name": "Classic Polar Bear",
+    "skin": "arctic/bear/111/bear"
+   },
+   {
+    "species": 112,
+    "sub": 0,
+    "name": "Gold-trim Polar Bear",
+    "skin": "arctic/bear/112/bear"
+   },
+   {
+    "species": 201,
+    "sub": 0,
+    "name": "Cola Connoisseur",
+    "skin": "arctic/bear/201/bear"
+   },
+   {
+    "species": 202,
+    "sub": 0,
+    "name": "Water Bear",
+    "skin": "arctic/bear/202/bear"
+   },
+   {
+    "species": 203,
+    "sub": 0,
+    "name": "Ursa Major",
+    "skin": "arctic/bear/203/bear"
+   }
+  ]
+ },
+ {
+  "id": 37,
+  "tier": 4,
+  "name": "Seal",
+  "skin": "arctic/seal/0/seal",
+  "folder": "arctic",
+  "color": "#633838",
+  "text": "UPGRADED to Seal!\n You can slide on ice (Hold W) + can climb hills (rocks too!)",
+  "variants": [
+   {
+    "species": 111,
+    "sub": 0,
+    "name": "Classic Seal",
+    "skin": "arctic/seal/111/seal"
+   },
+   {
+    "species": 112,
+    "sub": 0,
+    "name": "Gold-trim Seal",
+    "skin": "arctic/seal/112/seal"
+   },
+   {
+    "species": 201,
+    "sub": 0,
+    "name": "Hawaiian Monk",
+    "skin": "arctic/seal/201/seal"
+   },
+   {
+    "species": 202,
+    "sub": 0,
+    "name": "Soapy Seal",
+    "skin": "arctic/seal/202/seal"
+   }
+  ]
+ },
+ {
+  "id": 38,
+  "tier": 9,
+  "name": "Snow Leopard!",
+  "skin": "arctic/snowleopard/0/snowleopard",
+  "folder": "arctic",
+  "color": "#cfcfcf",
+  "text": "UPGRADED to Snow Leopard!!\n Press W to get a speed boost! (Every 4.5 seconds)!",
+  "variants": [
+   {
+    "species": 100,
+    "sub": 0,
+    "name": "Frostaline",
+    "skin": "arctic/snowleopard/100/snowleopard"
+   },
+   {
+    "species": 111,
+    "sub": 0,
+    "name": "Classic Snow Leopard!",
+    "skin": "arctic/snowleopard/111/snowleopard"
+   },
+   {
+    "species": 112,
+    "sub": 0,
+    "name": "Gold-trim Snow Leopard",
+    "skin": "arctic/snowleopard/112/snowleopard"
+   },
+   {
+    "species": 201,
+    "sub": 0,
+    "name": "Coral Queen",
+    "skin": "arctic/snowleopard/201/snowleopard"
+   },
+   {
+    "species": 202,
+    "sub": 0,
+    "name": "Astral Leopard",
+    "skin": "arctic/snowleopard/202/snowleopard"
+   },
+   {
+    "species": 204,
+    "sub": 0,
+    "name": "Martian Leopard",
+    "skin": "arctic/snowleopard/204/snowleopard"
+   }
+  ]
+ },
+ {
+  "id": 39,
+  "tier": 8,
+  "name": "Walrus!",
+  "skin": "arctic/walrus/0/walrus",
+  "folder": "arctic",
+  "color": "#633838",
+  "text": "UPGRADED to Walrus!\n You can slide on ice (Hold W) + can climb hills (rocks too!)",
+  "variants": [
+   {
+    "species": 100,
+    "sub": 0,
+    "name": "Candy Rus!",
+    "skin": "arctic/walrus/100/walrus"
+   },
+   {
+    "species": 111,
+    "sub": 0,
+    "name": "Classic Walrus",
+    "skin": "arctic/walrus/111/walrus"
+   },
+   {
+    "species": 112,
+    "sub": 0,
+    "name": "Gold-trim Walrus",
+    "skin": "arctic/walrus/112/walrus"
+   },
+   {
+    "species": 201,
+    "sub": 0,
+    "name": "Walrusmelon!",
+    "skin": "arctic/walrus/201/walrus"
+   },
+   {
+    "species": 202,
+    "sub": 0,
+    "name": "Potato Walrus",
+    "skin": "arctic/walrus/202/walrus"
+   }
+  ]
+ },
+ {
+  "id": 40,
+  "tier": 5,
+  "name": "Reindeer",
+  "skin": "arctic/reindeer/0/reindeer",
+  "folder": "arctic",
+  "color": "#a68976",
+  "text": "UPGRADED to Reindeer!\n Press W to dig up food! \n Your sharp hooves let you turn very well on ice!",
+  "variants": [
+   {
+    "species": 1,
+    "sub": 0,
+    "name": "Musk Deer",
+    "skin": "arctic/reindeer/1/reindeer"
+   },
+   {
+    "species": 111,
+    "sub": 0,
+    "name": "Classic Reindeer",
+    "skin": "arctic/reindeer/111/reindeer"
+   },
+   {
+    "species": 112,
+    "sub": 0,
+    "name": "Gold-trim Reindeer",
+    "skin": "arctic/reindeer/112/reindeer"
+   },
+   {
+    "species": 201,
+    "sub": 0,
+    "name": "Sunburn Reindeer",
+    "skin": "arctic/reindeer/201/reindeer"
+   },
+   {
+    "species": 202,
+    "sub": 0,
+    "name": "Piebald Cosmos",
+    "skin": "arctic/reindeer/202/reindeer"
+   },
+   {
+    "species": 204,
+    "sub": 0,
+    "name": "Spideer",
+    "skin": "arctic/reindeer/204/reindeer"
+   }
+  ]
+ },
+ {
+  "id": 41,
+  "tier": 6,
+  "name": "Arctic Fox",
+  "skin": "arctic/arcticfox/0/arcticfox",
+  "folder": "arctic",
+  "color": "#CFCFCF",
+  "text": "UPGRADED to Arctic Fox!\n You can kick players out of hiding holes! (Press W when in one!)\n+ Hide in red berry bushes!",
+  "variants": [
+   {
+    "species": 111,
+    "sub": 0,
+    "name": "Classic Arctic Fox",
+    "skin": "arctic/arcticfox/111/arcticfox"
+   },
+   {
+    "species": 112,
+    "sub": 0,
+    "name": "Gold-trim Arctic Fox",
+    "skin": "arctic/arcticfox/112/arcticfox"
+   },
+   {
+    "species": 200,
+    "sub": 0,
+    "name": "Ice Fox",
+    "skin": "arctic/arcticfox/200/arcticfox"
+   },
+   {
+    "species": 201,
+    "sub": 0,
+    "name": "Forest Spirit Fox",
+    "skin": "arctic/arcticfox/201/arcticfox"
+   }
+  ]
+ },
+ {
+  "id": 42,
+  "tier": 12,
+  "name": "Wolverine!",
+  "skin": "arctic/wolverine/0/wolverine",
+  "folder": "arctic",
+  "color": "#843A0F",
+  "text": "UPGRADED to Wolverine!!\n Press W to Let out a Powerful GROWL! (Knocks back prey!)",
+  "variants": [
+   {
+    "species": 111,
+    "sub": 0,
+    "name": "Classic Wolverine",
+    "skin": "arctic/wolverine/111/wolverine"
+   },
+   {
+    "species": 112,
+    "sub": 0,
+    "name": "Gold-trim Wolverine",
+    "skin": "arctic/wolverine/112/wolverine"
+   },
+   {
+    "species": 202,
+    "sub": 0,
+    "name": "Floral Wolverine",
+    "skin": "arctic/wolverine/202/wolverine"
+   },
+   {
+    "species": 220,
+    "sub": 0,
+    "name": "Summoner Wolverine",
+    "skin": "arctic/wolverine/220/wolverine"
+   }
+  ]
+ },
+ {
+  "id": 43,
+  "tier": 14,
+  "name": "Mammoth!",
+  "skin": "arctic/mammoth/0/mammoth",
+  "folder": "arctic",
+  "color": "#9d4717",
+  "text": "UPGRADED to Mammoth!\n Press W to roll snowballs with your trunk!\n The bigger the snowball gets, the longer the freeze!",
+  "variants": [
+   {
+    "species": 1,
+    "sub": 0,
+    "name": "Golden Mammoth!",
+    "skin": "arctic/mammoth/1/mammoth"
+   },
+   {
+    "species": 2,
+    "sub": 0,
+    "name": "Black Mammoth!",
+    "skin": "arctic/mammoth/2/mammoth"
+   },
+   {
+    "species": 111,
+    "sub": 0,
+    "name": "Classic Mammoth",
+    "skin": "arctic/mammoth/111/mammoth"
+   },
+   {
+    "species": 201,
+    "sub": 0,
+    "name": "Lost Tourist!",
+    "skin": "arctic/mammoth/201/mammoth"
+   },
+   {
+    "species": 202,
+    "sub": 0,
+    "name": "Acid Mammoth",
+    "skin": "arctic/mammoth/202/0/mammoth"
+   },
+   {
+    "species": 202,
+    "sub": 1,
+    "name": "Crystal Golem",
+    "skin": "arctic/mammoth/202/1/mammoth"
+   },
+   {
+    "species": 220,
+    "sub": 0,
+    "name": " Golem Mammoth",
+    "skin": "arctic/mammoth/220/mammoth"
+   }
+  ]
+ },
+ {
+  "id": 44,
+  "tier": 7,
+  "name": "Donkey",
+  "skin": "land/donkey/0/donkey",
+  "folder": "land",
+  "color": "#755A2A",
+  "text": "UPGRADED to Donkey!\nPress 'W' to give RARE kick and stun your opponents",
+  "variants": [
+   {
+    "species": 1,
+    "sub": 0,
+    "name": "Jackass",
+    "skin": "land/donkey/1/donkey"
+   },
+   {
+    "species": 2,
+    "sub": 0,
+    "name": "Zonkey",
+    "skin": "land/donkey/2/donkey"
+   },
+   {
+    "species": 100,
+    "sub": 0,
+    "name": "Equusthulhu",
+    "skin": "land/donkey/100/donkey"
+   },
+   {
+    "species": 111,
+    "sub": 0,
+    "name": "Classic Donkey",
+    "skin": "land/donkey/111/donkey"
+   },
+   {
+    "species": 112,
+    "sub": 0,
+    "name": "Gold-trim Donkey",
+    "skin": "land/donkey/112/donkey"
+   },
+   {
+    "species": 202,
+    "sub": 0,
+    "name": "Headless Mule",
+    "skin": "land/donkey/202/donkey"
+   }
+  ]
+ },
+ {
+  "id": 45,
+  "tier": 0,
+  "name": "Snail",
+  "skin": "ocean/snail/snail",
+  "folder": "ocean",
+  "color": "#FF9000",
+  "text": "UPGRADED to Snail!\n Press W to hide in your shell!",
+  "variants": []
+ },
+ {
+  "id": 46,
+  "tier": 17,
+  "name": "Black Dragon",
+  "skin": "volcano/blackdragon/0/blackdragon",
+  "folder": "volcano",
+  "color": "black",
+  "text": "UPGRADED to Black Dragon!\n Black dragons drink lava instead of water! Black dragons only heal on healing stones/lava!",
+  "variants": [
+   {
+    "species": 1,
+    "sub": 0,
+    "name": "Golden Black Dragon",
+    "skin": "volcano/blackdragon/1/blackdragon"
+   },
+   {
+    "species": 2,
+    "sub": 0,
+    "name": "Azure Bringer",
+    "skin": "volcano/blackdragon/2/blackdragon"
+   },
+   {
+    "species": 111,
+    "sub": 0,
+    "name": "Classic Black Dragon",
+    "skin": "volcano/blackdragon/111/blackdragon"
+   },
+   {
+    "species": 204,
+    "sub": 0,
+    "name": "Violet Dusk Black Dragon",
+    "skin": "volcano/blackdragon/204/blackdragon"
+   },
+   {
+    "species": 206,
+    "sub": 0,
+    "name": "Aurora Black Dragon",
+    "skin": "volcano/blackdragon/206/blackdragon"
+   }
+  ]
+ },
+ {
+  "id": 47,
+  "tier": 13,
+  "name": "Sabertooth Tiger!",
+  "skin": "arctic/sabertooth/0/sabertooth",
+  "folder": "arctic",
+  "color": "#945A99",
+  "text": "UPGRADED to Sabertooth Tiger!\nSabertooth Tigers can slash their opponents and prey.",
+  "variants": [
+   {
+    "species": 1,
+    "sub": 0,
+    "name": "Golden Tiger!",
+    "skin": "arctic/sabertooth/1/sabertooth"
+   },
+   {
+    "species": 2,
+    "sub": 0,
+    "name": "Margala Sabertooth!",
+    "skin": "arctic/sabertooth/2/sabertooth"
+   },
+   {
+    "species": 111,
+    "sub": 0,
+    "name": "Classic Sabertooth",
+    "skin": "arctic/sabertooth/111/sabertooth"
+   },
+   {
+    "species": 200,
+    "sub": 0,
+    "name": "Techno Saber!",
+    "skin": "arctic/sabertooth/200/sabertooth"
+   },
+   {
+    "species": 201,
+    "sub": 0,
+    "name": "Strawbertooth!",
+    "skin": "arctic/sabertooth/201/sabertooth"
+   },
+   {
+    "species": 202,
+    "sub": 0,
+    "name": "Ice-Fang Sabertooth",
+    "skin": "arctic/sabertooth/202/sabertooth"
+   },
+   {
+    "species": 204,
+    "sub": 0,
+    "name": "Shadow Sabeertooth!",
+    "skin": "arctic/sabertooth/204/sabertooth"
+   }
+  ]
+ },
+ {
+  "id": 48,
+  "tier": 14,
+  "name": "Elephant!",
+  "skin": "land/elephant/0/0/elephant",
+  "folder": "land",
+  "color": "#945A99",
+  "text": "UPGRADED to Elephant!\n Use your long trunk to attack and eat food!",
+  "variants": [
+   {
+    "species": 1,
+    "sub": 1,
+    "name": "Golden Elephant!",
+    "skin": "land/elephant/1/1/elephant"
+   },
+   {
+    "species": 1,
+    "sub": 2,
+    "name": "Albino Elephant!",
+    "skin": "land/elephant/1/2/elephant"
+   },
+   {
+    "species": 111,
+    "sub": 0,
+    "name": "Classic Elephant!",
+    "skin": "land/elephant/111/0/elephant"
+   }
+  ]
+ },
+ {
+  "id": 49,
+  "tier": 14,
+  "name": "Bluewhale!",
+  "skin": "ocean/bluewhale/0/0/bluewhale",
+  "folder": "ocean",
+  "color": "#945A99",
+  "text": "UPGRADED to Bluewhale!\n Smash with your powerful tail!",
+  "variants": [
+   {
+    "species": 1,
+    "sub": 1,
+    "name": "Golden Whale!",
+    "skin": "ocean/bluewhale/1/1/bluewhale"
+   },
+   {
+    "species": 1,
+    "sub": 2,
+    "name": "Albino Whale!",
+    "skin": "ocean/bluewhale/1/2/bluewhale"
+   },
+   {
+    "species": 111,
+    "sub": 0,
+    "name": "Classic Blue Whale",
+    "skin": "ocean/bluewhale/111/0/bluewhale"
+   }
+  ]
+ },
+ {
+  "id": 50,
+  "tier": 8,
+  "name": "Cobra",
+  "skin": "land/cobra/0/cobra",
+  "folder": "land",
+  "color": "black",
+  "text": "UPGRADED to Cobra!\n Hold W to Spit venom, and poison animals with your bite!",
+  "variants": [
+   {
+    "species": 100,
+    "sub": 0,
+    "name": "Wyrmous",
+    "skin": "land/cobra/100/cobra"
+   },
+   {
+    "species": 111,
+    "sub": 0,
+    "name": "Classic Cobra",
+    "skin": "land/cobra/111/cobra"
+   },
+   {
+    "species": 112,
+    "sub": 0,
+    "name": "Gold-trim Cobra",
+    "skin": "land/cobra/112/cobra"
+   },
+   {
+    "species": 200,
+    "sub": 0,
+    "name": "Celestial Cobra",
+    "skin": "land/cobra/200/cobra"
+   }
+  ]
+ },
+ {
+  "id": 51,
+  "tier": 13,
+  "name": "Boa Constrictor!",
+  "skin": "land/boaconstrictor/0/boaconstrictor",
+  "folder": "land",
+  "color": "black",
+  "text": "UPGRADED to Boa Constrictor!!\n Coil and suffocate other animals!",
+  "variants": [
+   {
+    "species": 1,
+    "sub": 0,
+    "name": "Golden Boa!",
+    "skin": "land/boaconstrictor/1/boaconstrictor"
+   },
+   {
+    "species": 2,
+    "sub": 0,
+    "name": "Tree Boa!",
+    "skin": "land/boaconstrictor/2/boaconstrictor"
+   },
+   {
+    "species": 3,
+    "sub": 0,
+    "name": "Ssscarf Boa!",
+    "skin": "land/boaconstrictor/3/boaconstrictor"
+   },
+   {
+    "species": 111,
+    "sub": 0,
+    "name": "Classic Boa",
+    "skin": "land/boaconstrictor/111/boaconstrictor"
+   }
+  ]
+ },
+ {
+  "id": 52,
+  "tier": 14,
+  "name": "Giant Spider!",
+  "skin": "land/giantspider/0/giantspider",
+  "folder": "land",
+  "color": "black",
+  "text": "UPGRADED to Giant Spider!!\n Place web around the game to catch prey!",
+  "variants": [
+   {
+    "species": 1,
+    "sub": 0,
+    "name": "Golden Spider!",
+    "skin": "land/giantspider/1/giantspider"
+   },
+   {
+    "species": 2,
+    "sub": 0,
+    "name": "Goliath Spider!",
+    "skin": "land/giantspider/2/giantspider"
+   },
+   {
+    "species": 111,
+    "sub": 0,
+    "name": "Classic Giant Spider",
+    "skin": "land/giantspider/111/giantspider"
+   },
+   {
+    "species": 202,
+    "sub": 0,
+    "name": "Sapphire Cave Spider",
+    "skin": "land/giantspider/202/giantspider"
+   },
+   {
+    "species": 204,
+    "sub": 0,
+    "name": "Smile Spider!",
+    "skin": "land/giantspider/204/giantspider"
+   }
+  ]
+ },
+ {
+  "id": 53,
+  "tier": 15,
+  "name": "The T.Rex",
+  "skin": "land/trex/0/trex",
+  "folder": "land",
+  "color": "#862A2A",
+  "text": "UPGRADED to The T.Rex The Dinosaur!\n This ancient dinosaur has powerful jaws that can drag prey around!!",
+  "variants": [
+   {
+    "species": 1,
+    "sub": 0,
+    "name": "Golden T.Rex",
+    "skin": "land/trex/1/trex"
+   },
+   {
+    "species": 2,
+    "sub": 0,
+    "name": "Ember T.Rex",
+    "skin": "land/trex/2/trex"
+   },
+   {
+    "species": 100,
+    "sub": 0,
+    "name": "Mr. Dollar",
+    "skin": "land/trex/100/trex"
+   },
+   {
+    "species": 111,
+    "sub": 0,
+    "name": "Classic T.Rex",
+    "skin": "land/trex/111/trex"
+   },
+   {
+    "species": 200,
+    "sub": 0,
+    "name": "Kaiju Rex",
+    "skin": "land/trex/200/trex"
+   },
+   {
+    "species": 202,
+    "sub": 0,
+    "name": "Hyporevenant Rex",
+    "skin": "land/trex/202/0/trex"
+   },
+   {
+    "species": 204,
+    "sub": 0,
+    "name": "Tartarus Rex",
+    "skin": "land/trex/204/trex"
+   },
+   {
+    "species": 220,
+    "sub": 0,
+    "name": "Bio Mutant T-rex",
+    "skin": "land/trex/220/trex"
+   }
+  ]
+ },
+ {
+  "id": 54,
+  "tier": 10,
+  "name": "Tiger",
+  "skin": "land/tiger/0/tiger",
+  "folder": "land",
+  "color": "#FF9000",
+  "text": "UPGRADED to Tiger!\n Tigers can launch an ambush attack (HOLD W to grow a bush)!",
+  "variants": [
+   {
+    "species": 1,
+    "sub": 0,
+    "name": "Rare White Tiger",
+    "skin": "land/tiger/1/tiger"
+   },
+   {
+    "species": 111,
+    "sub": 0,
+    "name": "Classic Tiger",
+    "skin": "land/tiger/111/tiger"
+   },
+   {
+    "species": 112,
+    "sub": 0,
+    "name": "Gold-trim Tiger",
+    "skin": "land/tiger/112/tiger"
+   },
+   {
+    "species": 204,
+    "sub": 0,
+    "name": "Chimera Tiger",
+    "skin": "land/tiger/204/tiger"
+   }
+  ]
+ },
+ {
+  "id": 55,
+  "tier": 8,
+  "name": "Giraffe",
+  "skin": "land/giraffe/0/giraffe",
+  "folder": "land",
+  "color": "#E9BD23",
+  "text": "UPGRADED to Giraffe!\nGiraffe have huge legs and stomp anyone in their way!",
+  "variants": [
+   {
+    "species": 1,
+    "sub": 0,
+    "name": "Momaffie",
+    "skin": "land/giraffe/1/giraffe"
+   },
+   {
+    "species": 2,
+    "sub": 0,
+    "name": "Girabie",
+    "skin": "land/giraffe/2/giraffe"
+   },
+   {
+    "species": 3,
+    "sub": 0,
+    "name": "Momaffie Family",
+    "skin": "land/giraffe/3/giraffe_family"
+   },
+   {
+    "species": 111,
+    "sub": 0,
+    "name": "Classic Giraffe",
+    "skin": "land/giraffe/111/giraffe"
+   },
+   {
+    "species": 112,
+    "sub": 0,
+    "name": "Gold-trim Giraffe",
+    "skin": "land/giraffe/112/giraffe"
+   },
+   {
+    "species": 202,
+    "sub": 0,
+    "name": "Quilin Giraffe",
+    "skin": "land/giraffe/202/0/giraffe"
+   },
+   {
+    "species": 202,
+    "sub": 1,
+    "name": "Draquorum",
+    "skin": "land/giraffe/202/1/giraffe"
+   }
+  ]
+ },
+ {
+  "id": 56,
+  "tier": 12,
+  "name": "Bald Eagle",
+  "skin": "land/eagle/0/eagle",
+  "folder": "land",
+  "color": "#5b400d",
+  "text": "UPGRADED to Bald Eagle!\nEagles can fly up other animals in the air!\n",
+  "variants": [
+   {
+    "species": 1,
+    "sub": 0,
+    "name": "Golden Eagle",
+    "skin": "land/eagle/1/eagle"
+   },
+   {
+    "species": 2,
+    "sub": 0,
+    "name": "Harpy Eagle!",
+    "skin": "land/eagle/2/eagle"
+   },
+   {
+    "species": 3,
+    "sub": 0,
+    "name": "Greater Spotted Eagle!",
+    "skin": "land/eagle/3/eagle"
+   },
+   {
+    "species": 4,
+    "sub": 0,
+    "name": "Gold-trim Eagle",
+    "skin": "land/eagle/4/eagle"
+   },
+   {
+    "species": 111,
+    "sub": 0,
+    "name": "Classic Eagle",
+    "skin": "land/eagle/111/eagle"
+   }
+  ]
+ },
+ {
+  "id": 57,
+  "tier": 6,
+  "name": "Hedgehog!",
+  "skin": "land/hedgehog/0/hedgehog",
+  "folder": "land",
+  "color": "#5b400d",
+  "text": "UPGRADED to Hedgehog!!\n (Hold W to become spiky, and dangerous to touch!)",
+  "variants": [
+   {
+    "species": 111,
+    "sub": 0,
+    "name": "Classic Hedgehog",
+    "skin": "land/hedgehog/111/hedgehog"
+   },
+   {
+    "species": 112,
+    "sub": 0,
+    "name": "Gold-trim Hedgehog",
+    "skin": "land/hedgehog/112/hedgehog"
+   },
+   {
+    "species": 202,
+    "sub": 0,
+    "name": "Grass Hedgehog",
+    "skin": "land/hedgehog/202/hedgehog"
+   }
+  ]
+ },
+ {
+  "id": 58,
+  "tier": 0,
+  "name": "(Animal)",
+  "folder": "",
+  "color": "#000000",
+  "text": "UPGRADED!",
+  "variants": []
+ },
+ {
+  "id": 59,
+  "tier": 0,
+  "name": "(Animal)",
+  "folder": "",
+  "color": "#000000",
+  "text": "UPGRADED!",
+  "variants": []
+ },
+ {
+  "id": 60,
+  "tier": 1,
+  "name": "Lemming!",
+  "skin": "arctic/lemming/0/lemming",
+  "folder": "arctic",
+  "color": "#CFCFCF",
+  "text": "You're a tiny Lemming! - Eat food to grow!",
+  "variants": [
+   {
+    "species": 111,
+    "sub": 0,
+    "name": "Classic Lemming",
+    "skin": "arctic/lemming/111/lemming"
+   }
+  ]
+ },
+ {
+  "id": 61,
+  "tier": 15,
+  "name": "King Crab!",
+  "skin": "ocean/kingcrab/0/kingcrab",
+  "folder": "ocean",
+  "color": "#971f0e",
+  "text": "UPGRADED to King Crab!!\n Use your powerful arms to smack your prey!",
+  "variants": [
+   {
+    "species": 1,
+    "sub": 0,
+    "name": "Golden Crab!",
+    "skin": "ocean/kingcrab/1/kingcrab"
+   },
+   {
+    "species": 2,
+    "sub": 0,
+    "name": "Amethyst Crab!",
+    "skin": "ocean/kingcrab/2/kingcrab"
+   },
+   {
+    "species": 111,
+    "sub": 0,
+    "name": "Classic King Crab!",
+    "skin": "ocean/kingcrab/111/kingcrab"
+   },
+   {
+    "species": 202,
+    "sub": 0,
+    "name": "Abyssal King Crab",
+    "skin": "ocean/kingcrab/202/kingcrab"
+   },
+   {
+    "species": 204,
+    "sub": 0,
+    "name": "Plasma-core King Crab!",
+    "skin": "ocean/kingcrab/204/kingcrab"
+   },
+   {
+    "species": 220,
+    "sub": 0,
+    "name": "Star Crusher Crab",
+    "skin": "ocean/kingcrab/220/kingcrab"
+   }
+  ]
+ },
+ {
+  "id": 62,
+  "tier": 0,
+  "name": "Frog",
+  "skin": "frog/frog",
+  "folder": "frog",
+  "color": "#FF9000",
+  "text": "UPGRADED to Frog!!",
+  "variants": []
+ },
+ {
+  "id": 63,
+  "tier": 13,
+  "name": "Ostrich!",
+  "skin": "land/ostrich/0/ostrich",
+  "folder": "land",
+  "color": "#FF9000",
+  "text": "UPGRADED to Ostrich!! Lay eggs to hatch babies! \nCommand babies by placing your crosshair (right-click/W)-\n They can attack prey!",
+  "variants": [
+   {
+    "species": 1,
+    "sub": 0,
+    "name": "Golden Ostrich!",
+    "skin": "land/ostrich/1/ostrich"
+   },
+   {
+    "species": 2,
+    "sub": 0,
+    "name": "Ruffled Ostrich!",
+    "skin": "land/ostrich/2/ostrich"
+   },
+   {
+    "species": 111,
+    "sub": 0,
+    "name": "Classic Ostrich",
+    "skin": "land/ostrich/111/ostrich"
+   },
+   {
+    "species": 202,
+    "sub": 0,
+    "name": "Sunset Ostrich",
+    "skin": "land/ostrich/202/ostrich"
+   },
+   {
+    "species": 204,
+    "sub": 0,
+    "name": "Necromancer Ostrich!",
+    "skin": "land/ostrich/204/0/ostrich"
+   },
+   {
+    "species": 205,
+    "sub": 0,
+    "name": "Jogging Ostrich",
+    "skin": "land/ostrich/205/ostrich"
+   }
+  ]
+ },
+ {
+  "id": 64,
+  "tier": 10,
+  "name": "Pelican",
+  "skin": "pelican/0/pelican",
+  "folder": "pelican",
+  "color": null,
+  "text": "UPGRADED to Pelican! \nPick up water (and prey!) in your mouth,\nfly, and drop water on prey! (press W again)",
+  "variants": [
+   {
+    "species": 111,
+    "sub": 0,
+    "name": "Classic Pelican",
+    "skin": "pelican/111/pelican"
+   },
+   {
+    "species": 112,
+    "sub": 0,
+    "name": "Gold-trim Pelican",
+    "skin": "pelican/112/pelican"
+   },
+   {
+    "species": 203,
+    "sub": 0,
+    "name": "Oil Spill Pelican",
+    "skin": "pelican/203/pelican"
+   }
+  ]
+ },
+ {
+  "id": 65,
+  "tier": 11,
+  "name": "Falcon",
+  "skin": "land/falcon/0/falcon",
+  "folder": "land",
+  "color": "#FF9000",
+  "text": "UPGRADED to Falcon! \nFly, and do a powerful dive attack! Aim it well.",
+  "variants": [
+   {
+    "species": 1,
+    "sub": 0,
+    "name": "Predator",
+    "skin": "land/falcon/1/falcon"
+   },
+   {
+    "species": 2,
+    "sub": 0,
+    "name": "Shaheen",
+    "skin": "land/falcon/2/falcon"
+   },
+   {
+    "species": 111,
+    "sub": 0,
+    "name": "Classic Falcon",
+    "skin": "land/falcon/111/falcon"
+   },
+   {
+    "species": 112,
+    "sub": 0,
+    "name": "Gold-trim Falcon",
+    "skin": "land/falcon/112/falcon"
+   },
+   {
+    "species": 202,
+    "sub": 0,
+    "name": "Meteor Falcon",
+    "skin": "land/falcon/202/falcon"
+   }
+  ]
+ },
+ {
+  "id": 66,
+  "tier": 8,
+  "name": "Snowy Owl",
+  "skin": "arctic/snowyowl/0/snowyowl",
+  "folder": "arctic",
+  "color": "#633838",
+  "text": "UPGRADED to Snowy Owl!\nAim the crosshair\nright-click / press W when its on top of prey to attack",
+  "variants": [
+   {
+    "species": 111,
+    "sub": 0,
+    "name": "Classic Snowy Owl!",
+    "skin": "arctic/snowyowl/111/snowyowl"
+   },
+   {
+    "species": 112,
+    "sub": 0,
+    "name": "Gold-trim Snowy Owl",
+    "skin": "arctic/snowyowl/112/snowyowl"
+   },
+   {
+    "species": 201,
+    "sub": 0,
+    "name": "Owlrigami",
+    "skin": "arctic/snowyowl/201/snowyowl"
+   }
+  ]
+ },
+ {
+  "id": 67,
+  "tier": 0,
+  "name": "(Animal)",
+  "folder": "",
+  "color": "#000000",
+  "text": "UPGRADED!",
+  "variants": []
+ },
+ {
+  "id": 68,
+  "tier": 15,
+  "name": "The Phoenix",
+  "skin": "/volcano/phoenix/0/phoenix",
+  "folder": "",
+  "color": "#FF9000",
+  "text": "UPGRADED to The Phoenix!\nPhoenix shoot Firetornados to burn their prey alive!",
+  "variants": [
+   {
+    "species": 1,
+    "sub": 0,
+    "name": "Golden Phoenix",
+    "skin": "/volcano/phoenix/1/phoenix"
+   },
+   {
+    "species": 2,
+    "sub": 0,
+    "name": "Alpha Phoenix",
+    "skin": "/volcano/phoenix/2/phoenix"
+   },
+   {
+    "species": 3,
+    "sub": 0,
+    "name": "Copper Phoenix",
+    "skin": "/volcano/phoenix/3/phoenix"
+   },
+   {
+    "species": 111,
+    "sub": 0,
+    "name": "Classic Phoenix",
+    "skin": "/volcano/phoenix/111/phoenix"
+   },
+   {
+    "species": 200,
+    "sub": 0,
+    "name": "Aqua Phoenix",
+    "skin": "/volcano/phoenix/200/0/phoenix"
+   },
+   {
+    "species": 200,
+    "sub": 1,
+    "name": "Ice Phoenix",
+    "skin": "/volcano/phoenix/200/1/phoenix"
+   },
+   {
+    "species": 200,
+    "sub": 2,
+    "name": "Ash Phoenix",
+    "skin": "/volcano/phoenix/200/2/phoenix"
+   },
+   {
+    "species": 200,
+    "sub": 3,
+    "name": "Red Giant Phoenix",
+    "skin": "/volcano/phoenix/200/3/phoenix"
+   },
+   {
+    "species": 206,
+    "sub": 0,
+    "name": "Singularity Phoenix",
+    "skin": "/volcano/phoenix/206/0/phoenix"
+   },
+   {
+    "species": 206,
+    "sub": 1,
+    "name": "Celestial Phoenix",
+    "skin": "/volcano/phoenix/206/1/phoenix"
+   }
+  ]
+ },
+ {
+  "id": 69,
+  "tier": 0,
+  "name": "Baby Ostrich",
+  "skin": "ostrich/ostrich-baby",
+  "folder": "ostrich",
+  "color": "#FF9000",
+  "text": "UPGRADED to Baby Ostrich!!",
+  "variants": []
+ },
+ {
+  "id": 70,
+  "tier": 16,
+  "name": "Sea Monster",
+  "skin": "ocean/seamonster/0/seamonster",
+  "folder": "ocean",
+  "color": "blue",
+  "text": "UPGRADED to Sea Monster!\nCreate whirlpool to trap prey!",
+  "variants": [
+   {
+    "species": 1,
+    "sub": 0,
+    "name": "Golden Sea Monster",
+    "skin": "ocean/seamonster/1/seamonster"
+   },
+   {
+    "species": 2,
+    "sub": 0,
+    "name": "Sapphire Monster",
+    "skin": "ocean/seamonster/2/seamonster"
+   },
+   {
+    "species": 111,
+    "sub": 0,
+    "name": "Classic Sea Monster",
+    "skin": "ocean/seamonster/111/seamonster"
+   },
+   {
+    "species": 200,
+    "sub": 0,
+    "name": "Luckycharm Monster",
+    "skin": "ocean/seamonster/200/seamonster"
+   },
+   {
+    "species": 201,
+    "sub": 0,
+    "name": "Ancient Tortoise",
+    "skin": "ocean/seamonster/201/seamonster"
+   },
+   {
+    "species": 202,
+    "sub": 0,
+    "name": "Submarine Monster",
+    "skin": "ocean/seamonster/202/seamonster"
+   },
+   {
+    "species": 220,
+    "sub": 0,
+    "name": "Dimensional Monster",
+    "skin": "ocean/seamonster/220/seamonster"
+   }
+  ]
+ },
+ {
+  "id": 71,
+  "tier": 16,
+  "name": "Land Monster",
+  "skin": "volcano/landmonster/0/0/landmonster",
+  "folder": "volcano",
+  "color": "orange",
+  "text": "UPGRADED to Land Monster!\nCreate Sink holes to trap prey!",
+  "variants": [
+   {
+    "species": 1,
+    "sub": 1,
+    "name": "Golden Land Monster",
+    "skin": "volcano/landmonster/1/1/landmonster"
+   },
+   {
+    "species": 1,
+    "sub": 2,
+    "name": "Titanite Monster",
+    "skin": "volcano/landmonster/1/2/landmonster"
+   },
+   {
+    "species": 111,
+    "sub": 0,
+    "name": "Classic Land Monster",
+    "skin": "volcano/landmonster/111/0/landmonster"
+   },
+   {
+    "species": 206,
+    "sub": 0,
+    "name": "Nebula Monster",
+    "skin": "volcano/landmonster/206/0/landmonster"
+   }
+  ]
+ },
+ {
+  "id": 72,
+  "tier": 16,
+  "name": "Ice Monster",
+  "skin": "arctic/icemonster/0/icemonster",
+  "folder": "arctic",
+  "color": "#ffffff",
+  "text": "UPGRADED to Ice Monster!\nShoot Ice crystals to freeze prey!",
+  "variants": [
+   {
+    "species": 1,
+    "sub": 0,
+    "name": "Golden Ice Monster",
+    "skin": "arctic/icemonster/1/icemonster"
+   },
+   {
+    "species": 2,
+    "sub": 0,
+    "name": "Amethyst Monster",
+    "skin": "arctic/icemonster/2/icemonster"
+   },
+   {
+    "species": 111,
+    "sub": 0,
+    "name": "Classic Ice Monster",
+    "skin": "arctic/icemonster/111/icemonster"
+   },
+   {
+    "species": 201,
+    "sub": 0,
+    "name": "Cryo Coach Monster",
+    "skin": "arctic/icemonster/201/icemonster"
+   },
+   {
+    "species": 204,
+    "sub": 0,
+    "name": "Blood Crystal Monster",
+    "skin": "arctic/icemonster/204/icemonster"
+   },
+   {
+    "species": 205,
+    "sub": 0,
+    "name": "Ice Pop Monster",
+    "skin": "arctic/icemonster/205/icemonster"
+   },
+   {
+    "species": 220,
+    "sub": 0,
+    "name": "Blazing Ice Monster",
+    "skin": "arctic/icemonster/220/icemonster"
+   }
+  ]
+ },
+ {
+  "id": 73,
+  "tier": 16,
+  "name": "Dino Monster",
+  "skin": "land/dinomonster/0/dinomonster",
+  "folder": "land",
+  "color": "orange",
+  "text": "UPGRADED to Dino Monster!\nKnock prey in Air to inflict deadly damage!",
+  "variants": [
+   {
+    "species": 1,
+    "sub": 0,
+    "name": "Golden Dino Monster",
+    "skin": "land/dinomonster/1/dinomonster"
+   },
+   {
+    "species": 2,
+    "sub": 0,
+    "name": "Citrine Monster",
+    "skin": "land/dinomonster/2/dinomonster"
+   },
+   {
+    "species": 111,
+    "sub": 0,
+    "name": "Classic Dino Monster",
+    "skin": "land/dinomonster/111/dinomonster"
+   },
+   {
+    "species": 200,
+    "sub": 0,
+    "name": "Ruby Devil",
+    "skin": "land/dinomonster/200/dinomonster"
+   },
+   {
+    "species": 202,
+    "sub": 0,
+    "name": "Tank Monster",
+    "skin": "land/dinomonster/202/dinomonster"
+   },
+   {
+    "species": 220,
+    "sub": 0,
+    "name": "Cordycera Dino Monster",
+    "skin": "land/dinomonster/220/dinomonster"
+   }
+  ]
+ },
+ {
+  "id": 74,
+  "tier": 2,
+  "name": "Pigeon",
+  "skin": "land/pigeon/0/pigeon",
+  "folder": "land",
+  "color": "#FF9000",
+  "text": "UPGRADED to Pigeon!\nHold W to fly around. ",
+  "variants": [
+   {
+    "species": 1,
+    "sub": 0,
+    "name": "Rare White Dove",
+    "skin": "land/pigeon/1/pigeon"
+   },
+   {
+    "species": 111,
+    "sub": 0,
+    "name": "Classic Pigeon",
+    "skin": "land/pigeon/111/pigeon"
+   },
+   {
+    "species": 112,
+    "sub": 0,
+    "name": "Gold-trim Pigeon",
+    "skin": "land/pigeon/112/pigeon"
+   },
+   {
+    "species": 202,
+    "sub": 0,
+    "name": "Thug Pigeon",
+    "skin": "land/pigeon/202/pigeon"
+   }
+  ]
+ },
+ {
+  "id": 75,
+  "tier": 9,
+  "name": "Toco Toucan",
+  "skin": "/land/toucan/0/toucan",
+  "folder": "",
+  "color": "#FF9000",
+  "text": "UPGRADED to Toco Toucan!\nHold right click (or W) to fly!\n(HINT: Start flying from a fruit tree or bush to throw fruit upon landing!)",
+  "variants": [
+   {
+    "species": 1,
+    "sub": 0,
+    "name": "Choco Toucan",
+    "skin": "/land/toucan/1/toucan"
+   },
+   {
+    "species": 2,
+    "sub": 0,
+    "name": "Keel-Billed Toucan",
+    "skin": "/land/toucan/2/toucan"
+   },
+   {
+    "species": 3,
+    "sub": 0,
+    "name": "Fiery Toucan",
+    "skin": "/land/toucan/3/toucan"
+   },
+   {
+    "species": 4,
+    "sub": 0,
+    "name": "Lava Toucan",
+    "skin": "/land/toucan/4/0/toucan"
+   },
+   {
+    "species": 4,
+    "sub": 1,
+    "name": "Ice Toucan",
+    "skin": "/land/toucan/4/1/toucan"
+   },
+   {
+    "species": 4,
+    "sub": 2,
+    "name": "Aqua Toucan",
+    "skin": "/land/toucan/4/2/toucan"
+   },
+   {
+    "species": 5,
+    "sub": 0,
+    "name": "Helmeted Hornbill",
+    "skin": "/land/toucan/5/toucan"
+   },
+   {
+    "species": 6,
+    "sub": 0,
+    "name": "Prisma Toucan",
+    "skin": "/land/toucan/6/toucan"
+   },
+   {
+    "species": 100,
+    "sub": 0,
+    "name": "The Dapper",
+    "skin": "/land/toucan/100/toucan"
+   },
+   {
+    "species": 111,
+    "sub": 0,
+    "name": "Classic Toucan",
+    "skin": "/land/toucan/111/toucan"
+   },
+   {
+    "species": 112,
+    "sub": 0,
+    "name": "Gold-trim Toucan",
+    "skin": "/land/toucan/112/toucan"
+   },
+   {
+    "species": 201,
+    "sub": 0,
+    "name": "Coconut Toucan",
+    "skin": "/land/toucan/201/toucan"
+   },
+   {
+    "species": 202,
+    "sub": 0,
+    "name": "Corpse Flower Toucan",
+    "skin": "/land/toucan/202/toucan"
+   },
+   {
+    "species": 206,
+    "sub": 0,
+    "name": "Starlight Toucan",
+    "skin": "/land/toucan/206/toucan"
+   },
+   {
+    "species": 220,
+    "sub": 0,
+    "name": "Molten Toucan",
+    "skin": "/land/toucan/220/toucan"
+   }
+  ]
+ },
+ {
+  "id": 76,
+  "tier": 7,
+  "name": "Macaw",
+  "skin": "land/macaw/0/macaw",
+  "folder": "land",
+  "color": "#FF9000",
+  "text": "UPGRADED to Macaw!\nHold W to fly around.\n(Hint: Use ability on hills to mimic animals) ",
+  "variants": [
+   {
+    "species": 1,
+    "sub": 0,
+    "name": "Blue Macaw",
+    "skin": "land/macaw/1/macaw"
+   },
+   {
+    "species": 2,
+    "sub": 0,
+    "name": "Spix's Macaw",
+    "skin": "land/macaw/2/macaw"
+   },
+   {
+    "species": 111,
+    "sub": 0,
+    "name": "Classic Macaw",
+    "skin": "land/macaw/111/macaw"
+   },
+   {
+    "species": 112,
+    "sub": 0,
+    "name": "Gold-trim Macaw",
+    "skin": "land/macaw/112/macaw"
+   }
+  ]
+ },
+ {
+  "id": 77,
+  "tier": 5,
+  "name": "Flamingo",
+  "skin": "ocean/flamingo/0/flamingo",
+  "folder": "ocean",
+  "color": "#FF9000",
+  "text": "UPGRADED to Flamingo!\nHold W in water to search for food underwater.\n(Tip: Any nearby underwater animals will get surfaced by the flamingo!)",
+  "variants": [
+   {
+    "species": 111,
+    "sub": 0,
+    "name": "Classic Flamingo",
+    "skin": "ocean/flamingo/111/flamingo"
+   },
+   {
+    "species": 112,
+    "sub": 0,
+    "name": "Gold-trim Flamingo",
+    "skin": "ocean/flamingo/112/flamingo"
+   },
+   {
+    "species": 202,
+    "sub": 0,
+    "name": "Fly Mango",
+    "skin": "ocean/flamingo/202/flamingo"
+   }
+  ]
+ },
+ {
+  "id": 78,
+  "tier": 14,
+  "name": "Cassowary!",
+  "skin": "land/cassowary/0/cassowary",
+  "folder": "land",
+  "color": "#FF9000",
+  "text": "UPGRADED to Cassowary!!\nHold W to charge up a kick, the longer you hold, the more powerful it is!",
+  "variants": [
+   {
+    "species": 1,
+    "sub": 0,
+    "name": "Golden Cassowary!",
+    "skin": "land/cassowary/1/cassowary"
+   },
+   {
+    "species": 2,
+    "sub": 0,
+    "name": "Cotton Cassowary!",
+    "skin": "land/cassowary/2/cassowary"
+   },
+   {
+    "species": 111,
+    "sub": 0,
+    "name": "Classic Cassowary",
+    "skin": "land/cassowary/111/cassowary"
+   },
+   {
+    "species": 202,
+    "sub": 0,
+    "name": "Pastel Cassowary",
+    "skin": "land/cassowary/202/cassowary"
+   },
+   {
+    "species": 204,
+    "sub": 0,
+    "name": "Basilisk Cassowary!",
+    "skin": "land/cassowary/204/cassowary"
+   }
+  ]
+ },
+ {
+  "id": 79,
+  "tier": 3,
+  "name": "Chicken",
+  "skin": "land/chicken/0/chicken",
+  "folder": "land",
+  "color": "#FF9000",
+  "text": "UPGRADED to Chicken!",
+  "variants": [
+   {
+    "species": 111,
+    "sub": 0,
+    "name": "Classic Chicken",
+    "skin": "land/chicken/111/chicken"
+   },
+   {
+    "species": 112,
+    "sub": 0,
+    "name": "Gold-trim Chicken",
+    "skin": "land/chicken/112/chicken"
+   },
+   {
+    "species": 201,
+    "sub": 0,
+    "name": "Countryside Chick",
+    "skin": "land/chicken/201/chicken"
+   },
+   {
+    "species": 202,
+    "sub": 0,
+    "name": "Lightning Lord",
+    "skin": "land/chicken/202/chicken"
+   },
+   {
+    "species": 203,
+    "sub": 0,
+    "name": "Mope Fried Chicken",
+    "skin": "land/chicken/203/chicken"
+   }
+  ]
+ },
+ {
+  "id": 80,
+  "tier": 4,
+  "name": "Woodpecker",
+  "skin": "land/woodpecker/0/woodpecker",
+  "folder": "land",
+  "color": "#FF9000",
+  "text": "UPGRADED to Woodpecker!\nHold W to Peck other animals,\n or (Hint: Use ability on hills to fly)",
+  "variants": [
+   {
+    "species": 111,
+    "sub": 0,
+    "name": "Classic Woodpecker",
+    "skin": "land/woodpecker/111/woodpecker"
+   },
+   {
+    "species": 112,
+    "sub": 0,
+    "name": "Gold-trim Woodpecker",
+    "skin": "land/woodpecker/112/woodpecker"
+   },
+   {
+    "species": 202,
+    "sub": 0,
+    "name": "Jackhammer",
+    "skin": "land/woodpecker/202/woodpecker"
+   }
+  ]
+ },
+ {
+  "id": 81,
+  "tier": 6,
+  "name": "Peacock",
+  "skin": "land/peacock/0/peacock",
+  "folder": "land",
+  "color": "#FF9000",
+  "text": "UPGRADED to Peacock!\nHold W to hypnotize prey: prey gets pulled in, predtors pushed!. \nHint:Start the ability on a hill to fly!. ",
+  "variants": [
+   {
+    "species": 111,
+    "sub": 0,
+    "name": "Classic Peacock",
+    "skin": "land/peacock/111/peacock"
+   },
+   {
+    "species": 112,
+    "sub": 0,
+    "name": "Gold-trim Peacock",
+    "skin": "land/peacock/112/peacock"
+   },
+   {
+    "species": 200,
+    "sub": 0,
+    "name": "Plague Raptor",
+    "skin": "land/peacock/200/peacock"
+   },
+   {
+    "species": 202,
+    "sub": 0,
+    "name": "Spectrum Peacock",
+    "skin": "land/peacock/202/peacock"
+   }
+  ]
+ },
+ {
+  "id": 82,
+  "tier": 1,
+  "name": "Desert Rat",
+  "skin": "desert/kangaroorat/0/kangaroorat",
+  "folder": "desert",
+  "color": "#FF9000",
+  "text": "You're a tiny Desert Rat- Eat food to grow!",
+  "variants": [
+   {
+    "species": 100,
+    "sub": 0,
+    "name": "Cacti Rat",
+    "skin": "desert/kangaroorat/100/kangaroorat"
+   },
+   {
+    "species": 111,
+    "sub": 0,
+    "name": "Classic Desert Rat",
+    "skin": "desert/kangaroorat/111/kangaroorat"
+   },
+   {
+    "species": 112,
+    "sub": 0,
+    "name": "Gold-trim Desert Rat",
+    "skin": "desert/kangaroorat/112/kangaroorat"
+   },
+   {
+    "species": 202,
+    "sub": 0,
+    "name": "Plasma Rat",
+    "skin": "desert/kangaroorat/202/kangaroorat"
+   }
+  ]
+ },
+ {
+  "id": 83,
+  "tier": 2,
+  "name": "Desert Chipmunk",
+  "skin": "desert/chipmunk/0/chipmunk",
+  "folder": "desert",
+  "color": "#FF9000",
+  "text": "UPGRADED to Desert Chipmunk!\n Press W to Spit food to boost yourself!",
+  "variants": [
+   {
+    "species": 111,
+    "sub": 0,
+    "name": "Classic Desert Chipmunk",
+    "skin": "desert/chipmunk/111/chipmunk"
+   },
+   {
+    "species": 112,
+    "sub": 0,
+    "name": "Gold-trim Desert Chipmunk",
+    "skin": "desert/chipmunk/112/chipmunk"
+   },
+   {
+    "species": 200,
+    "sub": 0,
+    "name": "Velvet Chipmunk",
+    "skin": "desert/chipmunk/200/chipmunk"
+   },
+   {
+    "species": 202,
+    "sub": 0,
+    "name": "Chipmonk",
+    "skin": "desert/chipmunk/202/chipmunk"
+   }
+  ]
+ },
+ {
+  "id": 84,
+  "tier": 3,
+  "name": "Meerkat",
+  "skin": "desert/meerkat/0/meerkat",
+  "folder": "desert",
+  "color": "#FF9000",
+  "text": "UPGRADED to Meerkat!\n HOLD to Dig Underground. \nYou can now eat pink cactus fruits!",
+  "variants": [
+   {
+    "species": 100,
+    "sub": 0,
+    "name": "Puumpkat",
+    "skin": "desert/meerkat/100/meerkat"
+   },
+   {
+    "species": 111,
+    "sub": 0,
+    "name": "Classic Meerkat",
+    "skin": "desert/meerkat/111/meerkat"
+   },
+   {
+    "species": 112,
+    "sub": 0,
+    "name": "Gold-trim Meerkat",
+    "skin": "desert/meerkat/112/meerkat"
+   },
+   {
+    "species": 201,
+    "sub": 0,
+    "name": "Scubakat",
+    "skin": "desert/meerkat/201/meerkat"
+   },
+   {
+    "species": 204,
+    "sub": 0,
+    "name": "Necromancer Meerkat",
+    "skin": "desert/meerkat/204/meerkat"
+   }
+  ]
+ },
+ {
+  "id": 85,
+  "tier": 5,
+  "name": "Gazelle",
+  "skin": "desert/gazelle/0/gazelle",
+  "folder": "desert",
+  "color": "#FF9000",
+  "text": "UPGRADED to Gazelle!\nHold 'W' to Jump High through everything.",
+  "variants": [
+   {
+    "species": 100,
+    "sub": 0,
+    "name": "Flammy Hart",
+    "skin": "desert/gazelle/100/gazelle"
+   },
+   {
+    "species": 111,
+    "sub": 0,
+    "name": "Classic Gazelle",
+    "skin": "desert/gazelle/111/gazelle"
+   },
+   {
+    "species": 112,
+    "sub": 0,
+    "name": "Gold-trim Gazelle",
+    "skin": "desert/gazelle/112/gazelle"
+   },
+   {
+    "species": 202,
+    "sub": 0,
+    "name": "Retro Neon Gazelle",
+    "skin": "desert/gazelle/202/gazelle"
+   }
+  ]
+ },
+ {
+  "id": 86,
+  "tier": 4,
+  "name": "Armadillo",
+  "skin": "desert/armadillo/0/armadillo",
+  "folder": "desert",
+  "color": "#FF9000",
+  "text": "UPGRADED to Armadillo!\nHold 'W' to roll through everything. \nCarefully, try eating mangoes around venus flytraps!",
+  "variants": [
+   {
+    "species": 111,
+    "sub": 0,
+    "name": "Classic Armadillo",
+    "skin": "desert/armadillo/111/armadillo"
+   },
+   {
+    "species": 112,
+    "sub": 0,
+    "name": "Gold-trim Armadillo",
+    "skin": "desert/armadillo/112/armadillo"
+   }
+  ]
+ },
+ {
+  "id": 87,
+  "tier": 6,
+  "name": "Fennec Fox",
+  "skin": "desert/fennecfox/0/fennecfox",
+  "folder": "desert",
+  "color": "#FF9000",
+  "text": "UPGRADED to Fennec Fox!\nFennec Fox has very sharp ears (can see animals in hiding holes).\n Press W to Whine!",
+  "variants": [
+   {
+    "species": 111,
+    "sub": 0,
+    "name": "Classic Fennec Fox",
+    "skin": "desert/fennecfox/111/fennecfox"
+   },
+   {
+    "species": 112,
+    "sub": 0,
+    "name": "Gold-trim Fennec Fox",
+    "skin": "desert/fennecfox/112/fennecfox"
+   },
+   {
+    "species": 202,
+    "sub": 0,
+    "name": "Fire Fox",
+    "skin": "desert/fennecfox/202/0/fennecfox"
+   },
+   {
+    "species": 202,
+    "sub": 1,
+    "name": "Purple Fire Fox",
+    "skin": "desert/fennecfox/202/1/fennecfox"
+   }
+  ]
+ },
+ {
+  "id": 88,
+  "tier": 8,
+  "name": "Camel",
+  "skin": "desert/camel/0/camel",
+  "folder": "desert",
+  "color": "#FF9000",
+  "text": "UPGRADED to Camel!\n Press W to Spit. Try eating oranges from trees!",
+  "variants": [
+   {
+    "species": 100,
+    "sub": 0,
+    "name": "Doomedarius",
+    "skin": "desert/camel/100/camel"
+   },
+   {
+    "species": 111,
+    "sub": 0,
+    "name": "Classic Camel",
+    "skin": "desert/camel/111/camel"
+   },
+   {
+    "species": 112,
+    "sub": 0,
+    "name": "Gold-trim Camel",
+    "skin": "desert/camel/112/camel"
+   },
+   {
+    "species": 201,
+    "sub": 0,
+    "name": "Balloon Warrior",
+    "skin": "desert/camel/201/camel"
+   },
+   {
+    "species": 202,
+    "sub": 0,
+    "name": "Fungal Camel",
+    "skin": "desert/camel/202/camel"
+   }
+  ]
+ },
+ {
+  "id": 89,
+  "tier": 7,
+  "name": "Warthog",
+  "skin": "desert/warthog/0/warthog",
+  "folder": "desert",
+  "color": "#FF9000",
+  "text": "UPGRADED to Warthog!\nPress W to Dig and Charge.",
+  "variants": [
+   {
+    "species": 100,
+    "sub": 0,
+    "name": "The Burlone",
+    "skin": "desert/warthog/100/warthog"
+   },
+   {
+    "species": 111,
+    "sub": 0,
+    "name": "Classic Warthog",
+    "skin": "desert/warthog/111/warthog"
+   },
+   {
+    "species": 112,
+    "sub": 0,
+    "name": "Gold-trim Warthog",
+    "skin": "desert/warthog/112/warthog"
+   },
+   {
+    "species": 200,
+    "sub": 0,
+    "name": "WarT. Hog",
+    "skin": "desert/warthog/200/warthog"
+   },
+   {
+    "species": 201,
+    "sub": 0,
+    "name": "Flame Tiki",
+    "skin": "desert/warthog/201/warthog"
+   },
+   {
+    "species": 202,
+    "sub": 0,
+    "name": "Dark Matter Warthog",
+    "skin": "desert/warthog/202/warthog"
+   },
+   {
+    "species": 204,
+    "sub": 0,
+    "name": "Candy Corn Warthog",
+    "skin": "desert/warthog/204/warthog"
+   }
+  ]
+ },
+ {
+  "id": 90,
+  "tier": 10,
+  "name": "Hyena",
+  "skin": "desert/hyena/0/hyena",
+  "folder": "desert",
+  "color": "#FF9000",
+  "text": "UPGRADED to Hyena!\nHyenas have a very loud and scary laugh!\nPress W to Laugh.",
+  "variants": [
+   {
+    "species": 111,
+    "sub": 0,
+    "name": "Classic Hyena",
+    "skin": "desert/hyena/111/hyena"
+   },
+   {
+    "species": 112,
+    "sub": 0,
+    "name": "Gold-trim Hyena",
+    "skin": "desert/hyena/112/hyena"
+   },
+   {
+    "species": 201,
+    "sub": 0,
+    "name": "DJ Hyena",
+    "skin": "desert/hyena/201/hyena"
+   },
+   {
+    "species": 202,
+    "sub": 0,
+    "name": "Anubis Hyena",
+    "skin": "desert/hyena/202/hyena"
+   }
+  ]
+ },
+ {
+  "id": 91,
+  "tier": 9,
+  "name": "Rattle Snake",
+  "skin": "desert/rattlesnake/0/rattlesnake",
+  "folder": "desert",
+  "color": "#FF9000",
+  "text": "UPGRADED to Rattle Snake!\nThe Rattle Snake is a very dangerous animal. \nHOLD W to Rattle.",
+  "variants": [
+   {
+    "species": 100,
+    "sub": 0,
+    "name": "Gummy Viper",
+    "skin": "desert/rattlesnake/100/rattlesnake"
+   },
+   {
+    "species": 111,
+    "sub": 0,
+    "name": "Classic Rattle Snake",
+    "skin": "desert/rattlesnake/111/rattlesnake"
+   },
+   {
+    "species": 112,
+    "sub": 0,
+    "name": "Gold-trim Rattle Snake",
+    "skin": "desert/rattlesnake/112/rattlesnake"
+   }
+  ]
+ },
+ {
+  "id": 92,
+  "tier": 11,
+  "name": "Vulture",
+  "skin": "desert/vulture/0/vulture",
+  "folder": "desert",
+  "color": "#FF9000",
+  "text": "UPGRADED to Vulture!\nPress W to Grab/Drop bones on other animals,\n Try Eating bones too!",
+  "variants": [
+   {
+    "species": 1,
+    "sub": 0,
+    "name": "Argentavis",
+    "skin": "desert/vulture/1/vulture"
+   },
+   {
+    "species": 100,
+    "sub": 0,
+    "name": "Vulgeist",
+    "skin": "desert/vulture/100/vulture"
+   },
+   {
+    "species": 111,
+    "sub": 0,
+    "name": "Classic Vulture",
+    "skin": "desert/vulture/111/vulture"
+   },
+   {
+    "species": 112,
+    "sub": 0,
+    "name": "Gold-trim Vulture",
+    "skin": "desert/vulture/112/vulture"
+   },
+   {
+    "species": 204,
+    "sub": 0,
+    "name": "Acid Husk",
+    "skin": "desert/vulture/204/vulture"
+   }
+  ]
+ },
+ {
+  "id": 93,
+  "tier": 12,
+  "name": "Bison",
+  "skin": "desert/bison/0/bison",
+  "folder": "desert",
+  "color": "#FF9000",
+  "text": "UPGRADED to Bison!\nHold W to charge and toss opponent in air.",
+  "variants": [
+   {
+    "species": 111,
+    "sub": 0,
+    "name": "Classic Bison",
+    "skin": "desert/bison/111/bison"
+   },
+   {
+    "species": 112,
+    "sub": 0,
+    "name": "Gold-trim Bison",
+    "skin": "desert/bison/112/bison"
+   },
+   {
+    "species": 200,
+    "sub": 0,
+    "name": "Titan Bison",
+    "skin": "desert/bison/200/bison"
+   },
+   {
+    "species": 202,
+    "sub": 0,
+    "name": "Minotaur",
+    "skin": "desert/bison/202/bison"
+   }
+  ]
+ },
+ {
+  "id": 94,
+  "tier": 13,
+  "name": "Komodo Dragon",
+  "skin": "desert/komododragon/0/komododragon",
+  "folder": "desert",
+  "color": "#FF9000",
+  "text": "UPGRADED to Komodo Dragon!\nKomodo Dragon have very poisonous bite. Press W to bite! Also eat bones.",
+  "variants": [
+   {
+    "species": 1,
+    "sub": 0,
+    "name": "Golden Komodo",
+    "skin": "desert/komododragon/1/komododragon"
+   },
+   {
+    "species": 2,
+    "sub": 0,
+    "name": "Night Komodo",
+    "skin": "desert/komododragon/2/komododragon"
+   },
+   {
+    "species": 111,
+    "sub": 0,
+    "name": "Classic Komodo Dragon",
+    "skin": "desert/komododragon/111/komododragon"
+   },
+   {
+    "species": 200,
+    "sub": 0,
+    "name": "Dowager Varande",
+    "skin": "desert/komododragon/200/0/komododragon"
+   },
+   {
+    "species": 200,
+    "sub": 1,
+    "name": "Emperor Varande",
+    "skin": "desert/komododragon/200/1/komododragon"
+   },
+   {
+    "species": 202,
+    "sub": 0,
+    "name": "Galaxy Komodo Dragon",
+    "skin": "desert/komododragon/202/komododragon"
+   }
+  ]
+ },
+ {
+  "id": 95,
+  "tier": 16,
+  "name": "Giant Scorpion",
+  "skin": "desert/scorpion/0/scorpion",
+  "folder": "desert",
+  "color": "#FF9000",
+  "text": "UPGRADED to Giant Scorpion!\nSting and Shiver your prey to death.\n(Press W to Sting)",
+  "variants": [
+   {
+    "species": 1,
+    "sub": 0,
+    "name": "Golden Scorpion",
+    "skin": "desert/scorpion/1/scorpion"
+   },
+   {
+    "species": 2,
+    "sub": 0,
+    "name": "Carnelian Scorpion",
+    "skin": "desert/scorpion/2/scorpion"
+   },
+   {
+    "species": 111,
+    "sub": 0,
+    "name": "Classic Giant Scorpion",
+    "skin": "desert/scorpion/111/scorpion"
+   },
+   {
+    "species": 204,
+    "sub": 0,
+    "name": "Selamorph Scorpion",
+    "skin": "desert/scorpion/204/scorpion"
+   },
+   {
+    "species": 220,
+    "sub": 0,
+    "name": "Nebuladon Scorpion",
+    "skin": "desert/scorpion/220/scorpion"
+   }
+  ]
+ },
+ {
+  "id": 96,
+  "tier": 15,
+  "name": "Pterodactyl",
+  "skin": "desert//pterodactyl/0/pterodactyl",
+  "folder": "desert",
+  "color": "#FF9000",
+  "text": "UPGRADED to Pterodactyl!\nFly and dive onto prey to pick it up.",
+  "variants": [
+   {
+    "species": 1,
+    "sub": 0,
+    "name": "Golden Pterodactyl",
+    "skin": "desert//pterodactyl/1/pterodactyl"
+   },
+   {
+    "species": 2,
+    "sub": 0,
+    "name": "Emerald Pterodactyl",
+    "skin": "desert//pterodactyl/2/pterodactyl"
+   },
+   {
+    "species": 100,
+    "sub": 0,
+    "name": "Carnageodactyl",
+    "skin": "desert//pterodactyl/100/pterodactyl"
+   },
+   {
+    "species": 111,
+    "sub": 0,
+    "name": "Classic Pterodactyl",
+    "skin": "desert//pterodactyl/111/pterodactyl"
+   }
+  ]
+ },
+ {
+  "id": 97,
+  "tier": 10,
+  "name": "Gobi Bear",
+  "skin": "desert/gobibear/0/gobibear",
+  "folder": "desert",
+  "color": "#FF9000",
+  "text": "UPGRADED to Gobi Bear!\n",
+  "variants": [
+   {
+    "species": 111,
+    "sub": 0,
+    "name": "Classic Gobi Bear",
+    "skin": "desert/gobibear/111/gobibear"
+   },
+   {
+    "species": 112,
+    "sub": 0,
+    "name": "Gold-trim Gobi Bear",
+    "skin": "desert/gobibear/112/gobibear"
+   },
+   {
+    "species": 202,
+    "sub": 0,
+    "name": "Gobee Bear",
+    "skin": "desert/gobibear/202/gobibear"
+   }
+  ]
+ },
+ {
+  "id": 98,
+  "tier": 14,
+  "name": "Blackwidow Spider",
+  "skin": "desert/blackwidow/0/0/blackwidow",
+  "folder": "desert",
+  "color": "#FF9000",
+  "text": "UPGRADED to Blackwidow Spider!\nBlackwidow is a sneaky predator. It traps prey in the web and injects sweat poison.\nPress W to spin and throw web.",
+  "variants": [
+   {
+    "species": 1,
+    "sub": 1,
+    "name": "Goldenwidow Spider",
+    "skin": "desert/blackwidow/1/1/blackwidow"
+   },
+   {
+    "species": 1,
+    "sub": 2,
+    "name": "Queen Blackwidow",
+    "skin": "desert/blackwidow/1/2/blackwidow"
+   },
+   {
+    "species": 111,
+    "sub": 0,
+    "name": "Classic Blackwidow Spider",
+    "skin": "desert/blackwidow/111/0/blackwidow"
+   }
+  ]
+ },
+ {
+  "id": 99,
+  "tier": 0,
+  "name": "Bullet Ant",
+  "skin": "desert/bulletant/0/bulletant",
+  "folder": "desert",
+  "color": "#FF9000",
+  "text": "UPGRADED to Bullet Ant!\nHold 'W' to pick anything and take to your Anthill.",
+  "variants": []
+ },
+ {
+  "id": 100,
+  "tier": 17,
+  "name": "King Dragon",
+  "skin": "volcano/kingdragon/0/kingdragon_body",
+  "folder": "volcano",
+  "color": "black",
+  "text": "UPGRADED to King Dragon!\nYou got firestream that burns your victim alive! Watch your tail and slap them hard.",
+  "variants": [
+   {
+    "species": 1,
+    "sub": 0,
+    "name": "Golden King Dragon",
+    "skin": "volcano/kingdragon/1/kingdragon_body"
+   },
+   {
+    "species": 2,
+    "sub": 0,
+    "name": "King Ripper",
+    "skin": "volcano/kingdragon/2/kingdragon_body"
+   },
+   {
+    "species": 3,
+    "sub": 0,
+    "name": "King Stan",
+    "skin": "volcano/kingdragon/3/kingdragon_body"
+   },
+   {
+    "species": 4,
+    "sub": 0,
+    "name": "King Shah",
+    "skin": "volcano/kingdragon/4/kingdragon_body"
+   },
+   {
+    "species": 5,
+    "sub": 0,
+    "name": "Queen Scarlet",
+    "skin": "volcano/kingdragon/5/kingdragon_body"
+   },
+   {
+    "species": 6,
+    "sub": 0,
+    "name": "Queen Celeste",
+    "skin": "volcano/kingdragon/6/kingdragon_body"
+   },
+   {
+    "species": 8,
+    "sub": 0,
+    "name": "King Mistik",
+    "skin": "volcano/kingdragon/8/kingdragon_body"
+   },
+   {
+    "species": 13,
+    "sub": 0,
+    "name": "Birthday Mistik",
+    "skin": "volcano/kingdragon/13/kingdragon_body"
+   },
+   {
+    "species": 111,
+    "sub": 0,
+    "name": "Classic King Dragon",
+    "skin": "volcano/kingdragon/111/kingdragon_body"
+   },
+   {
+    "species": 200,
+    "sub": 0,
+    "name": "Queen Flame",
+    "skin": "volcano/kingdragon/200/kingdragon_body"
+   },
+   {
+    "species": 202,
+    "sub": 0,
+    "name": "King Graveyard",
+    "skin": "volcano/kingdragon/202/kingdragon_body"
+   },
+   {
+    "species": 206,
+    "sub": 0,
+    "name": "King Nightbringer",
+    "skin": "volcano/kingdragon/206/kingdragon_body"
+   }
+  ]
+ },
+ {
+  "id": 102,
+  "tier": 0,
+  "name": "Santa!",
+  "skin": "santa/0/santa",
+  "folder": "santa",
+  "color": "#231f18",
+  "text": "UPGRADED to Santa!\n Santa distributes gifts to everyone!",
+  "variants": []
+ },
+ {
+  "id": 103,
+  "tier": 0,
+  "name": "Rudolph!",
+  "skin": "santa/rudolph",
+  "folder": "santa",
+  "color": "#6B6B6B",
+  "text": "UPGRADED to Rudolph!\n Rudolph paws turn very well on ice!\n Press W to howl!",
+  "variants": []
+ },
+ {
+  "id": 105,
+  "tier": 12,
+  "name": "Markhor",
+  "skin": "arctic/markhor/0/0/markhor",
+  "folder": "arctic",
+  "color": "#FF9000",
+  "text": "UPGRADED to Markhor!\nPress 'W' to Jump High from hills. Ram in the preys on land.",
+  "variants": [
+   {
+    "species": 2,
+    "sub": 0,
+    "name": "Big Goat",
+    "skin": "arctic/markhor/2/0/markhor"
+   },
+   {
+    "species": 111,
+    "sub": 0,
+    "name": "Classic Markhor",
+    "skin": "arctic/markhor/111/0/markhor"
+   },
+   {
+    "species": 112,
+    "sub": 0,
+    "name": "Gold-trim Markhor",
+    "skin": "arctic/markhor/112/0/markhor"
+   },
+   {
+    "species": 113,
+    "sub": 0,
+    "name": "Krampus Markhor",
+    "skin": "arctic/markhor/113/0/markhor"
+   },
+   {
+    "species": 201,
+    "sub": 1,
+    "name": "Fruity Ice Markhor",
+    "skin": "arctic/markhor/201/1/markhor"
+   },
+   {
+    "species": 204,
+    "sub": 2,
+    "name": "Golden Devil Goat",
+    "skin": "arctic/markhor/204/2/markhor"
+   }
+  ]
+ },
+ {
+  "id": 106,
+  "tier": 0,
+  "name": "The BigFoot",
+  "skin": "land/bigfoot/0/bigfoot",
+  "folder": "land",
+  "color": "#839eb5",
+  "text": "UPGRADED to The BigFoot! So it really exists... \n Right click/W to throw Spears. \nHold to make a fire (every 11s)",
+  "variants": []
+ },
+ {
+  "id": 107,
+  "tier": 0,
+  "name": "Jagga",
+  "skin": "land/aiboss/jagga",
+  "folder": "land",
+  "color": "#22FF8A",
+  "text": "UPGRADED to Jagga the A.I BOSS!",
+  "variants": [
+   {
+    "species": 1,
+    "sub": 0,
+    "name": "Bali",
+    "skin": "land/aiboss/bali"
+   },
+   {
+    "species": 2,
+    "sub": 0,
+    "name": "Jutt",
+    "skin": "land/aiboss/jutt"
+   },
+   {
+    "species": 3,
+    "sub": 0,
+    "name": "Bhollaa",
+    "skin": "land/aiboss/bhollaa"
+   },
+   {
+    "species": 4,
+    "sub": 0,
+    "name": "Butt",
+    "skin": "land/aiboss/butt"
+   },
+   {
+    "species": 5,
+    "sub": 0,
+    "name": "Khattak",
+    "skin": "land/aiboss/khattak"
+   },
+   {
+    "species": 6,
+    "sub": 0,
+    "name": "Chandyo",
+    "skin": "land/aiboss/chandyo/chandyo"
+   },
+   {
+    "species": 7,
+    "sub": 0,
+    "name": "Abysmal",
+    "skin": "land/aiboss/abysmal"
+   },
+   {
+    "species": 8,
+    "sub": 0,
+    "name": "Sultan",
+    "skin": "land/aiboss/sultan/sultan"
+   },
+   {
+    "species": 9,
+    "sub": 0,
+    "name": "Gujjar",
+    "skin": "land/aiboss/gujjar"
+   }
+  ]
+ },
+ {
+  "id": 108,
+  "tier": 8,
+  "name": "Raven",
+  "skin": "forest/raven/0/raven",
+  "folder": "forest",
+  "color": "#FF9000",
+  "text": "UPGRADED to Raven!\nHold W to fly around from Tress/Hills.\n(Hint: Use ability on land to scare animals) ",
+  "variants": [
+   {
+    "species": 111,
+    "sub": 0,
+    "name": "Classic Raven",
+    "skin": "forest/raven/111/raven"
+   },
+   {
+    "species": 220,
+    "sub": 0,
+    "name": "Muscipula Raven",
+    "skin": "forest/raven/220/raven"
+   }
+  ]
+ },
+ {
+  "id": 109,
+  "tier": 4,
+  "name": "Kakapo",
+  "skin": "forest/kakapo/0/kakapo",
+  "folder": "forest",
+  "color": "#FF9000",
+  "text": "UPGRADED to Kakapo!\nHold W to hop around.\n(Hint: Use ability on prey to stun them) ",
+  "variants": [
+   {
+    "species": 111,
+    "sub": 0,
+    "name": "Classic Kakapo",
+    "skin": "forest/kakapo/111/kakapo"
+   },
+   {
+    "species": 202,
+    "sub": 0,
+    "name": "Wind-up Kakapo",
+    "skin": "forest/kakapo/202/kakapo"
+   }
+  ]
+ },
+ {
+  "id": 110,
+  "tier": 0,
+  "name": "Swinehoe",
+  "skin": "forest/pheasant/0/pheasant",
+  "folder": "forest",
+  "color": "#FF9000",
+  "text": "UPGRADED to Swinehoe!\nHold W to charge. ",
+  "variants": [
+   {
+    "species": 1,
+    "sub": 0,
+    "name": "Golden Pheasant",
+    "skin": "forest/pheasant/1/pheasant"
+   }
+  ]
+ },
+ {
+  "id": 112,
+  "tier": 9,
+  "name": "Turkey!",
+  "skin": "forest/turkey/0/turkey",
+  "folder": "forest",
+  "color": "#FF9000",
+  "text": "UPGRADED to Turkey!!\nHold W to charge up a kick, fly from tree and shoot eggs from hill!",
+  "variants": [
+   {
+    "species": 111,
+    "sub": 0,
+    "name": "Classic Turkey",
+    "skin": "forest/turkey/111/turkey"
+   }
+  ]
+ },
+ {
+  "id": 113,
+  "tier": 0,
+  "name": "Tarsier!",
+  "skin": "forest/tarsier/0/tarsier",
+  "folder": "forest",
+  "color": "#FF9D43",
+  "text": "UPGRADED to Tarsier!!",
+  "variants": []
+ },
+ {
+  "id": 114,
+  "tier": 0,
+  "name": "Chukar!",
+  "skin": "forest/chukar/0/chukar",
+  "folder": "forest",
+  "color": "#FF9D43",
+  "text": "UPGRADED to Chukar!!\n Hold W to fly around.",
+  "variants": []
+ },
+ {
+  "id": 121,
+  "tier": 0,
+  "name": "Flying Lizard!",
+  "skin": "forest/flyinglizard/0/flyinglizard",
+  "folder": "forest",
+  "color": "#FF9D43",
+  "text": "UPGRADED to Flying Lizard!!\nClimb on a high spot to be able to glide from it!",
+  "variants": []
+ },
+ {
+  "id": 122,
+  "tier": 16,
+  "name": "Bird Monster",
+  "skin": "land/birdmonster/0/birdmonster",
+  "folder": "land",
+  "color": "#FF9000",
+  "text": "UPGRADED to Bird Monster! \nPress W to Fly, and do a powerful Electro Swoop attack! Aim it well.\nPress S to create Gale charge and Electro Tornado",
+  "variants": []
+ }
+]

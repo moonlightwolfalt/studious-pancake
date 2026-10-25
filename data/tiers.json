@@ -1,0 +1,603 @@
+{
+ "0": [
+  {
+   "id": 45,
+   "name": "Snail",
+   "biome": "ocean"
+  },
+  {
+   "id": 58,
+   "name": "(Animal)",
+   "biome": ""
+  },
+  {
+   "id": 59,
+   "name": "(Animal)",
+   "biome": ""
+  },
+  {
+   "id": 62,
+   "name": "Frog",
+   "biome": "frog"
+  },
+  {
+   "id": 67,
+   "name": "(Animal)",
+   "biome": ""
+  },
+  {
+   "id": 69,
+   "name": "Baby Ostrich",
+   "biome": "ostrich"
+  },
+  {
+   "id": 99,
+   "name": "Bullet Ant",
+   "biome": "desert"
+  },
+  {
+   "id": 102,
+   "name": "Santa",
+   "biome": "santa"
+  },
+  {
+   "id": 103,
+   "name": "Rudolph",
+   "biome": "santa"
+  },
+  {
+   "id": 106,
+   "name": "The BigFoot",
+   "biome": "land"
+  },
+  {
+   "id": 107,
+   "name": "Jagga",
+   "biome": "land"
+  },
+  {
+   "id": 110,
+   "name": "Swinehoe",
+   "biome": "forest"
+  },
+  {
+   "id": 113,
+   "name": "Tarsier",
+   "biome": "forest"
+  },
+  {
+   "id": 114,
+   "name": "Chukar",
+   "biome": "forest"
+  },
+  {
+   "id": 121,
+   "name": "Flying Lizard",
+   "biome": "forest"
+  }
+ ],
+ "1": [
+  {
+   "id": 1,
+   "name": "Mouse",
+   "biome": "land"
+  },
+  {
+   "id": 15,
+   "name": "Shrimp",
+   "biome": "ocean"
+  },
+  {
+   "id": 33,
+   "name": "Chipmunk",
+   "biome": "arctic"
+  },
+  {
+   "id": 60,
+   "name": "Lemming",
+   "biome": "arctic"
+  },
+  {
+   "id": 82,
+   "name": "Desert Rat",
+   "biome": "desert"
+  }
+ ],
+ "2": [
+  {
+   "id": 2,
+   "name": "Rabbit",
+   "biome": "land"
+  },
+  {
+   "id": 16,
+   "name": "Trout",
+   "biome": "ocean"
+  },
+  {
+   "id": 31,
+   "name": "Arctic Hare",
+   "biome": "arctic"
+  },
+  {
+   "id": 74,
+   "name": "Pigeon",
+   "biome": "land"
+  },
+  {
+   "id": 83,
+   "name": "Desert Chipmunk",
+   "biome": "desert"
+  }
+ ],
+ "3": [
+  {
+   "id": 6,
+   "name": "Mole",
+   "biome": "land"
+  },
+  {
+   "id": 17,
+   "name": "Crab",
+   "biome": "ocean"
+  },
+  {
+   "id": 35,
+   "name": "Penguin",
+   "biome": "arctic"
+  },
+  {
+   "id": 79,
+   "name": "Chicken",
+   "biome": "land"
+  },
+  {
+   "id": 84,
+   "name": "Meerkat",
+   "biome": "desert"
+  }
+ ],
+ "4": [
+  {
+   "id": 3,
+   "name": "Pig",
+   "biome": "land"
+  },
+  {
+   "id": 22,
+   "name": "Seahorse",
+   "biome": "ocean"
+  },
+  {
+   "id": 37,
+   "name": "Seal",
+   "biome": "arctic"
+  },
+  {
+   "id": 80,
+   "name": "Woodpecker",
+   "biome": "land"
+  },
+  {
+   "id": 86,
+   "name": "Armadillo",
+   "biome": "desert"
+  },
+  {
+   "id": 109,
+   "name": "Kakapo",
+   "biome": "forest"
+  }
+ ],
+ "5": [
+  {
+   "id": 5,
+   "name": "Deer",
+   "biome": "land"
+  },
+  {
+   "id": 18,
+   "name": "Squid",
+   "biome": "ocean"
+  },
+  {
+   "id": 40,
+   "name": "Reindeer",
+   "biome": "arctic"
+  },
+  {
+   "id": 77,
+   "name": "Flamingo",
+   "biome": "ocean"
+  },
+  {
+   "id": 85,
+   "name": "Gazelle",
+   "biome": "desert"
+  }
+ ],
+ "6": [
+  {
+   "id": 4,
+   "name": "Fox",
+   "biome": "land"
+  },
+  {
+   "id": 23,
+   "name": "Jellyfish",
+   "biome": "ocean"
+  },
+  {
+   "id": 41,
+   "name": "Arctic Fox",
+   "biome": "arctic"
+  },
+  {
+   "id": 57,
+   "name": "Hedgehog",
+   "biome": "land"
+  },
+  {
+   "id": 81,
+   "name": "Peacock",
+   "biome": "land"
+  },
+  {
+   "id": 87,
+   "name": "Fennec Fox",
+   "biome": "desert"
+  }
+ ],
+ "7": [
+  {
+   "id": 7,
+   "name": "Zebra",
+   "biome": "land"
+  },
+  {
+   "id": 21,
+   "name": "Turtle",
+   "biome": "ocean"
+  },
+  {
+   "id": 34,
+   "name": "Muskox",
+   "biome": "arctic"
+  },
+  {
+   "id": 44,
+   "name": "Donkey",
+   "biome": "land"
+  },
+  {
+   "id": 76,
+   "name": "Macaw",
+   "biome": "land"
+  },
+  {
+   "id": 89,
+   "name": "Warthog",
+   "biome": "desert"
+  }
+ ],
+ "8": [
+  {
+   "id": 20,
+   "name": "Stingray",
+   "biome": "ocean"
+  },
+  {
+   "id": 39,
+   "name": "Walrus",
+   "biome": "arctic"
+  },
+  {
+   "id": 50,
+   "name": "Cobra",
+   "biome": "land"
+  },
+  {
+   "id": 55,
+   "name": "Giraffe",
+   "biome": "land"
+  },
+  {
+   "id": 66,
+   "name": "Snowy Owl",
+   "biome": "arctic"
+  },
+  {
+   "id": 88,
+   "name": "Camel",
+   "biome": "desert"
+  },
+  {
+   "id": 108,
+   "name": "Raven",
+   "biome": "forest"
+  }
+ ],
+ "9": [
+  {
+   "id": 9,
+   "name": "Cheetah",
+   "biome": "land"
+  },
+  {
+   "id": 25,
+   "name": "Puffer Fish",
+   "biome": "ocean"
+  },
+  {
+   "id": 28,
+   "name": "Gorilla",
+   "biome": "land"
+  },
+  {
+   "id": 38,
+   "name": "Snow Leopard",
+   "biome": "arctic"
+  },
+  {
+   "id": 75,
+   "name": "Toco Toucan",
+   "biome": "land"
+  },
+  {
+   "id": 91,
+   "name": "Rattle Snake",
+   "biome": "desert"
+  },
+  {
+   "id": 112,
+   "name": "Turkey",
+   "biome": "forest"
+  }
+ ],
+ "10": [
+  {
+   "id": 10,
+   "name": "Bear",
+   "biome": "land"
+  },
+  {
+   "id": 27,
+   "name": "Swordfish",
+   "biome": "ocean"
+  },
+  {
+   "id": 30,
+   "name": "Wolf",
+   "biome": "arctic"
+  },
+  {
+   "id": 54,
+   "name": "Tiger",
+   "biome": "land"
+  },
+  {
+   "id": 64,
+   "name": "Pelican",
+   "biome": "pelican"
+  },
+  {
+   "id": 90,
+   "name": "Hyena",
+   "biome": "desert"
+  },
+  {
+   "id": 97,
+   "name": "Gobi Bear",
+   "biome": "desert"
+  }
+ ],
+ "11": [
+  {
+   "id": 8,
+   "name": "Lion",
+   "biome": "land"
+  },
+  {
+   "id": 11,
+   "name": "Crocodile",
+   "biome": "land"
+  },
+  {
+   "id": 29,
+   "name": "Octopus",
+   "biome": "ocean"
+  },
+  {
+   "id": 36,
+   "name": "Polar Bear",
+   "biome": "arctic"
+  },
+  {
+   "id": 65,
+   "name": "Falcon",
+   "biome": "land"
+  },
+  {
+   "id": 92,
+   "name": "Vulture",
+   "biome": "desert"
+  }
+ ],
+ "12": [
+  {
+   "id": 12,
+   "name": "Rhino",
+   "biome": "land"
+  },
+  {
+   "id": 19,
+   "name": "Shark",
+   "biome": "ocean"
+  },
+  {
+   "id": 42,
+   "name": "Wolverine",
+   "biome": "arctic"
+  },
+  {
+   "id": 56,
+   "name": "Bald Eagle",
+   "biome": "land"
+  },
+  {
+   "id": 93,
+   "name": "Bison",
+   "biome": "desert"
+  },
+  {
+   "id": 105,
+   "name": "Markhor",
+   "biome": "arctic"
+  }
+ ],
+ "13": [
+  {
+   "id": 13,
+   "name": "Hippo",
+   "biome": "land"
+  },
+  {
+   "id": 26,
+   "name": "Killerwhale",
+   "biome": "ocean"
+  },
+  {
+   "id": 47,
+   "name": "Sabertooth Tiger",
+   "biome": "arctic"
+  },
+  {
+   "id": 51,
+   "name": "Boa Constrictor",
+   "biome": "land"
+  },
+  {
+   "id": 63,
+   "name": "Ostrich",
+   "biome": "land"
+  },
+  {
+   "id": 94,
+   "name": "Komodo Dragon",
+   "biome": "desert"
+  }
+ ],
+ "14": [
+  {
+   "id": 43,
+   "name": "Mammoth",
+   "biome": "arctic"
+  },
+  {
+   "id": 48,
+   "name": "Elephant",
+   "biome": "land"
+  },
+  {
+   "id": 49,
+   "name": "Bluewhale",
+   "biome": "ocean"
+  },
+  {
+   "id": 52,
+   "name": "Giant Spider",
+   "biome": "land"
+  },
+  {
+   "id": 78,
+   "name": "Cassowary",
+   "biome": "land"
+  },
+  {
+   "id": 98,
+   "name": "Blackwidow Spider",
+   "biome": "desert"
+  }
+ ],
+ "15": [
+  {
+   "id": 14,
+   "name": "Dragon",
+   "biome": "land"
+  },
+  {
+   "id": 24,
+   "name": "The Kraken",
+   "biome": "ocean"
+  },
+  {
+   "id": 32,
+   "name": "The Yeti",
+   "biome": "arctic"
+  },
+  {
+   "id": 53,
+   "name": "The T.Rex",
+   "biome": "land"
+  },
+  {
+   "id": 61,
+   "name": "King Crab",
+   "biome": "ocean"
+  },
+  {
+   "id": 68,
+   "name": "The Phoenix",
+   "biome": "volcano"
+  },
+  {
+   "id": 96,
+   "name": "Pterodactyl",
+   "biome": "desert"
+  }
+ ],
+ "16": [
+  {
+   "id": 70,
+   "name": "Sea Monster",
+   "biome": "ocean"
+  },
+  {
+   "id": 71,
+   "name": "Land Monster",
+   "biome": "volcano"
+  },
+  {
+   "id": 72,
+   "name": "Ice Monster",
+   "biome": "arctic"
+  },
+  {
+   "id": 73,
+   "name": "Dino Monster",
+   "biome": "land"
+  },
+  {
+   "id": 95,
+   "name": "Giant Scorpion",
+   "biome": "desert"
+  },
+  {
+   "id": 122,
+   "name": "Bird Monster",
+   "biome": "land"
+  }
+ ],
+ "17": [
+  {
+   "id": 46,
+   "name": "Black Dragon",
+   "biome": "volcano"
+  },
+  {
+   "id": 100,
+   "name": "King Dragon",
+   "biome": "volcano"
+  }
+ ]
+}
