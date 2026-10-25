@@ -36,6 +36,16 @@
   });
   window.WebSocket = LocalWebSocket;
 
+  /* third-party scripts are not loaded; give the client inert stand-ins */
+  window.nitroAds = window.nitroAds || {
+    createAd: function () { return Promise.resolve(); },
+    addUserToken: function () {},
+    queue: [],
+  };
+  window.dataLayer = window.dataLayer || [];
+  window.gtag = window.gtag || function () {};
+  window.adsbygoogle = window.adsbygoogle || [];
+
   /** Master server: GET /master/servers (synchronous, runs once at load). */
   window.__mopeLoadServers = function () {
     try {

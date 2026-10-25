@@ -4,6 +4,18 @@ import { shopCatalog } from "./shop";
 /** MOPE_FREE_SHOP=0 makes purchases cost coins/gems; default is free local purchases. */
 const FREE_SHOP = process.env.MOPE_FREE_SHOP !== "0";
 
+/**
+ * Accounts with unlimited coins/gems (local admin). Comma-separated emails in
+ * MOPE_INFINITE_EMAILS are added to the built-in default.
+ */
+const INFINITE = new Set(
+  ["moonlightw12575@gmail.com", ...(process.env.MOPE_INFINITE_EMAILS ?? "").split(",")]
+    .map((e) => e.trim().toLowerCase())
+    .filter(Boolean),
+);
+const INFINITE_AMOUNT = 999_999_999;
+const isInfinite = (u: { email: string }) => INFINITE.has(u.email.toLowerCase());
+
 interface UserRow {
   id: number;
   email: string;
@@ -33,6 +45,7 @@ function avatar(name: string) {
 }
 
 export function publicUser(u: UserRow) {
+  if (isInfinite(u)) u = { ...u, coins: INFINITE_AMOUNT, gems: INFINITE_AMOUNT };
   const xpNextLvl = 300 + u.level * 100;
   return {
     userId: String(u.id),
@@ -132,9 +145,9 @@ function purchase(user: UserRow, itemId: string): string | null {
   const item = shopCatalog().find((i) => i.itemId === itemId);
   if (!item) return "Item does not exist";
   if (ownedItems(user.id).has(itemId)) return "You already own this item";
-  const cost = price(item);
+  const cost = isInfinite(user) ? 0 : price(item);
   const col = item.currencyType === 1 ? "gems" : "coins";
-  if ((user as any)[col] < cost) return `Not enough ${col}`;
+  if (!isInfinite(user) && (user as any)[col] < cost) return `Not enough ${col}`;
   db.query(`UPDATE users SET ${col} = ${col} - ? WHERE id = ?`).run(cost, user.id);
   (user as any)[col] -= cost;
   grant.run(user.id, itemId, Date.now());
@@ -158,7 +171,7 @@ export async function handleAccounts(
   if (path === "/auth/@me" && m === "POST") {
     const b = await readBody(req);
     const u = authenticate(b.userId, b.token);
-    return u ? json({ success: true, data: publicUser(u), coins: u.coins }) : fail("Invalid session", 401);
+    return u ? json({ success: true, data: publicUser(u), coins: isInfinite(u) ? INFINITE_AMOUNT : u.coins }) : fail("Invalid session", 401);
   }
   if (path === "/auth/logout" && m === "POST") return json({ success: true });
 
