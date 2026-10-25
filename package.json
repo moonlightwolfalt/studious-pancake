@@ -10,5 +10,13 @@
     "@babel/types": "^8.0.8",
     "prettier": "^3.9.10",
     "webcrack": "^2.16.0"
+  },
+  "scripts": {
+    "start": "bun mopeio.ts serve",
+    "build": "bun mopeio.ts build",
+    "dev": "bun mopeio.ts all"
+  },
+  "engines": {
+    "bun": ">=1.0.0"
   }
 }
