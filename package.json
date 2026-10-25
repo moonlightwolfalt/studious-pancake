@@ -18,5 +18,8 @@
   },
   "engines": {
     "bun": ">=1.0.0"
+  },
+  "overrides": {
+    "isolated-vm": "npm:empty-npm-package@1.0.0"
   }
 }
