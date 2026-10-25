@@ -3,6 +3,7 @@ import { join } from "node:path";
 import { parse } from "@babel/parser";
 import traverse from "@babel/traverse";
 import * as prettier from "prettier";
+import vm from "node:vm";
 import { webcrack } from "webcrack";
 import { DECODED, SITE } from "./config";
 
@@ -17,8 +18,19 @@ export async function prettify(code: string): Promise<string> {
  * control-flow wrappers, self-defending regex checks). webcrack inlines the
  * string array / proxies and strips the self-defence; we then run prettier.
  */
+/**
+ * webcrack evaluates the obfuscator's string-array decoder to resolve every string. Its default
+ * sandbox uses the native `isolated-vm` module, which needs a C++ toolchain to install (it breaks
+ * slim Docker images). Node's built-in `vm` does the same job without any native build.
+ * The evaluated code is the site's own string decoder, run once at build time with a timeout.
+ */
+const vmSandbox = async (code: string): Promise<unknown> => {
+  const result = vm.runInNewContext(code, Object.create(null), { timeout: 10_000, filename: "file:///obfuscated.js" });
+  return JSON.parse(JSON.stringify(result)); // plain data, like isolated-vm's `copy: true`
+};
+
 export async function deobfuscate(code: string): Promise<string> {
-  const res = await webcrack(code, { mangle: false, unpack: false, jsx: false, deobfuscate: true });
+  const res = await webcrack(code, { mangle: false, unpack: false, jsx: false, deobfuscate: true, sandbox: vmSandbox });
   return res.code;
 }
 
