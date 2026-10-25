@@ -32,7 +32,7 @@ switch (cmd) {
   case "build": // what the Docker image runs: everything except probe/serve (generated data is committed)
     await fetchSite();
     {
-      const { pretty } = await runDeobfuscation();
+      const { pretty } = await runDeobfuscation(console.log, { prettifyRaw: false });
       await writeNamed();
       await fetchSite({ extraTexts: [{ text: pretty, base: "/client.js" }] });
     }

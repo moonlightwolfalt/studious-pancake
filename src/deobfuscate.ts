@@ -102,13 +102,16 @@ export function scanEnvironment(decoded: string, html: string): EnvReport {
   return { config, accountServer, platformEnv, localStorageKeys, externalHosts, constants };
 }
 
-export async function runDeobfuscation(log: (s: string) => void = console.log) {
+export async function runDeobfuscation(log: (s: string) => void = console.log, opts: { prettifyRaw?: boolean } = {}) {
   await mkdir(DECODED, { recursive: true });
   const raw = await Bun.file(join(SITE, "client.js")).text();
   log(`client.js: ${raw.length} bytes`);
 
-  log("prettifying raw client.js ...");
-  await writeFile(join(DECODED, "client.pretty.js"), await prettify(raw));
+  // pretty-printing the raw 2.7 MB file is only for reading; skipped in deploy builds to save memory
+  if (opts.prettifyRaw !== false) {
+    log("prettifying raw client.js ...");
+    await writeFile(join(DECODED, "client.pretty.js"), await prettify(raw));
+  }
 
   log("deobfuscating (webcrack) ...");
   const t0 = performance.now();
