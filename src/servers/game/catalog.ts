@@ -15,12 +15,29 @@ const FOLDER_BIOME: Record<string, number> = {
   forest: BIOME.FOREST,
 };
 
+export type Diet = "herbivore" | "omnivore" | "carnivore";
+
 export interface Animal {
   id: number;
   name: string;
   tier: number;
   biome: number;
+  diet: Diet;
   def: AnimalDef;
+}
+
+/**
+ * The client has no diet data (the server decides), so diets are inferred from animal names:
+ * hunters eat meat and smaller animals, omnivores both plants and meat, everything else plants only.
+ */
+const CARNIVORE =
+  /lion|tiger|wolf|croc|rex\b|shark|orca|killer|cheetah|leopard|jaguar|lynx|panther|snake|cobra|python|viper|anaconda|spider|widow|scorpion|dragon|kraken|monster|eagle|hawk|falcon|owl|piranha|barracuda|squid|moray|vulture|hyena|komodo|raptor|pterodactyl|phoenix|yeti|bigfoot|saber|mantis|dino|seal\b|walrus|pelican|heron|stork|kingfisher|angler|swordfish|stingray|jelly|marlin|polar|puma|cougar|crocodile|gator|alligator|osprey|harpy|condor|secretary|mongoose|weasel|ferret|otter|orca|manta|octopus/i;
+const OMNIVORE = /bear|pig|boar|warthog|raccoon|crab|fox|badger|skunk|monkey|gorilla|chimp|duck|chicken|crow|raven|turkey|lizard|frog|toad|ostrich|cassowary|hedgehog|armadillo|opossum|possum|lemur|coati|tarsier|pheasant|chukar|kakapo/i;
+
+function dietOf(name: string): Diet {
+  if (CARNIVORE.test(name)) return "carnivore";
+  if (OMNIVORE.test(name)) return "omnivore";
+  return "herbivore";
 }
 
 let animals: Animal[] | null = null;
@@ -30,7 +47,7 @@ export function loadAnimals(): Animal[] {
   const p = join(DATA, "animals.json");
   if (!existsSync(p)) {
     console.warn("[game] data/animals.json missing – run `bun mopeio.ts probe`; falling back to a mouse-only ladder");
-    animals = [{ id: 1, name: "Mouse", tier: 1, biome: 0, def: { id: 1, tier: 1, name: "Mouse", skin: "land/mouse/0/mouse", folder: "land", color: null, text: "", variants: [] } }];
+    animals = [{ id: 1, name: "Mouse", tier: 1, biome: 0, diet: "herbivore", def: { id: 1, tier: 1, name: "Mouse", skin: "land/mouse/0/mouse", folder: "land", color: null, text: "", variants: [] } }];
     return animals;
   }
   const raw = JSON.parse(readFileSync(p, "utf8")) as AnimalDef[];
@@ -42,13 +59,16 @@ export function loadAnimals(): Animal[] {
       name: a.name.replace(/[!\n]/g, " ").trim(),
       tier: a.tier,
       biome: FOLDER_BIOME[(a.skin ?? a.folder ?? "").replace(/^\//, "").split("/")[0]] ?? BIOME.LAND,
+      diet: dietOf(a.name),
       def: a,
     }));
   return animals;
 }
 
+let byId: Map<number, Animal> | null = null;
 export function animalById(id: number): Animal | undefined {
-  return loadAnimals().find((a) => a.id === id);
+  byId ??= new Map(loadAnimals().map((a) => [a.id, a]));
+  return byId.get(id);
 }
 
 export function maxTier(): number {

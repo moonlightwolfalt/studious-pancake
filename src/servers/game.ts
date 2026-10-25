@@ -1,5 +1,5 @@
 import type { ServerWebSocket } from "bun";
-import { authenticate, equippedSkins, sessionUsers } from "./accounts";
+import { authenticate, equippedSkins, ownedItems, sessionUsers } from "./accounts";
 import { animalById, loadAnimals, upgradeChoices, xpForTier, type Animal } from "./game/catalog";
 import { type Entity } from "./game/entities";
 import { ediblesFor } from "./game/diet";
@@ -39,7 +39,8 @@ function released(id: string) {
   if (!w || w.players.size) return;
   stopTimers.set(id, setTimeout(() => (w.players.size ? null : (w.stop(), worlds.delete(id))), 30_000));
 }
-export const playerCount = (id: string) => worlds.get(id)?.players.size ?? 0;
+/** players shown in the server list: everyone connected, not only those currently alive */
+export const playerCount = (id: string) => worlds.get(id)?.connected.size ?? 0;
 
 const sessionId = () => Buffer.from(crypto.getRandomValues(new Uint8Array(9))).toString("hex");
 
@@ -58,6 +59,11 @@ export class Session implements PlayerLike {
   known = new Map<number, Snapshot>();
   menu: Animal[] | null = null;
   wantsMenu = false;
+  water = 100;
+  hpF = 100;
+  cooldown = { W: 0, S: 0 };
+  /** the skin picked for each animal this life, so the menu preview matches what you become */
+  private skinCache = new Map<number, { species: number; sub: number }>();
   name = "mope.io";
   private lb: ReturnType<typeof setInterval> | null = null;
 
@@ -70,6 +76,7 @@ export class Session implements PlayerLike {
   // ---- connection lifecycle -------------------------------------------------
   hello() {
     this.world = worldFor(this.ws.data.serverId);
+    this.world.connected.add(this);
     const f = this.world.file;
     this.send(new Writer().u8(S2C.SESSION).str(this.id).u8(0).u8(1).str(this.ws.data.serverId).u8(0).u16(0));
     this.camera(f.width / 2, f.height / 2, 1.0);
@@ -99,6 +106,7 @@ export class Session implements PlayerLike {
     this.despawn();
     const id = this.ws.data.serverId;
     this.world?.players.delete(this);
+    this.world?.connected.delete(this);
     released(id);
   }
 
@@ -107,26 +115,50 @@ export class Session implements PlayerLike {
     return sessionUsers.get(this.id) ?? null;
   }
 
-  /** species/sub for an animal from the player's equipped wardrobe skin ("RANDOM" = default skin) */
+  /**
+   * species/sub for an animal. An equipped wardrobe skin wins; "RANDOM" (the wardrobe default) picks
+   * at random among the plain skin and every skin the player owns for that animal.
+   */
   private skinFor(a: Animal): { species: number; sub: number } {
+    const cached = this.skinCache.get(a.id);
+    if (cached) return cached;
+    let pick = { species: 0, sub: 0 };
     const uid = this.userId();
-    if (!uid) return { species: 0, sub: 0 };
-    const equipped = equippedSkins(uid).get(a.id);
-    if (!equipped || equipped === "RANDOM") return { species: 0, sub: 0 };
-    const item = shopCatalog().find((i) => i.itemId === equipped);
-    return { species: item?.animalSpecies ?? 0, sub: item?.animalSubSpecies ?? 0 };
+    if (uid) {
+      const catalog = shopCatalog();
+      const equipped = equippedSkins(uid).get(a.id);
+      if (equipped && equipped !== "RANDOM") {
+        const item = catalog.find((i) => i.itemId === equipped);
+        pick = { species: item?.animalSpecies ?? 0, sub: item?.animalSubSpecies ?? 0 };
+      } else {
+        const owned = ownedItems(uid);
+        const options = [{ species: 0, sub: 0 }];
+        for (const i of catalog) {
+          if (i.itemType === 0 && i.animalType === a.id && owned.has(i.itemId)) options.push({ species: i.animalSpecies ?? 0, sub: i.animalSubSpecies ?? 0 });
+        }
+        pick = options[Math.floor(Math.random() * options.length)];
+      }
+    }
+    this.skinCache.set(a.id, pick);
+    return pick;
   }
 
   spawn(name: string) {
     const world = this.world!;
     if (this.ent) return;
     const start = animalById(1) ?? loadAnimals()[0];
-    const spot = world.randomSpot(start.biome);
+    // MOPE_DEBUG_SPAWN_BIOME=<0-5> spawns in that biome (for checking terrain visuals)
+    const dbg = process.env.MOPE_DEBUG_SPAWN_BIOME;
+    const spot = world.randomSpot(dbg != null && dbg !== "" ? Number(dbg) : start.biome);
     this.name = (name || "mope.io").slice(0, 15);
     this.xp = 0;
     this.kills = 0;
     this.maxXp = 0;
     this.bornAt = Date.now();
+    this.water = 100;
+    this.hpF = 100;
+    this.cooldown = { W: 0, S: 0 };
+    this.skinCache.clear();
     this.attach(start, spot.x, spot.y, 2);
     world.players.add(this);
     this.send(new Writer().u8(S2C.ALIVE));
@@ -194,10 +226,16 @@ export class Session implements PlayerLike {
     this.world!.gain(this, 0);
   }
 
-  onEaten(by: Entity | null) {
-    const killer = by ? (by.owner as Session | undefined)?.name ?? "" : "";
+  onDeath(reason: number, by: Entity | null) {
+    const killer = by ? ((by.owner as Session | undefined)?.name || by.ref?.name || "an animal") : "";
+    const killedBy = reason === 4 ? "Thirst" : killer || "Unknown";
+    const rank = this.world ? this.world.rankOf(this) : 1;
+    // body: reason, killer id, killer name | rank, "killed by", seconds alive, kills, max xp, 1v1 wins
     this.send(
-      new Writer().u8(S2C.DEAD).u8(1).u32(by?.id ?? 0).str(killer).u16(1).str(this.name).u32(this.xp).u16(Math.min(65535, (Date.now() - this.bornAt) / 1000)).u32(this.maxXp).u8(Math.min(255, this.kills)),
+      new Writer()
+        .u8(S2C.DEAD).u8(reason).u32(by?.id ?? 0).str(killer)
+        .u16(rank).str(killedBy).u32(Math.max(0, Math.round((Date.now() - this.bornAt) / 1000)))
+        .u16(Math.min(65535, this.kills)).u32(this.maxXp).u8(0),
     );
     this.ent = null;
     this.animal = null;
@@ -218,10 +256,11 @@ export class Session implements PlayerLike {
   private periodic() {
     const world = this.world;
     if (!world) return;
-    this.send(new Writer().u8(S2C.PLAYERS_INFO).u16(world.players.size).u16(30));
+    const online = world.connected.size;
+    this.send(new Writer().u8(S2C.PLAYERS_INFO).u16(online).u16(Math.min(1000, 20 + online * 15 + world.animals.size / 4)));
     const top = world.leaderboard(10);
-    const me = this.ent ? top.findIndex((p) => p === this) : -1;
-    const w = new Writer().u8(8).u16(me >= 0 ? me + 1 : 0).str(this.name).u32(this.xp).u8(top.length);
+    const rank = this.ent ? world.rankOf(this) : 0;
+    const w = new Writer().u8(8).u16(rank).str(this.name).u32(this.xp).u8(top.length);
     top.forEach((p, i) => w.u16(i + 1).str((p as Session).name).u32(p.xp));
     this.send(w);
   }
@@ -241,6 +280,12 @@ export class Session implements PlayerLike {
       }
       case C2S.MOUSE:
         this.mouse = { x: r.i16(), y: r.i16() };
+        break;
+      case 20: // W pressed/released
+        if (r.u8() === 1) this.world?.useAbility(this, "W");
+        break;
+      case 28: // S pressed/released
+        if (r.u8() === 1) this.world?.useAbility(this, "S");
         break;
       case C2S.BOOST:
         this.boost = r.u8() === 1;
