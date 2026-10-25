@@ -1,0 +1,12 @@
+# Railway config-as-code: deploy from the repo's Dockerfile (web dashboard: New Project > Deploy from GitHub).
+# Game worlds live in memory, so keep exactly one replica.
+[build]
+builder = "DOCKERFILE"
+dockerfilePath = "Dockerfile"
+
+[deploy]
+numReplicas = 1
+healthcheckPath = "/master/servers"
+healthcheckTimeout = 120
+restartPolicyType = "ON_FAILURE"
+restartPolicyMaxRetries = 5
