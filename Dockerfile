@@ -1,9 +1,10 @@
 FROM oven/bun:1
 WORKDIR /app
 
-COPY package.json bun.lock ./
-# strict first; fall back to a normal install if the image's bun version reads the lockfile differently
-RUN bun install --frozen-lockfile || bun install
+# no lockfile on purpose: its format depends on the bun version that wrote it, and a mismatch
+# with the image's bun fails the build ("bun install --frozen-lockfile ... exit code 1")
+COPY package.json ./
+RUN bun install
 
 COPY . .
 # mirror v1.mope.io, deobfuscate client.js and apply the patches (generated game data is committed)
