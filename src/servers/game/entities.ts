@@ -69,6 +69,10 @@ export interface Entity {
   hp: number;
   // objects
   innerRad?: number;
+  /** rectangle objects (biome ground): size in world units; the entity x,y is the centre */
+  rectW?: number;
+  rectH?: number;
+  ground?: boolean;
   /** seconds until a consumed object respawns, <0 = permanent */
   respawn?: number;
   // animals

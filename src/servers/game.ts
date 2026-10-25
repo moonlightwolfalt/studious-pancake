@@ -121,7 +121,9 @@ export class Session implements PlayerLike {
     const world = this.world!;
     if (this.ent) return;
     const start = animalById(1) ?? loadAnimals()[0];
-    const spot = world.randomSpot(start.biome);
+    // MOPE_DEBUG_SPAWN_BIOME=<0-5> spawns in that biome (for checking terrain visuals)
+    const dbg = process.env.MOPE_DEBUG_SPAWN_BIOME;
+    const spot = world.randomSpot(dbg != null && dbg !== "" ? Number(dbg) : start.biome);
     this.name = (name || "mope.io").slice(0, 15);
     this.xp = 0;
     this.kills = 0;

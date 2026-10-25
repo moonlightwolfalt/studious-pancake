@@ -74,7 +74,18 @@ export const clientPatches: Patch[] = [
     // so one build works on any deployment.
     name: "google-client-id",
     apply(code) {
-      return code.replace(/(google: )"[0-9]+-[a-z0-9]+\.apps\.googleusercontent\.com"/, '$1window.__mopeGoogleId()');
+      return code.replace(/(google: )"[0-9]+-[a-z0-9]+\.apps\.googleusercontent\.com"/, '$1(window.__mopeGoogleId() || "not-configured.apps.googleusercontent.com")');
+    },
+  },
+  {
+    // Biome ground: type 33 is the desert's sand rectangle. Volcano and forest have no ground type of
+    // their own, so reuse it with those biomes' colours (the client's biome palette).
+    name: "biome-ground-colors",
+    apply(code) {
+      const re =
+        /(\w+)\.fillStyle = (\w+);(\s*var \w+ = -this\.rectW \/ 2;\s*var \w+ = this\.rectW \/ 2;\s*var \w+ = -this\.rectH \/ 2;\s*var \w+ = this\.rectH \/ 2;\s*\1\.beginPath\(\);\s*\1\.moveTo)/;
+      if (!re.test(code)) throw new Error("sand ground draw not found");
+      return code.replace(re, '$1.fillStyle = this.curBiome === 3 ? "#bf4f0b" : this.curBiome === 5 ? "#06912b" : $2;$3');
     },
   },
   {

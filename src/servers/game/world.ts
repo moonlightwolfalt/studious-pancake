@@ -53,6 +53,8 @@ export class World {
   players = new Set<PlayerLike>();
   nextId = 1;
   respawns: { at: number; make: () => Entity }[] = [];
+  /** biome ground rectangles; too big for the spatial grid, so they're tested against the view directly */
+  ground: Entity[] = [];
   private timer: ReturnType<typeof setInterval> | null = null;
   private last = performance.now();
 
@@ -67,7 +69,25 @@ export class World {
       });
       this.nextId = Math.max(this.nextId, o.id + 1);
     }
+    this.buildGround();
     this.spawnNpcs(120);
+  }
+
+  /**
+   * Biome ground. The client has no background colour of its own: each biome is a big rectangle
+   * object (12 = ocean, 16 = snow, 33 = sand; volcano/forest reuse 33, recoloured by a client patch).
+   * Land is the page's own green.
+   */
+  private buildGround() {
+    const typeFor: Record<number, number> = { [BIOME.WATER]: 12, [BIOME.ARCTIC]: 16, [BIOME.DESERT]: 33, [BIOME.VOLCANO]: 33, [BIOME.FOREST]: 33 };
+    for (const r of this.file.minimap) {
+      const type = typeFor[r.biome];
+      if (!type) continue;
+      this.ground.push({
+        id: this.nextId++, kind: "obj", type, x: r.x + r.w / 2, y: r.y + r.h / 2, rad: Math.max(r.w, r.h) / 2, biome: r.biome,
+        angle: 0, spec: 0, spec2: 0, hp: 100, rectW: r.w, rectH: r.h, ground: true, vx: 0, vy: 0,
+      });
+    }
   }
 
   start() {
@@ -293,6 +313,9 @@ export class World {
       for (const e of this.near(me.x, me.y, Math.max(hw, hh) + 600)) {
         // large objects (lakes, ...) stay visible while any part overlaps the view
         if (Math.abs(e.x - me.x) <= hw + e.rad && Math.abs(e.y - me.y) <= hh + e.rad) visible.set(e.id, e);
+      }
+      for (const g of this.ground) {
+        if (Math.abs(g.x - me.x) <= hw + g.rectW! / 2 && Math.abs(g.y - me.y) <= hh + g.rectH! / 2) visible.set(g.id, g);
       }
       visible.set(me.id, me);
 

@@ -79,7 +79,7 @@ const food = {
   5: [3, 29, 31, 32, 68, 69],
 };
 // only types the server can fully encode (no undecoded custom per-class data)
-const decor = { 0: [101, 8, 47, 7], 1: [5, 9, 13], 2: [8, 17, 47], 3: [44, 58, 8], 4: [8, 47], 5: [101, 101, 7] };
+const decor = { 0: [101, 8, 47, 7], 1: [8], 2: [8, 17, 47], 3: [44, 58, 8], 4: [8, 47], 5: [101, 101, 7] };
 // objects per 1000x1000 cell
 const DENSITY = { food: 26, decor: 1.6 };
 const known = new Set(gameobjTypes);
