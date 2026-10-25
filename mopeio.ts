@@ -4,9 +4,12 @@ import { ROOT } from "./src/config";
 import { runDeobfuscation } from "./src/deobfuscate";
 import { fetchSite } from "./src/fetch";
 import { buildDist } from "./src/patch";
-import { runProbe } from "./src/probe";
 import { writeNamed } from "./src/rename";
-import { serve } from "./src/serve";
+
+// The server (and with it the database layer) is imported only when needed: `build` runs on build
+// machines where DATABASE_URL may be set but unreachable, and must never try to connect.
+const serve = async () => (await import("./src/serve")).serve();
+const runProbe = async () => (await import("./src/probe")).runProbe();
 
 const run = (cmd: string[]) => Bun.spawn(cmd, { stdout: "inherit", stderr: "inherit", cwd: ROOT }).exited;
 
