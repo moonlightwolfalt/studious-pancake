@@ -166,7 +166,15 @@
     if (ws && ws.readyState === 1) ws.send(new Uint8Array([122]).buffer);
   });
 
+  /* rebrand fallback: any "Mistik" text that reaches the DOM becomes "Moonlight Wolf" */
+  function rebrand(root) {
+    var w = document.createTreeWalker(root, NodeFilter.SHOW_TEXT);
+    var n;
+    while ((n = w.nextNode())) if (/Mistik/.test(n.nodeValue)) n.nodeValue = n.nodeValue.replace(/Mistik/g, "Moonlight Wolf");
+  }
+
   function tick() {
+    rebrand(document.body || document.documentElement);
     patchLoginOverlay();
     patchShop();
   }
