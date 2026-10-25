@@ -166,11 +166,12 @@
     if (ws && ws.readyState === 1) ws.send(new Uint8Array([122]).buffer);
   });
 
-  /* rebrand fallback: any "Mistik" text that reaches the DOM becomes "Moonlight Wolf" */
+  /* rebrand fallback: a text node that is exactly "Mistik" becomes "Moonlight Wolf"
+     (skin names like "King Mistik" are left alone) */
   function rebrand(root) {
     var w = document.createTreeWalker(root, NodeFilter.SHOW_TEXT);
     var n;
-    while ((n = w.nextNode())) if (/Mistik/.test(n.nodeValue)) n.nodeValue = n.nodeValue.replace(/Mistik/g, "Moonlight Wolf");
+    while ((n = w.nextNode())) if (n.nodeValue.trim() === "Mistik") n.nodeValue = n.nodeValue.replace("Mistik", "Moonlight Wolf");
   }
 
   function tick() {

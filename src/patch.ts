@@ -42,11 +42,6 @@ export const BRAND = "Moonlight Wolf";
 
 export const clientPatches: Patch[] = [
   {
-    // "Mistik" (the creator branding shown in text and in two skin names)
-    name: "rebrand",
-    apply: (code) => code.replace(/Mistik/g, BRAND),
-  },
-  {
     // Anti-tamper traps: `while (true) {}` hidden behind `... === this` checks,
     // a stray `debugger`, and a timer that evals `server = null`.
     name: "strip-anti-tamper",
