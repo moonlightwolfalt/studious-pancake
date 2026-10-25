@@ -15,14 +15,35 @@ export interface SnapshotStore {
   save(bytes: Uint8Array): Promise<void>;
 }
 
+/**
+ * Hosted Postgres (Supabase, Neon, ...) requires TLS but hands out certificates that a plain
+ * verification often rejects (same as libpq's sslmode=require: encrypt, don't verify). Local servers
+ * stay plain. DATABASE_SSL=verify turns full certificate checking on; DATABASE_SSL=off disables TLS.
+ */
+function tlsFor(url: string): boolean | { rejectUnauthorized: boolean } | undefined {
+  const mode = process.env.DATABASE_SSL?.toLowerCase();
+  if (mode === "off") return undefined;
+  if (mode === "verify") return true;
+  try {
+    const host = new URL(url).hostname;
+    if (host === "localhost" || host === "127.0.0.1" || host === "::1" || host.startsWith("/")) return undefined;
+  } catch {}
+  return { rejectUnauthorized: false };
+}
+
 class PostgresStore implements SnapshotStore {
   readonly name = "postgres";
   private sql: SQL;
   constructor(url: string) {
-    this.sql = new SQL(url);
+    const tls = tlsFor(url);
+    this.sql = tls === undefined ? new SQL(url) : new SQL(url, { tls });
   }
   async init() {
     await this.sql`CREATE TABLE IF NOT EXISTS mope_snapshot (id integer PRIMARY KEY, data text NOT NULL, updated_at timestamptz NOT NULL DEFAULT now())`;
+    // The snapshot holds password hashes and login tokens. Supabase exposes the public schema through
+    // a REST API; with row level security on and no policies, that API can read nothing here (this
+    // connection's owner role is unaffected). Harmless on any other Postgres.
+    await this.sql`ALTER TABLE mope_snapshot ENABLE ROW LEVEL SECURITY`;
   }
   async load() {
     const rows = await this.sql`SELECT data FROM mope_snapshot WHERE id = 1`;
