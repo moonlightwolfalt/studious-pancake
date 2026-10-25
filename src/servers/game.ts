@@ -2,7 +2,8 @@ import type { ServerWebSocket } from "bun";
 import { authenticate, equippedSkins, sessionUsers } from "./accounts";
 import { animalById, loadAnimals, upgradeChoices, xpForTier, type Animal } from "./game/catalog";
 import { type Entity } from "./game/entities";
-import { FOOD, loadWorldFile, type PlayerLike, World, type WorldFile } from "./game/world";
+import { ediblesFor } from "./game/diet";
+import { loadWorldFile, type PlayerLike, World, type WorldFile } from "./game/world";
 import type { Snapshot } from "./game/wire";
 import { shopCatalog } from "./shop";
 import { C2S, Reader, S2C, Writer } from "./protocol";
@@ -159,7 +160,7 @@ export class Session implements PlayerLike {
     w.u32(e.id).u32(xpForTier(a.tier)).u16(0).u16(0);
     const danger = all.filter((x) => x.tier > a.tier).map((x) => x.id);
     const edible = all.filter((x) => x.tier < a.tier).map((x) => x.id);
-    for (const list of [danger, [], edible.slice(0, 0), [...FOOD]]) {
+    for (const list of [danger, edible.slice(0, 0), [], ediblesFor(a)]) {
       w.u8(list.length);
       for (const v of list) w.u8(v);
     }

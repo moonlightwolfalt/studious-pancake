@@ -3,6 +3,7 @@ import { join } from "node:path";
 import { DATA } from "../../config";
 import { Writer } from "../protocol";
 import { BIOME, loadAnimals, xpForTier, type Animal } from "./catalog";
+import { canEat, FOOD, foodXp } from "./diet";
 import { type Entity, OT } from "./entities";
 import { snapshot, type Snapshot, writeNewlyVisible, writeRemoved, writeUpdate } from "./wire";
 
@@ -15,8 +16,7 @@ export interface WorldFile {
   objects: { id: number; type: number; biome: number; x: number; y: number; rad: number; innerRad?: number; respawn?: number }[];
 }
 
-/** object types that can be eaten for XP (berries, fruit, sea food, ...) */
-export const FOOD = new Set([3, 29, 30, 31, 32, 35, 36, 37, 38, 39, 48, 49, 50, 52, 53, 54, 60, 68, 69, 98]);
+export { FOOD };
 
 export function loadWorldFile(): WorldFile {
   const p = join(DATA, "world.json");
@@ -207,8 +207,9 @@ export class World {
         if (o === me || o.dead) continue;
         const d = Math.hypot(o.x - me.x, o.y - me.y);
         if (o.kind === "obj" && FOOD.has(o.type) && d < me.rad + o.rad * 0.4) {
+          if (!canEat(p.animal, o.type)) continue; // not on this animal's diet: it passes over it
           this.consume(o, me);
-          this.gain(p, 8 + p.animal.tier * 4);
+          this.gain(p, foodXp(p.animal, o.type));
         } else if (o.kind === "animal" && d < me.rad * 0.8 && me.rad > o.rad * 1.1 && o !== me) {
           const victim = o.owner as PlayerLike | undefined;
           const vt = loadAnimals().find((a) => a.id === o.animalType)?.tier ?? 1;
