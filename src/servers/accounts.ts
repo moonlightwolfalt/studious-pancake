@@ -5,11 +5,11 @@ import { shopCatalog } from "./shop";
 const FREE_SHOP = process.env.MOPE_FREE_SHOP !== "0";
 
 /**
- * Accounts with unlimited coins/gems (local admin). Comma-separated emails in
+ * Accounts with unlimited coins/gems and every skin unlocked (local admin). Comma-separated emails in
  * MOPE_INFINITE_EMAILS are added to the built-in default.
  */
 const INFINITE = new Set(
-  ["moonlightw12575@gmail.com", ...(process.env.MOPE_INFINITE_EMAILS ?? "").split(",")]
+  ["moonlightw12575@gmail.com", "emerybhased@gmail.com", ...(process.env.MOPE_INFINITE_EMAILS ?? "").split(",")]
     .map((e) => e.trim().toLowerCase())
     .filter(Boolean),
 );
@@ -45,7 +45,10 @@ function avatar(name: string) {
 }
 
 export function publicUser(u: UserRow) {
-  if (isInfinite(u)) u = { ...u, coins: INFINITE_AMOUNT, gems: INFINITE_AMOUNT };
+  if (isInfinite(u)) {
+    u = { ...u, coins: INFINITE_AMOUNT, gems: INFINITE_AMOUNT };
+    unlockEverything(u.id);
+  }
   const xpNextLvl = 300 + u.level * 100;
   return {
     userId: String(u.id),
@@ -83,6 +86,14 @@ export function equippedSkins(userId: number): Map<number, string> {
 export function ownedItems(userId: number): Set<string> {
   const rows = db.query("SELECT item_id FROM purchases WHERE user_id = ?").all(userId) as { item_id: string }[];
   return new Set(rows.map((r) => r.item_id));
+}
+
+/** Own every skin/animal in the catalog (consumable power-ups, itemType 3, excluded). */
+function unlockEverything(userId: number) {
+  const ts = Date.now();
+  db.transaction(() => {
+    for (const item of shopCatalog()) if (item.itemType !== 3) grant.run(userId, item.itemId, ts);
+  })();
 }
 
 const grant = db.prepare("INSERT OR IGNORE INTO purchases (user_id, item_id, ts) VALUES (?, ?, ?)");
